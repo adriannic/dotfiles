@@ -1,0 +1,76 @@
+/* $text: --wofi-color15; */
+/* $bg: --wofi-color0; */
+/* $text-selected: --wofi-color0; */
+/* $bg-selected: --wofi-color15; */
+/* $border: --wofi-color1; */
+
+window {
+  margin: 0px;
+  background: transparent;
+  border-radius: 25px;
+  font-family: FiraCode Nerd Font;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+#input {
+  padding: 10px;
+  border: inset 4px;
+  border-color: --wofi-color1;
+  border-radius: 25px;
+  color: --wofi-color15;
+  background-color: --wofi-color0;
+  outline: none;
+  margin: 10px;
+  margin-bottom: 2px;
+}
+
+#inner-box {
+  border: none;
+  color: --wofi-color15;
+  background-color: transparent;
+}
+
+#outer-box {
+  background: transparent;
+  border-radius: 25px 0;
+}
+
+#scroll {
+  border: none;
+  padding: 10px;
+}
+
+#img {
+  background-color: transparent;
+}
+
+#text {
+  margin: 0px 10px;
+  border: none;
+  font-weight: bold;
+  background-color: transparent;
+  color: --wofi-color15;
+}
+
+#text:selected {
+  color: --wofi-color0;
+}
+
+#entry {
+  margin: 4px 0px;
+  border: 4px inset --wofi-color1;
+  border-radius: 25px;
+  padding: 10px;
+  background-color: --wofi-color0;
+  transition: background-color 0.25s;
+  transition: border-radius 0.25s;
+}
+
+#entry:selected {
+  margin: 4px 0px;
+  color: --wofi-color0;
+  background-color: --wofi-color15;
+  transition: background-color 0.25s;
+  transition: border-radius 0.25s;
+}

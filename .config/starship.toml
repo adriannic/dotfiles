@@ -1,0 +1,41 @@
+[c]
+format = "[$name $version ]($style)"
+
+[cmake]
+format = "[CMake $version ]($style)"
+
+[docker_context]
+format = "[$symbol$context ]($style)"
+
+[git_branch]
+format = "[$symbol$branch(:$remote_branch) ]($style)"
+
+[java]
+format = "[$symbol($version )]($style)"
+
+[lua]
+format = "[$symbol($version) ]($style)"
+symbol = "󰢱 "
+
+[package]
+format = "[$symbol$version ]($style)"
+symbol = "󰏗 "
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = "󰌠 "
+
+[rust]
+format = "[$symbol($version) ]($style)"
+symbol = "󱘗 "
+
+[username]
+format = "[$user ]($style)"
+show_always = true
+
+[os]
+format = "[$symbol]($style)"
+disabled = false
+
+[os.symbols]
+Arch = "󰣇 "

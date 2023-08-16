@@ -1,0 +1,477 @@
+(defvar is-bar-visible
+  "true"
+)
+
+(defvar is-notifications-visible-0
+  "false"
+)
+
+(defvar is-notifications-visible-1
+  "false"
+)
+
+(defvar battery-icons
+  '{"Charging":"󰂄","Discharging":["󰂎","󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"]}'
+)
+
+(defvar net-icons
+  '{"none":"󱛇","portal":"󱚵","limited":"󱚵","full":"󰖩","unknown":"󰖪"}'
+)
+
+(defvar selected-util
+  ""
+)
+
+(deflisten active-workspaces
+  "./scripts/active-workspace"
+)
+
+(defpoll time
+  :interval "60s"
+  "date +%H:%M"
+)
+
+(defpoll vol
+  :interval "1s"
+  "~/.config/eww/scripts/getvol.sh"
+)
+
+(defpoll bluetooth
+  :interval "1s"
+  "bluetoothctl show | grep Powered | cut -d' ' -f2"
+)
+
+(defpoll brightness
+  :interval "1s"
+  "brightnessctl -m | cut -d',' -f4 | cut -d'%' -f1"
+)
+
+(defpoll battery
+  :interval "5s"
+  "cat /sys/class/power_supply/BAT0/capacity"
+)
+
+(defpoll battery-state
+  :interval "5s"
+  "cat /sys/class/power_supply/BAT0/status"
+)
+
+(defpoll net-enabled
+  :interval "5s"
+  "LC_ALL=C nmcli networking"
+)
+
+(defpoll net-state
+  :interval "5s"
+  "LC_ALL=C nmcli networking connectivity"
+)
+
+(defpoll cal-day
+  :interval "1h"
+  "date +%d"
+)
+
+(defpoll cal-month
+  :interval "10h"
+  "date +%B"
+)
+
+(defpoll cal-year
+  :interval "10h"
+  "date +%Y"
+)
+
+(deflisten song
+  "~/.config/eww/scripts/getsong.sh"
+)
+(defpoll notifications
+  :interval "5s"
+  "dunstctl history | jq"
+)
+
+(defwidget bar-widget [n]
+  (box
+    :orientation "v"
+    :space-evenly false
+    (revealer
+      :transition "slideup"
+      :reveal is-bar-visible
+      :duration "250ms"
+      (centerbox
+        :height 56
+        :orientation "h"
+        :style "
+          margin: 0px 5px 5px 5px;
+        "
+        (workspaces
+          :n n
+        )
+        (box
+          :width "100%"
+          :halign "center"
+        )
+        (util-bar
+          :n n
+        )
+      )
+    )
+  )
+)
+
+(defwidget workspaces [n]
+  (box
+    :space-evenly true
+    :halign "start"
+    :spacing 0
+    (button :class "workspace${active-workspaces[n] == 1 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 1" " ")
+    (button :class "workspace${active-workspaces[n] == 2 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 2" " ")
+    (button :class "workspace${active-workspaces[n] == 3 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 3" " ")
+    (button :class "workspace${active-workspaces[n] == 4 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 4" "󰈹 ")
+    (button :class "workspace${active-workspaces[n] == 5 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 5" " ")
+    (button :class "workspace${active-workspaces[n] == 6 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 6" "󰙯 ")
+    (button :class "workspace${active-workspaces[n] == 7 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 7" " ")
+    (button :class "workspace${active-workspaces[n] == 8 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 8" " ")
+  )
+)
+
+(defwidget battery-indicator []
+  (eventbox
+    :visible {battery != ""}
+    :class "util-button"
+    :onhover "eww update selected-util='battery-indicator'"
+    :onhoverlost "eww update selected-util=''"
+    (box
+      :spacing 4
+      :space-evenly false
+      :style "
+        padding: 0px 16px 0px 20px;
+      "
+      '${(battery-state == "Charging") ? battery-icons[battery-state] : battery-icons["Discharging"][(battery - battery%10)/10]}'
+      (revealer
+        :transition "slideleft"
+        :duration "250ms"
+        :reveal {selected-util == 'battery-indicator'}
+        ' ${battery}%'
+      )
+    )
+  )
+)
+
+(defwidget brightness-indicator []
+  (eventbox
+    :visible {brightness != ""}
+    :class "util-button"
+    :onhover "eww update selected-util='brightness-indicator'"
+    :onhoverlost "eww update selected-util=''"
+    :tooltip "${brightness}%"
+    (box
+      :spacing 4
+      :space-evenly false
+      :style "
+        padding: 0px 18px;
+      "
+      '󰃟'
+      (revealer
+        :transition "slideleft"
+        :duration "250ms"
+        :reveal {selected-util == 'brightness-indicator'}
+        (scale
+          :onchange "brightnessctl set {}%"
+          :value brightness
+        )
+      )
+    )
+  )
+)
+
+(defwidget net-indicator []
+  (eventbox
+    :class "util-button"
+    :onclick "nmcli networking ${net-enabled == 'enabled' ? 'off' : 'on'}"
+    :onmiddleclick "bash scripts/nmtui.sh"
+    :onhover "eww update selected-util='net-indicator'"
+    :onhoverlost "eww update selected-util=''"
+    (box
+      :spacing 4
+      :space-evenly false
+      :style "
+        padding: 0px 18px;
+      "
+      "${net-enabled == 'enabled' ? net-icons[net-state] : '󰖪'}"
+      (revealer
+        :transition "slideleft"
+        :duration "250ms"
+        :reveal {selected-util == 'net-indicator'}
+        :style "
+          padding-left: 4px;
+        "
+        ' ${net-state}'
+      )
+    )
+  )
+)
+
+(defwidget bt-indicator []
+  (eventbox
+    :class "util-button"
+    :onclick "bluetoothctl power ${bluetooth == 'yes' ? 'off' : 'on'}"
+    :onmiddleclick "blueberry"
+    :onhover "eww update selected-util='bt-indicator'"
+    :onhoverlost "eww update selected-util=''"
+    (box
+      :spacing 4
+      :space-evenly false
+      :style "
+        padding: 0px 16px 0px 20px;
+      "
+      {bluetooth == "yes" ? "󰂯" : "󰂲"}
+      (revealer
+        :transition "slideleft"
+        :duration "250ms"
+        :reveal {selected-util == 'bt-indicator'}
+        " ${bluetooth == "yes" ? "on" : "off"}"
+      )
+    )
+  )
+)
+
+(defwidget vol-indicator []
+  (eventbox
+    :class "util-button"
+    :onclick "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    :onmiddleclick "bash ~/.config/eww/scripts/pulsemixer.sh"
+    :onhover "eww update selected-util='vol-indicator'"
+    :onhoverlost "eww update selected-util=''"
+    :tooltip "${vol[0].volume}%"
+    (box
+      :spacing 4
+      :space-evenly false
+      :style "
+        padding: 0px 18px;
+      "
+      {vol[0].muted == 1 ? '󰖁' : ''}
+      (revealer
+        :transition "slideleft"
+        :duration "250ms"
+        :reveal {selected-util == 'vol-indicator'}
+        (scale
+          :onchange "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ {}%"
+          :value {vol[0].volume}
+        )
+      )
+    )
+  )
+)
+
+(defwidget mic-indicator []
+  (eventbox
+    :class "util-button"
+    :onclick "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+    :onmiddleclick "bash ~/.config/eww/scripts/pulsemixer.sh"
+    :onhover "eww update selected-util='mic-indicator'"
+    :onhoverlost "eww update selected-util=''"
+    :tooltip "${vol[1].volume}%"
+    (box
+      :spacing 4
+      :space-evenly false
+      :style "
+        padding: 0px 16px 0px 20px;
+      "
+      {vol[1].muted == 1 ? '' : ''}
+      (revealer
+        :transition "slideleft"
+        :duration "250ms"
+        :reveal {selected-util == 'mic-indicator'}
+        (scale
+          :onchange "wpctl set-volume -l 1 @DEFAULT_AUDIO_SOURCE@ {}%"
+          :value {vol[1].volume}
+        )
+      )
+    )
+  )
+)
+
+(defwidget clock [n]
+  (eventbox
+    :class "clock"
+    :onclick "eww open --toggle cal-window-${n}"
+    (button
+      :class "util-button"
+      :onclick "eww open --toggle cal-window-${n}"
+      time
+    )
+  )
+)
+
+(defwidget util-bar [n]
+  (box
+    :halign "end"
+    :space-evenly false
+    :spacing 4
+    (battery-indicator)
+    (brightness-indicator)
+    (net-indicator)
+    (bt-indicator)
+    (vol-indicator)
+    (mic-indicator)
+    (clock
+      :n n
+    )
+  )
+)
+
+(defwidget cal []
+  (box
+    :class "cal-box"
+    (calendar
+      :day cal-day
+      :month cal-month
+      :year cal-year
+      :show-week-numbers true
+    )
+  )
+)
+
+(defwindow cal-window-0
+  :monitor 0
+  :geometry (geometry
+    :width "15%"
+    :height "19%"
+    :anchor "bottom right"
+  )
+  :stacking "overlay"
+  :focusable false
+  :namespace "eww"
+  (cal)
+)
+
+(defwindow cal-window-1
+  :monitor 1
+  :geometry (geometry
+    :x "85%"
+    :y "76%"
+    :width "15%"
+    :height "10%"
+  )
+  :stacking "overlay"
+  :focusable false
+  :namespace "eww"
+  (cal)
+)
+
+(defwindow bar-0
+  :monitor 0
+  :geometry (geometry
+    :width "100%"
+    :anchor "bottom center"
+  )
+  :stacking "fg"
+  :exclusive true
+  :focusable false
+  :namespace "eww"
+  (bar-widget
+    :n 0
+  )
+)
+
+(defwindow bar-1
+  :monitor 1
+  :geometry (geometry
+    :width "100%"
+    :anchor "bottom center"
+  )
+  :stacking "fg"
+  :exclusive true
+  :focusable false
+  :namespace "eww"
+  (bar-widget
+    :n 1
+  )
+)
+
+(defwidget notifications []
+  (box
+    :class "notification-box"
+    :orientation "v"
+    :space-evenly false
+    :spacing 4
+    (label
+      :class "title"
+      :text "󰂚 Notificaciones"
+    )
+    (for not in {notifications.data[0]}
+      (box
+        :class "notification"
+        :orientation "h"
+        (label
+          :xalign 0
+          :limit-width 20
+          :wrap true
+          :markup {not.message.data}
+        )
+        (label
+          :xalign 1
+          :text "${not.appname.data}"
+        )
+      )
+    )
+  )
+)
+
+(defwindow notifications-0
+  :monitor 0
+  :geometry (geometry
+    :width "30%"
+    :anchor "top center"
+  )
+  :stacking "overlay"
+  :exclusive false
+  :focusable false
+  :namespace "eww"
+  (eventbox
+    :onhover "eww update is-notifications-visible-0=true"
+    :onhoverlost "eww update is-notifications-visible-0=false"
+    (box
+      :orientation "v"
+      :space-evenly false
+      (revealer
+        :transition "slidedown"
+        :reveal is-notifications-visible-0
+        :duration "250ms"
+        (notifications)
+      )
+      (box
+        :height 1
+      )
+    )
+  )
+)
+
+(defwindow notifications-1
+  :monitor 1
+  :geometry (geometry
+    :width "30%"
+    :anchor "top center"
+  )
+  :stacking "overlay"
+  :exclusive false
+  :focusable false
+  :namespace "eww"
+  (eventbox
+    :onhover "eww update is-notifications-visible-1=true"
+    :onhoverlost "eww update is-notifications-visible-1=false"
+    (box
+      :orientation "v"
+      :space-evenly false
+      (revealer
+        :transition "slidedown"
+        :reveal is-notifications-visible-1
+        :duration "250ms"
+        (notifications)
+      )
+      (box
+        :height 1
+      )
+    )
+  )
+)

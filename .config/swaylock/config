@@ -1,0 +1,17 @@
+daemonize
+screenshot
+effect-blur=32x8
+effect-vignette=0.5:0.5
+indicator
+show-failed-attempts
+ignore-empty-password
+indicator-caps-lock
+indicator-radius=100
+font=FiraCode Nerd Font
+clock
+line-color=313244
+ring-color=313244
+inside-color=181b28
+text-color=8080c0
+key-hl-color=8080c0
+separator-color=8080c0

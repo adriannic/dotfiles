@@ -1,0 +1,179 @@
+@import "/home/adriannic/.cache/wal/colors.scss";
+
+// Purple
+// $text: #c080f0;
+// $bg-selected: #c080f0;
+// $border: #400070;
+// $bg: #16003B;
+// $text-selected: #16003B;
+
+// blueish
+// $text: #88f;
+// $bg: #112;
+// $text-selected: #112;
+// $bg-selected: #88f;
+// $border: #335;
+
+// New Gray
+// $text: #88c;
+// $bg: #111;
+// $text-selected: #111;
+// $bg-selected: #88c;
+// $border: #334;
+
+$text: $foreground;
+$bg: $background;
+$text-selected: $background;
+$bg-selected: $foreground;
+$border: $color1;
+
+$font-size: 18px;
+
+* {
+  all: unset;
+  font-family: "FiraCode Nerd Font";
+  font-weight: bold;
+}
+
+.bar {
+  background: transparent;
+}
+
+button:hover {
+  background-color: $bg-selected;
+  color: $text-selected;
+  transition: background-color 0.25s;
+}
+
+.workspace {
+  margin: 0px 4px;
+  font-size: $font-size;
+  padding: 5px;
+  padding-left: 12px;
+  padding-right: 7px;
+  border: inset 4px $border;
+  border-radius: 25px;
+  background-color: $bg;
+  color: $text;
+  transition: background-color 0.25s;
+  transition: color 0.25s;
+}
+
+.active-workspace {
+  color: $text-selected;
+  background-color: $bg-selected;
+  transition: color 0.25s;
+  transition: background-color 0.25s;
+}
+
+.util-button {
+  // min-width: 64px;
+  font-size: $font-size - 2px;
+  padding: 5px 9px;
+  border: inset 4px $border;
+  border-radius: 25px;
+  background-color: $bg;
+  color: $text;
+  transition: color 0.25s;
+  transition: background-color 0.25s;
+}
+
+scale {
+  border-radius: 25px;
+  margin-left: 10px;
+  padding-right: 8px;
+  transition: 0ms cubic-bezier(0.05, 0.7, 0.1, 1);
+
+  trough {
+    min-height: 15px;
+    min-width: 100px;
+    border-radius: 25px;
+    background-color: $border;
+    // border: 2px inset $border;
+  }
+
+  highlight {
+    min-width: 3px;
+    border-radius: 25px;
+    background-color: $bg-selected;
+    transition: 0ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  }
+
+  slider {
+    min-width: 5px;
+    margin: -8px;
+    border-radius: 25px;
+    background-color: $border;
+    border: 5px inset $border;
+  }
+}
+
+.title {
+  padding: 10px;
+  font-size: $font-size;
+  border: inset 4px $border;
+  border-radius: 25px;
+  color: $text;
+  background-color: $bg;
+}
+
+.notification-box {
+  margin-top: 5px;
+  color: $text;
+  background: transparent;
+}
+
+.notification {
+  padding: 10px;
+  font-size: $font-size - 4px;
+  border: inset 4px $border;
+  border-radius: 25px;
+  color: $text;
+  background-color: $bg;
+}
+
+.cal-box {
+  padding: 5px;
+  padding-left: 9px;
+  padding-right: 4px;
+  margin: 4px;
+  border: inset 5px $border;
+  border-radius: 25px;
+  background-color: $bg;
+  color: $text;
+}
+
+calendar {
+  color: $text;
+}
+
+calendar:selected {
+  color: $text-selected;
+  background-color: $bg-selected;
+  border-radius: 10px;
+}
+
+calendar.header {
+  color: $text;
+}
+
+calendar.button {
+  color: $text;
+}
+
+calendar.highlight {
+  color: $color8; 
+}
+
+calendar:indeterminate {
+  color: $color2;
+}
+
+tooltip {
+  color: $text;
+  background-color: $bg;
+  border-radius: 25px;
+  border: inset 4px $border;
+  padding: 50px;
+  font-size: $font-size - 2px;
+}
