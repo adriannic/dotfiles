@@ -30,6 +30,7 @@ if status is-interactive
 	    pywalfox update &> /dev/null &
 	    swww img "$(cat ~/.cache/wal/wal)" --transition-type=any --transition-fps=60 --transition-duration=2 &> /dev/null &
 	    eww reload &> /dev/null & 
+	    bash ~/.config/hypr/scripts/pywal.sh &> /dev/null &
     end
 
     function randwp
