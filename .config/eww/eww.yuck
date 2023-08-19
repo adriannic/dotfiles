@@ -176,7 +176,7 @@
         :duration "250ms"
         :reveal {selected-util == 'brightness-indicator'}
         (scale
-          :onchange "brightnessctl set {}%"
+          :onchange "brightnessctl set {}% && swayosd-client --brightness 0"
           :value brightness
         )
       )
@@ -238,7 +238,7 @@
 (defwidget vol-indicator []
   (eventbox
     :class "util-button"
-    :onclick "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    :onclick "swayosd-client --output-volume mute-toggle"
     :onmiddleclick "bash ~/.config/eww/scripts/pulsemixer.sh"
     :onhover "eww update selected-util='vol-indicator'"
     :onhoverlost "eww update selected-util=''"
@@ -255,7 +255,7 @@
         :duration "250ms"
         :reveal {selected-util == 'vol-indicator'}
         (scale
-          :onchange "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ {}%"
+          :onchange "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ {}% && swayosd-client --output-volume 0"
           :value {vol[0].volume}
         )
       )
@@ -266,7 +266,7 @@
 (defwidget mic-indicator []
   (eventbox
     :class "util-button"
-    :onclick "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+    :onclick "swayosd-client --input-volume mute-toggle"
     :onmiddleclick "bash ~/.config/eww/scripts/pulsemixer.sh"
     :onhover "eww update selected-util='mic-indicator'"
     :onhoverlost "eww update selected-util=''"
@@ -283,7 +283,7 @@
         :duration "250ms"
         :reveal {selected-util == 'mic-indicator'}
         (scale
-          :onchange "wpctl set-volume -l 1 @DEFAULT_AUDIO_SOURCE@ {}%"
+          :onchange "wpctl set-volume -l 1 @DEFAULT_AUDIO_SOURCE@ {}% && swayosd-client --input-volume 0"
           :value {vol[1].volume}
         )
       )
