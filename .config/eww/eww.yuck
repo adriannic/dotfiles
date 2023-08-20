@@ -167,9 +167,9 @@
       :spacing 4
       :space-evenly false
       :style "
-        padding: 0px 18px;
+        padding: 0px 8px 0px 18px;
       "
-      '󰃟'
+      '󰃟 '
       (revealer
         :transition "slideleft"
         :duration "250ms"
