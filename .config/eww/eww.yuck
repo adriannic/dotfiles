@@ -107,7 +107,6 @@
           :n n
         )
         (box
-          :width "100%"
           :halign "center"
         )
         (util-bar
@@ -123,14 +122,14 @@
     :space-evenly true
     :halign "start"
     :spacing 0
-    (button :class "workspace${active-workspaces[n] == 1 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 1" " ")
-    (button :class "workspace${active-workspaces[n] == 2 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 2" " ")
-    (button :class "workspace${active-workspaces[n] == 3 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 3" " ")
-    (button :class "workspace${active-workspaces[n] == 4 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 4" "󰈹 ")
-    (button :class "workspace${active-workspaces[n] == 5 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 5" " ")
-    (button :class "workspace${active-workspaces[n] == 6 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 6" "󰙯 ")
-    (button :class "workspace${active-workspaces[n] == 7 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 7" " ")
-    (button :class "workspace${active-workspaces[n] == 8 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 8" " ")
+    (button :class "workspace${active-workspaces[n] == 1 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 1" "")
+    (button :class "workspace${active-workspaces[n] == 2 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 2" "")
+    (button :class "workspace${active-workspaces[n] == 3 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 3" "")
+    (button :class "workspace${active-workspaces[n] == 4 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 4" "󰈹")
+    (button :class "workspace${active-workspaces[n] == 5 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 5" "")
+    (button :class "workspace${active-workspaces[n] == 6 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 6" "󰙯")
+    (button :class "workspace${active-workspaces[n] == 7 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 7" "")
+    (button :class "workspace${active-workspaces[n] == 8 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 8" "")
   )
 )
 
@@ -187,8 +186,8 @@
 (defwidget net-indicator []
   (eventbox
     :class "util-button"
-    :onclick "nmcli networking ${net-enabled == 'enabled' ? 'off' : 'on'}"
-    :onmiddleclick "bash scripts/nmtui.sh"
+    :onclick "networkmanager_dmenu"
+    :onmiddle "nmcli networking ${net-enabled == 'enabled' ? 'off' : 'on'}"
     :onhover "eww update selected-util='net-indicator'"
     :onhoverlost "eww update selected-util=''"
     (box
@@ -386,92 +385,5 @@
   :namespace "eww"
   (bar-widget
     :n 1
-  )
-)
-
-(defwidget notifications []
-  (box
-    :class "notification-box"
-    :orientation "v"
-    :space-evenly false
-    :spacing 4
-    (label
-      :class "title"
-      :text "󰂚 Notificaciones"
-    )
-    (for not in {notifications.data[0]}
-      (box
-        :class "notification"
-        :orientation "h"
-        (label
-          :xalign 0
-          :limit-width 20
-          :wrap true
-          :markup {not.message.data}
-        )
-        (label
-          :xalign 1
-          :text "${not.appname.data}"
-        )
-      )
-    )
-  )
-)
-
-(defwindow notifications-0
-  :monitor 0
-  :geometry (geometry
-    :width "30%"
-    :anchor "top center"
-  )
-  :stacking "overlay"
-  :exclusive false
-  :focusable false
-  :namespace "eww"
-  (eventbox
-    :onhover "eww update is-notifications-visible-0=true"
-    :onhoverlost "eww update is-notifications-visible-0=false"
-    (box
-      :orientation "v"
-      :space-evenly false
-      (revealer
-        :transition "slidedown"
-        :reveal is-notifications-visible-0
-        :duration "250ms"
-        (notifications)
-      )
-      (box
-        :height 1
-      )
-    )
-  )
-)
-
-(defwindow notifications-1
-  :monitor 1
-  :geometry (geometry
-    :width "30%"
-    :anchor "top center"
-  )
-  :stacking "overlay"
-  :exclusive false
-  :focusable false
-  :namespace "eww"
-  (eventbox
-    :onhover "eww update is-notifications-visible-1=true"
-    :onhoverlost "eww update is-notifications-visible-1=false"
-    (box
-      :orientation "v"
-      :space-evenly false
-      (revealer
-        :transition "slidedown"
-        :reveal is-notifications-visible-1
-        :duration "250ms"
-        (notifications)
-      )
-      (box
-        :height 1
-      )
-    )
   )
 )

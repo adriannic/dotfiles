@@ -35,10 +35,6 @@ $font-size: 18px;
   font-weight: bold;
 }
 
-.bar {
-  background: transparent;
-}
-
 button:hover {
   background-color: $bg-selected;
   color: $text-selected;
@@ -48,9 +44,7 @@ button:hover {
 .workspace {
   margin: 0px 4px;
   font-size: $font-size;
-  padding: 5px;
-  padding-left: 12px;
-  padding-right: 7px;
+  padding: 0px 18px 0px 14px;
   border: inset 4px $border;
   border-radius: 25px;
   background-color: $bg;
@@ -67,7 +61,7 @@ button:hover {
 }
 
 .util-button {
-  // min-width: 64px;
+  min-width: 42px;
   font-size: $font-size - 2px;
   padding: 5px 9px;
   border: inset 4px $border;
