@@ -27,7 +27,7 @@
 )
 
 (defpoll time
-  :interval "60s"
+  :interval "5s"
   "date +%H:%M"
 )
 
@@ -238,7 +238,7 @@
   (eventbox
     :class "util-button"
     :onclick "swayosd-client --output-volume mute-toggle"
-    :onmiddleclick "bash ~/.config/eww/scripts/pulsemixer.sh"
+    :onmiddleclick "hyprctl dispatch exec pavucontrol"
     :onhover "eww update selected-util='vol-indicator'"
     :onhoverlost "eww update selected-util=''"
     :tooltip "${vol[0].volume}%"
@@ -266,7 +266,7 @@
   (eventbox
     :class "util-button"
     :onclick "swayosd-client --input-volume mute-toggle"
-    :onmiddleclick "bash ~/.config/eww/scripts/pulsemixer.sh"
+    :onmiddleclick "hyprctl dispatch exec pavucontrol"
     :onhover "eww update selected-util='mic-indicator'"
     :onhoverlost "eww update selected-util=''"
     :tooltip "${vol[1].volume}%"
