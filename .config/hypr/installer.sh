@@ -152,7 +152,7 @@ sudo systemctl enable --now bluetooth
 
 # Configs
 git clone --bare https://github.com/adriannic/dotfiles "$HOME"/.dotfiles
-git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" checkout
+git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" checkout -f
 
 if [[ $ISNVIDIA = true ]]; then
   ln -sf ~/.config/hypr/nvidia-env.conf ~/.config/hypr/nvidia-env
@@ -168,13 +168,13 @@ mkdir -p ~/.config/astronvim/lua/user
 rm -rf ~/.config/nvim
 
 git clone --depth=1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-git clone https://github.com/adriannic/astronvim-configs ~/.config/astronvim/lua/user
+git clone https://github.com/adriannic/astronvim-config ~/.config/astronvim/lua/user
 
 # Autologin
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d/
 echo "[Service]
 ExecStart=
-ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin username %I $TERM" | sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf
+ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin adriannic %I $TERM" | sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf
 
 # Hack to be able to open term apps with wofi
 sudo ln -s /usr/bin/kitty /usr/bin/gnome-terminal
