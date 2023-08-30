@@ -152,7 +152,7 @@ sudo systemctl enable --now bluetooth
 
 # Configs
 git clone --bare https://github.com/adriannic/dotfiles "$HOME"/.dotfiles
-git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" checkout
+git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" checkout -f
 
 if [[ $ISNVIDIA = true ]]; then
   ln -sf ~/.config/hypr/nvidia-env.conf ~/.config/hypr/nvidia-env
