@@ -116,7 +116,7 @@ packages=(
 	dolphin-plugins
 )
 
-yay -S --needed --noconfirm base-devel git
+sudo pacman -S --needed --noconfirm base-devel git
 
 # Installing yay
 git clone https://aur.archlinux.org/yay.git
