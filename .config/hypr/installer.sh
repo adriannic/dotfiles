@@ -174,7 +174,7 @@ git clone https://github.com/adriannic/astronvim-config ~/.config/astronvim/lua/
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d/
 echo "[Service]
 ExecStart=
-ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin username %I $TERM" | sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf
+ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin adriannic %I $TERM" | sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf
 
 # Hack to be able to open term apps with wofi
 sudo ln -s /usr/bin/kitty /usr/bin/gnome-terminal
