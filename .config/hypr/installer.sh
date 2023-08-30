@@ -168,7 +168,7 @@ mkdir -p ~/.config/astronvim/lua/user
 rm -rf ~/.config/nvim
 
 git clone --depth=1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-git clone https://github.com/adriannic/astronvim-configs ~/.config/astronvim/lua/user
+git clone https://github.com/adriannic/astronvim-config ~/.config/astronvim/lua/user
 
 # Autologin
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d/
