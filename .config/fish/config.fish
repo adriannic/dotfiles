@@ -20,23 +20,6 @@ if status is-interactive
     ## Desktop specific aliases
     alias towindows="systemctl reboot --boot-loader-entry=auto-windows"
 
-    # Functions
-    function burn
-        sudo dd bs=4M if=$argv[1] of=$argv[2] conv=fsync oflag=direct status=progress
-    end
-
-    function wp
-	    wal -n -i "$argv" &> /dev/null
-	    pywalfox update &> /dev/null &
-	    swww img "$(cat ~/.cache/wal/wal)" --transition-type=any --transition-fps=60 --transition-duration=2 &> /dev/null &
-	    eww reload &> /dev/null & 
-	    bash ~/.config/hypr/scripts/pywal.sh &> /dev/null &
-    end
-
-    function randwp
-        bash ~/.config/wal/random-bg.sh &> /dev/null
-    end
-
     [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
     starship init fish | source
