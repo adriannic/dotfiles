@@ -105,7 +105,6 @@ packages=(
 	watershot
 	wev
 	whatsapp-nativefier
-	wlogout
 	wofi
 	xdg-desktop-portal
 	xdg-desktop-portal-hyprland
