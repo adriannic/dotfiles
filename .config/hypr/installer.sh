@@ -2,121 +2,121 @@
 
 prep=(
 	base-devel
+	bluez
+	bluez-utils
+	cliphist
+	gtk3
+	jq
+	nwg-look
+	pipewire
+	pipewire-alsa
+	pipewire-audio
+	pipewire-pulse
+	qt5-svg
 	qt5-wayland
 	qt5ct
 	qt6-wayland
 	qt6ct
-	qt5-svg
-	gtk3
-	nwg-look
-	pipewire
-	pipewire-audio
-	pipewire-alsa
-	pipewire-pulse
+	rustup
+	udiskie
 	wireplumber
-	jq
 	wl-clip-persist-git
 	wl-clipboard
-	cliphist
-	rustup
-	bluez
-	bluez-utils
-	udiskie
 )
 
 nvidia=(
+	libva
+	libva-nvidia-driver-git
 	linux-headers
 	nvidia-dkms
 	nvidia-settings
-	libva
-	libva-nvidia-driver-git
 )
 
 packages=(
-	kitty
-	dunst
-	eww-wayland
-	swaylock-effects
-	swww
-	wofi
-	wlogout
-	xdg-desktop-portal
-	xdg-desktop-portal-hyprland
-	hyprshot
-	btop
-	firefox
-	mpv
-	pulsemixer
-	brightnessctl
-	blueberry
-	starship
-	ttf-firacode-nerd
-	nerd-fonts-inter
 	ani-cli
-	bat
 	ark
+	bat
+	blueberry
+	brightnessctl
+	btop
 	cava
 	discord
-	lsd
+	dolphin
+	dolphin-plugins
+	dunst
+	eww-wayland
+	firefox
 	fish
 	flatpak
 	gamemode
 	gamescope
 	github-cli
-	neovim
 	hyprpicker-git
+	hyprshot
 	jq
 	jre-openjdk
 	kcalc
+	kitty
+	lsd
 	luarocks
 	lutris
 	mangal-bin
 	mangohud
-	rclone
+	megasync-bin
+	mpv
+	ncdu
 	neofetch
+	neovim
+	nerd-fonts-inter
 	networkmanager
 	npm
 	obs-studio
 	partitionmanager
+	pavucontrol
 	playerctl
-	prismlauncher
 	polkit-kde-agent
+	prismlauncher
+	pulsemixer
+	python-pywalfox
+	pywal-git
 	qbittorrent
 	ranger
+	rclone
 	reflector
 	ripgrep
+	ripgrep-all
 	rsync
 	spotify-adblock
 	stacer
+	starship
+	swappy
+	swaylock-effects
+	swayosd-git
+	sweet-folders-icons-git
 	sweet-theme-full-git
+	swww
 	telegram-desktop
 	time
 	tldr
+	ttf-firacode-nerd
 	unrar
 	unzip
 	v4l2loopback-dkms
+	watershot
 	wev
 	whatsapp-nativefier
-	xdg-utils
+	wlogout
+	wofi
+	xdg-desktop-portal
+	xdg-desktop-portal-hyprland
 	xdg-user-dirs
+	xdg-utils
 	ydotool
 	yt-dlp
 	zathura
 	zathura-pdf-mupdf
 	zip
-	pywal-git
-	python-pywalfox
-	swappy
-	megasync-bin
-	sweet-folders-icons-git
-	watershot
-	swayosd-git
-	pavucontrol
-	dolphin
-	dolphin-plugins
 	zoxide
-	ripgrep-all
-	ncdu
 )
 
 sudo pacman -S --needed --noconfirm base-devel git
