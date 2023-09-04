@@ -57,7 +57,7 @@ packages=(
 	ark
 	cava
 	discord
-	exa
+	lsd
 	fish
 	flatpak
 	gamemode
@@ -114,6 +114,9 @@ packages=(
 	pavucontrol
 	dolphin
 	dolphin-plugins
+	zoxide
+	ripgrep-all
+	ncdu
 )
 
 sudo pacman -S --needed --noconfirm base-devel git

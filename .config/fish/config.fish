@@ -3,7 +3,7 @@ if status is-interactive
     neofetch
 
     # Aliases
-    alias ls="exa -ghmuU --git"
+    alias ls="lsd"
     alias ip="ip -color=auto"
     alias l="ls -la"
     alias la="ls -a"
@@ -23,6 +23,7 @@ if status is-interactive
     [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
     starship init fish | source
+    zoxide init fish --cmd cd | source
     enable_transience
 end
 
