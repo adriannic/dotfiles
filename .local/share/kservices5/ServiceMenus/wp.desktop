@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Service
+Icon=folder-pictures
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=image/*;
+Actions=change-wp
+
+[Desktop Action change-wp]
+Name=Change wallpaper
+Name[es]=Cambiar fondo de pantalla
+Icon=folder-pictures-symbolic
+Exec=~/.config/wal/wp.sh %f
