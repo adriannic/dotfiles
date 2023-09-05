@@ -180,3 +180,6 @@ ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin adriannic %I $TE
 
 # Hack to be able to open term apps with wofi
 sudo ln -s /usr/bin/kitty /usr/bin/gnome-terminal
+
+# Cava
+sudo modprobe snd_aloop
