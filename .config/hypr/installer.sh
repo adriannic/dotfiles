@@ -43,7 +43,6 @@ packages=(
 	discord
 	dolphin
 	dolphin-plugins
-	dunst
 	eww-wayland
 	firefox
 	fish
@@ -91,6 +90,7 @@ packages=(
 	starship
 	swappy
 	swaylock-effects
+	swaync-git
 	swayosd-git
 	sweet-folders-icons-git
 	sweet-theme-full-git
