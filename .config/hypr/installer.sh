@@ -69,6 +69,7 @@ packages=(
 	neovim
 	nerd-fonts-inter
 	networkmanager
+	networkmanager-dmenu-git
 	nm-connection-editor
 	npm
 	obs-studio
