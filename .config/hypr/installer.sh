@@ -56,6 +56,7 @@ packages=(
 	jre-openjdk
 	kcalc
 	kitty
+	less
 	lsd
 	luarocks
 	lutris
@@ -68,13 +69,13 @@ packages=(
 	neovim
 	nerd-fonts-inter
 	networkmanager
+	nm-connection-editor
 	npm
 	obs-studio
 	partitionmanager
 	pavucontrol
 	playerctl
 	polkit-kde-agent
-	prismlauncher
 	pulsemixer
 	python-pywalfox
 	pywal-git
