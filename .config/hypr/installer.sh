@@ -123,13 +123,19 @@ packages=(
 sudo pacman -S --needed --noconfirm base-devel git
 
 # Installing yay
-git clone https://aur.archlinux.org/yay.git
-(
-	cd yay
-	makepkg -si --noconfirm --needed
+echo "Checking if yay is installed..."
+[[ ! $(yay -V) ]] && (
+	echo "Installing yay..."
+	git clone https://aur.archlinux.org/yay.git
+	(
+		cd yay || return
+		makepkg -si --noconfirm --needed
+	)
+	rm -rf yay
 )
-rm -rf yay
 
+# Check for nvidia
+echo "Checking for nvidia gpu..."
 if lspci -k | grep -A 2 -E "(VGA|3D)" | grep -iq nvidia; then
 	ISNVIDIA=true
 else
@@ -137,37 +143,45 @@ else
 fi
 
 if [[ $ISNVIDIA = true ]]; then
+	echo "Using nvidia. Installing nvidia-specific packages..."
 	yay -S --needed --noconfirm "${nvidia[@]}"
 	sudo sed -i 's/MODULES=()/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
 	sudo mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img
 	echo -e "options nvidia-drm modeset=1" | sudo tee -a /etc/modprobe.d/nvidia.conf
-  yay -S --needed --noconfirm hyprland-nvidia
+	yay -S --needed --noconfirm hyprland-nvidia
 else
-  yay -S --needed --noconfirm hyprland
+	echo "Not using nvidia."
+	yay -S --needed --noconfirm hyprland
 fi
 
 # Prep
+echo "Installing prep stage packages..."
 yay -S --needed --noconfirm "${prep[@]}"
 
+echo "Installing rust toolchains..."
 rustup toolchain install stable
 rustup toolchain install nightly
 
+echo "Enabling bluetooth..."
 sudo systemctl enable --now bluetooth
 
 # Configs
+echo "Cloning dotfiles..."
 git clone --bare https://github.com/adriannic/dotfiles "$HOME"/.dotfiles
 git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" checkout -f
 
 if [[ $ISNVIDIA = true ]]; then
-  ln -sf ~/.config/hypr/nvidia-env.conf ~/.config/hypr/nvidia-env
+	ln -sf ~/.config/hypr/nvidia-env.conf ~/.config/hypr/nvidia-env
 else
-  ln -sf ~/.config/hypr/empty.conf ~/.config/hypr/nvidia-env
+	ln -sf ~/.config/hypr/empty.conf ~/.config/hypr/nvidia-env
 fi
 
 # Packages
+echo "Installing packages..."
 yay -S --needed --noconfirm "${packages[@]}"
 
 # Nvim
+echo "Cloning astronvim config..."
 mkdir -p ~/.config/astronvim/lua/user
 rm -rf ~/.config/nvim
 
@@ -175,13 +189,18 @@ git clone --depth=1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 git clone https://github.com/adriannic/astronvim-config ~/.config/astronvim/lua/user
 
 # Autologin
+echo "Setting up autologin..."
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d/
 echo "[Service]
 ExecStart=
-ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin adriannic %I $TERM" | sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf
+ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin adriannic %I $TERM" | sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf >/dev/null
 
 # Hack to be able to open term apps with wofi
+echo "Creating symlink to kitty from gnome-terminal..."
 sudo ln -s /usr/bin/kitty /usr/bin/gnome-terminal
 
 # Cava
+echo "Activating snd_aloop module for cava..."
 sudo modprobe snd_aloop
+
+echo "Installation complete!"
