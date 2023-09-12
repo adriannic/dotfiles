@@ -7,6 +7,7 @@ function wallpaper() {
 		swww img "$(<"${HOME}/.cache/wal/wal")" --transition-type=any --transition-fps=60 --transition-duration=2 &
 		eww reload &
 	  bash ~/.config/hypr/scripts/pywal.sh &
+	  swaync-client -rs &
 	) 2>&1 > /dev/null
 }
 

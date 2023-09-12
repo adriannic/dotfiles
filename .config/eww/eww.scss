@@ -38,7 +38,8 @@ $font-size: 18px;
 button:hover {
   background-color: $bg-selected;
   color: $text-selected;
-  transition: background-color 0.25s;
+  transition: color 0.25s ease-in-out;
+  transition: background 0.25s ease-in-out;
 }
 
 .workspace {
@@ -49,15 +50,13 @@ button:hover {
   border-radius: 25px;
   background-color: $bg;
   color: $text;
-  transition: background-color 0.25s;
-  transition: color 0.25s;
+  transition: all 0.25s ease-in-out;
 }
 
 .active-workspace {
   color: $text-selected;
   background-color: $bg-selected;
-  transition: color 0.25s;
-  transition: background-color 0.25s;
+  transition: all 0.25s ease-in-out;
 }
 
 .util-button {
@@ -68,8 +67,7 @@ button:hover {
   border-radius: 25px;
   background-color: $bg;
   color: $text;
-  transition: color 0.25s;
-  transition: background-color 0.25s;
+  transition: all 0.25s ease-in-out;
 }
 
 scale {
