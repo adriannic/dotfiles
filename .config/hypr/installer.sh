@@ -122,6 +122,17 @@ packages=(
 
 sudo pacman -S --needed --noconfirm base-devel git
 
+# Configs
+echo "Cloning dotfiles..."
+git clone --bare https://github.com/adriannic/dotfiles "$HOME"/.dotfiles
+git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" checkout -f
+
+if [[ $ISNVIDIA = true ]]; then
+	ln -sf ~/.config/hypr/nvidia-env.conf ~/.config/hypr/nvidia-env
+else
+	ln -sf ~/.config/hypr/empty.conf ~/.config/hypr/nvidia-env
+fi
+
 # Installing yay
 echo "Checking if yay is installed..."
 [[ ! $(yay -V) ]] && (
@@ -164,17 +175,6 @@ rustup toolchain install nightly
 
 echo "Enabling bluetooth..."
 sudo systemctl enable --now bluetooth
-
-# Configs
-echo "Cloning dotfiles..."
-git clone --bare https://github.com/adriannic/dotfiles "$HOME"/.dotfiles
-git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" checkout -f
-
-if [[ $ISNVIDIA = true ]]; then
-	ln -sf ~/.config/hypr/nvidia-env.conf ~/.config/hypr/nvidia-env
-else
-	ln -sf ~/.config/hypr/empty.conf ~/.config/hypr/nvidia-env
-fi
 
 # Packages
 echo "Installing packages..."
