@@ -106,7 +106,7 @@ packages=(
 	v4l2loopback-dkms
 	watershot
 	wev
-	whatsapp-nativefier
+	whatsdesk-bin
 	wofi
 	xdg-desktop-portal
 	xdg-desktop-portal-hyprland
