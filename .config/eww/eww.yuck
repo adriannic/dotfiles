@@ -290,6 +290,14 @@
   )
 )
 
+(defwidget notifications []
+  (button
+    :class "notifications"
+    :onclick "swaync-client -t"
+    "󰵅"
+  )
+)
+
 (defwidget clock [n]
   (eventbox
     :class "clock"
@@ -313,6 +321,7 @@
     (bt-indicator)
     (vol-indicator)
     (mic-indicator)
+    (notifications)
     (clock
       :n n
     )
