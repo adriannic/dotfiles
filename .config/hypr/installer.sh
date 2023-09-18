@@ -18,6 +18,7 @@ prep=(
 	qt6-wayland
 	qt6ct
 	rustup
+	tlp
 	udiskie
 	wireplumber
 	wl-clip-persist-git
@@ -178,6 +179,9 @@ rustup toolchain install nightly
 
 echo "Enabling bluetooth..."
 sudo systemctl enable --now bluetooth
+
+echo "Enabling tlp..."
+sudo systemctl enable --now tlp
 
 # Packages
 echo "Installing packages..."
