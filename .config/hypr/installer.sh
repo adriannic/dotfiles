@@ -60,6 +60,8 @@ packages=(
 	lsd
 	luarocks
 	lutris
+	man-db
+	man-pages
 	mangal-bin
 	mangohud
 	megasync-bin
@@ -90,6 +92,7 @@ packages=(
 	spotify-adblock
 	stacer
 	starship
+	steam-devices
 	swappy
 	swaylock-effects
 	swaync-git
@@ -202,5 +205,13 @@ sudo ln -s /usr/bin/kitty /usr/bin/gnome-terminal
 # Cava
 echo "Activating snd_aloop module for cava..."
 sudo modprobe snd_aloop
+
+# Flatpak
+echo "Setting up flathub..."
+flatpak --user remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# Steam
+echo "Installing steam..."
+flatpak --user install flathub com.valvesoftware.Steam
 
 echo "Installation complete!"
