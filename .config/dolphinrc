@@ -11,6 +11,9 @@ RememberOpenedTabs=false
 Version=202
 ViewPropsTimestamp=2023,8,30,19,13,48.621
 
+[IconsMode]
+PreviewSize=64
+
 [KFileDialog Settings]
 Places Icons Auto-resize=false
 Places Icons Static Size=22
