@@ -131,12 +131,6 @@ echo "Cloning dotfiles..."
 git clone --bare https://github.com/adriannic/dotfiles "$HOME"/.dotfiles
 git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" checkout -f
 
-if [[ $ISNVIDIA = true ]]; then
-	ln -sf ~/.config/hypr/nvidia-env.conf ~/.config/hypr/nvidia-env
-else
-	ln -sf ~/.config/hypr/empty.conf ~/.config/hypr/nvidia-env
-fi
-
 # Installing yay
 echo "Checking if yay is installed..."
 [[ ! $(yay -V) ]] && (
@@ -158,6 +152,7 @@ else
 fi
 
 if [[ $ISNVIDIA = true ]]; then
+	ln -sf ~/.config/hypr/nvidia-env.conf ~/.config/hypr/nvidia-env
 	echo "Using nvidia. Installing nvidia-specific packages..."
 	yay -S --needed --noconfirm --sudoloop "${nvidia[@]}"
 	sudo sed -i 's/MODULES=()/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
@@ -165,6 +160,7 @@ if [[ $ISNVIDIA = true ]]; then
 	echo -e "options nvidia-drm modeset=1" | sudo tee -a /etc/modprobe.d/nvidia.conf
 	yay -S --needed --noconfirm --sudoloop hyprland-nvidia
 else
+	ln -sf ~/.config/hypr/empty.conf ~/.config/hypr/nvidia-env
 	echo "Not using nvidia."
 	yay -S --needed --noconfirm --sudoloop hyprland
 fi
