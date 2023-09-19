@@ -159,19 +159,19 @@ fi
 
 if [[ $ISNVIDIA = true ]]; then
 	echo "Using nvidia. Installing nvidia-specific packages..."
-	yay -S --needed --noconfirm "${nvidia[@]}"
+	yay -S --needed --noconfirm --sudoloop "${nvidia[@]}"
 	sudo sed -i 's/MODULES=()/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
 	sudo mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img
 	echo -e "options nvidia-drm modeset=1" | sudo tee -a /etc/modprobe.d/nvidia.conf
-	yay -S --needed --noconfirm hyprland-nvidia
+	yay -S --needed --noconfirm --sudoloop hyprland-nvidia
 else
 	echo "Not using nvidia."
-	yay -S --needed --noconfirm hyprland
+	yay -S --needed --noconfirm --sudoloop hyprland
 fi
 
 # Prep
 echo "Installing prep stage packages..."
-yay -S --needed --noconfirm "${prep[@]}"
+yay -S --needed --noconfirm --sudoloop "${prep[@]}"
 
 echo "Installing rust toolchains..."
 rustup toolchain install stable
@@ -185,7 +185,7 @@ sudo systemctl enable --now tlp
 
 # Packages
 echo "Installing packages..."
-yay -S --needed --noconfirm "${packages[@]}"
+yay -S --needed --noconfirm --sudoloop "${packages[@]}"
 
 # Nvim
 echo "Cloning astronvim config..."
