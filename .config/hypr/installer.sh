@@ -36,10 +36,9 @@ nvidia=(
 packages=(
 	ani-cli
 	ark
-	bat
 	blueberry
+	bottom
 	brightnessctl
-	btop
 	cava
 	discord
 	dolphin
