@@ -29,7 +29,7 @@ nvidia=(
 	libva
 	libva-nvidia-driver-git
 	linux-headers
-	nvidia-dkms
+	nvidia
 	nvidia-settings
 )
 
@@ -53,7 +53,6 @@ packages=(
 	github-cli
 	hyprpicker-git
 	hyprshot
-	jq
 	jre-openjdk
 	kcalc
 	kitty
@@ -108,7 +107,6 @@ packages=(
 	unrar
 	unzip
 	v4l2loopback-dkms
-	watershot
 	wev
 	whatsdesk-bin
 	wofi
