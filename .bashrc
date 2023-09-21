@@ -7,6 +7,6 @@
 
 PS1='[\u@\h \W]\$ '
 
-(cat ~/.cache/wal/sequences &)
+[[ "$USER" = "adriannic" ]] && (cat ~/.cache/wal/sequences &)
 
 fish && exit
