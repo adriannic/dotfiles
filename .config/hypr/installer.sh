@@ -39,7 +39,7 @@ packages=(
 	blueberry
 	bottom
 	brightnessctl
-	cava
+	cli-visualizer
 	discord
 	dolphin
 	dolphin-plugins
