@@ -22,7 +22,7 @@
 // $border: #334;
 
 $text: $foreground;
-$bg: $background;
+$bg: rgba(red($background), green($background), blue($background), 0.5);
 $text-selected: $background;
 $bg-selected: $foreground;
 $border: $color1;

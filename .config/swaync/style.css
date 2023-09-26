@@ -177,7 +177,7 @@
 }
 
 .control-center {
-  background: alpha(@background, 0.75);
+  background: alpha(@background, 0.5);
   border-radius: 25px;
   margin: 5px;
   border: 4px inset @color1;
