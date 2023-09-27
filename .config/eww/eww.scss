@@ -22,7 +22,7 @@
 // $border: #334;
 
 $text: $foreground;
-$bg: rgba(red($background), green($background), blue($background), 0.5);
+$bg: rgba($background, 0.5);
 $text-selected: $background;
 $bg-selected: $text;
 $border: $color1;
@@ -62,6 +62,7 @@ button:hover {
   margin: 3px;
   padding-top: 3px;
   border-bottom: 3px solid $text;
+  transition: border-bottom 0.25s ease-in-out;;
 }
 
 .util-bar {
