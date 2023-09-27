@@ -127,9 +127,11 @@
     :spacing 0
     (for workspace in workspaces
       (button
-        :class "${active-workspaces[n] == workspace.index ? 'active-workspace' : ''}"
         :onclick "~/.config/hypr/scripts/workspaces ${workspace.index}"
-        {workspace.icon}
+        (box
+         :class "${active-workspaces[n] == workspace.index ? 'active-workspace' : ''}"
+         {workspace.icon}
+        )
       )
     )
   )

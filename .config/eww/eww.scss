@@ -58,6 +58,8 @@ button:hover {
 }
 
 .active-workspace {
+  min-width: 34px;
+  margin: 3px;
   padding-top: 3px;
   border-bottom: 3px solid $text;
 }
