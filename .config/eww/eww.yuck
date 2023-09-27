@@ -98,7 +98,7 @@
     :orientation "v"
     :space-evenly false
     (revealer
-      :transition "slidedown"
+      :transition "slideup"
       :reveal is-bar-visible
       :duration "250ms"
       (centerbox
