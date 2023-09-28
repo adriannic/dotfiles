@@ -108,6 +108,7 @@ packages=(
 	v4l2loopback-dkms
 	wev
 	whatsdesk-bin
+	wlrobs-hg
 	wofi
 	xdg-desktop-portal
 	xdg-desktop-portal-hyprland
