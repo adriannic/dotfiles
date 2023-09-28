@@ -371,3 +371,63 @@
     :n 1
   )
 )
+
+(defwidget powermenu-widget []
+  (box
+    :class "powermenu-bg"
+    (box
+      :orientation "v"
+      :valign "center"
+      (box
+        :width "480px"
+        :height "160px"
+        :spacing 10
+        :orientation "h"
+        :halign "center"
+        (button
+          :onclick "bash ~/.config/swaylock/pywal.sh && echo"
+          :class "powermenu-button"
+          ""
+        )
+        (button
+          :onclick "reboot"
+          :class "powermenu-button"
+          "󰑓"
+        )
+        (button
+          :onclick "shutdown now"
+          :class "powermenu-button"
+          "󰤆"
+        )
+      )
+    )
+  )
+)
+
+(defwindow powermenu-0
+  :monitor 0
+  :geometry (geometry
+    :width "100%"
+    :height "105%"
+    :anchor "center center"
+  )
+  :stacking "overlay"
+  :exclusive false
+  :focusable false
+  :namespace "eww"
+  (powermenu-widget)
+)
+
+(defwindow powermenu-1
+  :monitor 1
+  :geometry (geometry
+    :width "100%"
+    :height "105%"
+    :anchor "center center"
+  )
+  :stacking "overlay"
+  :exclusive false
+  :focusable false
+  :namespace "eww"
+  (powermenu-widget)
+)

@@ -141,3 +141,20 @@ scale {
     // border: 5px inset $border;
   }
 }
+
+.powermenu-bg {
+  background: rgba(#000, 0.1)
+}
+
+.powermenu-button {
+  min-width: 160px;
+  min-height: 160px;
+  background-color: $bg;
+  border: 2px inset $border;
+}
+
+.powermenu-button > * {
+  font-size: 100px;
+}
+
+.powemenu-box {}
