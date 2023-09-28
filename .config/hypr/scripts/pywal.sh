@@ -3,6 +3,6 @@
 source "$HOME/.cache/wal/colors.sh"
 
 background=${background:1}
-color6=${color6:1}
+color1=${color1:1}
 
-hyprctl keyword general:col.active_border "rgb($background) rgb($color6) 0deg"
+hyprctl keyword general:col.active_border "rgb($background) rgb($color1) 0deg"
