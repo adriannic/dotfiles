@@ -5,7 +5,8 @@
 @import url('file:///home/adriannic/.cache/wal/colors-waybar.css');
 
 * {
-  font-family: "FiraCode Nerd Font";
+  all: unset;
+  font-family: "Inter Nerd Font";
   font-weight: bold;
   transition: color 0.25s ease-in-out;
   transition: background 0.25s ease-in-out;
@@ -14,17 +15,15 @@
 .notification-row {
   all: unset;
   outline: none;
-  border-radius: 25px;
 }
 
 .notification-row:focus,
 .notification-row:hover {
-  background: @color8;
+  padding-left: 5px;
+  transition: padding-left 0.1s ease-in-out;
 }
 
 .notification {
-  all: unset;
-  border-radius: 25px;
   padding: 5px;
 }
 
@@ -32,54 +31,47 @@
 .low {
   background: yellow;
   padding: 6px;
-  border-radius: 25px;
 }
 
 .normal {
   background: green;
   padding: 6px;
-  border-radius: 25px;
 }
 
 .critical {
   background: red;
   padding: 6px;
-  border-radius: 25px;
 }
 */
 
 .notification-content {
   background: transparent;
   padding: 15px;
-  border-radius: 25px;
 }
 .close-button {
   background: @background;
-  color: @foreground;
+  color: @color8;
   text-shadow: none;
   padding: 0;
-  border-radius: 100%;
   margin-top: 10px;
   margin-right: 16px;
   box-shadow: none;
   border: none;
-  min-width: 24px;
-  min-height: 24px;
+  min-width: 22px;
+  min-height: 22px;
 }
 
 .close-button:hover {
-  box-shadow: none;
-  color: @background;
-  background: @foreground;
+  color: @foreground;
 }
 
 .notification-default-action,
 .notification-action {
-  padding: 4px;
+  padding: 2px;
   margin: 0;
   box-shadow: none;
   background: @background;
-  border: 4px inset @color1;
+  border: 2px inset @color1;
   color: @foreground;
 }
 
@@ -89,13 +81,10 @@
 }
 
 .notification-default-action {
-  border-radius: 25px;
 }
 
 /* When alternative actions are visible */
 .notification-default-action:not(:only-child) {
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
 }
 
 .notification-action {
@@ -106,35 +95,31 @@
 
 /* add bottom border radius to eliminate clipping */
 .notification-action:first-child {
-  border-bottom-left-radius: 10px;
 }
 
 .notification-action:last-child {
-  border-bottom-right-radius: 10px;
-  border-right: 4px inset @color1;
+  border-right: 2px inset @color1;
 }
 
 .inline-reply {
   margin-top: 8px;
 }
 .inline-reply-entry {
-  background: @background;
   color: @foreground;
+  background: @background;
   caret-color: @foreground;
-  border: 4px inset @color1;
-  border-radius: 25px;
+  border: 2px inset @color1;
 }
 .inline-reply-button {
-  margin-left: 4px;
+  margin-left: 2px;
   background: @background;
-  border: 4px inset @color1;
-  border-radius: 25px;
+  border: 2px inset @color1;
   color: @foreground;
 }
 .inline-reply-button:disabled {
   background: initial;
   color: @color8;
-  border: 4px inset transparent;
+  border: 2px inset transparent;
 }
 .inline-reply-button:hover {
   color: @background;
@@ -142,13 +127,11 @@
 }
 
 .image {
-  border-radius: 25px;
 }
 
 .body-image {
   margin-top: 6px;
   background-color: white;
-  border-radius: 25px;
 }
 
 .summary {
@@ -178,9 +161,8 @@
 
 .control-center {
   background: alpha(@background, 0.5);
-  border-radius: 25px;
   margin: 5px;
-  border: 4px inset @color1;
+  border: 2px inset @color1;
   padding: 15px;
 }
 
@@ -214,9 +196,9 @@
   color: @foreground;
   text-shadow: none;
   background: @background;
-  border: 4px inset @color1;
+  border: 2px inset @color1;
   box-shadow: none;
-  border-radius: 25px;
+  padding: 5px;
 }
 .widget-title > button:hover {
   color: @background;
@@ -231,20 +213,20 @@
 }
 .widget-dnd > switch {
   font-size: initial;
-  border-radius: 25px;
   background: @background;
-  border: 4px inset @color1;
+  border: 2px inset @color1;
   box-shadow: none;
+  color: @background;
 }
 .widget-dnd > switch:checked {
-  background: @foreground;
+  background: @background;
 }
 .widget-dnd > switch slider {
   background: @foreground;
-  border-radius: 25px;
+  color: @foreground;
 }
 .widget-dnd > switch:checked slider {
-  background: @background;
+  background: @foreground;
 }
 
 /* Label widget */
@@ -266,14 +248,13 @@
   margin: 8px;
 }
 .image-button {
-  color: @foreground;
-  background: @background;
-  border-radius: 25px;
-  border: 4px inset @color1;
+  color: @color8;
+  background: transparent;
+  transition: color 0.25s ease-in-out;
 }
 .image-button:hover {
-  color: @background;
-  background: @foreground;
+  color: @foreground;
+  transition: color 0.25s ease-in-out;
 }
 .widget-mpris-title {
   font-weight: bold;
@@ -289,13 +270,11 @@
 .widget-buttons-grid {
   padding: 8px;
   margin: 8px;
-  border-radius: 25px;
   background-color: @background;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button{
   background: @background;
-  border-radius: 25px;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
@@ -313,7 +292,6 @@
   background-color: @background;
   padding: 8px;
   margin: 8px;
-  border-radius: 25px;
 }
 
 .AnyName>button {
@@ -337,7 +315,6 @@
   background-color: @background;
   padding: 8px;
   margin: 8px;
-  border-radius: 25px;
 }
 
 .widget-volume>box>button {
@@ -347,9 +324,8 @@
 
 .per-app-volume {
   background-color: @background-alt;
-  padding: 4px 8px 8px 8px;
+  padding: 2px 8px 8px 8px;
   margin: 0px 8px 8px 8px;
-  border-radius: 25px
 }
 
 /* Backlight widget */
@@ -357,7 +333,6 @@
   background-color: @background;
   padding: 8px;
   margin: 8px;
-  border-radius: 25px;
 }
 
 /* Title widget */
@@ -370,9 +345,8 @@
   color: @foreground;
   text-shadow: none;
   background: @background;
-  border: 4px inset @color1;
+  border: 2px inset @color1;
   box-shadow: none;
-  border-radius: 25px;
 }
 .widget-inhibitors > button:hover {
   color: @background;

@@ -22,19 +22,29 @@
 // $border: #334;
 
 $text: $foreground;
-$bg: rgba(red($background), green($background), blue($background), 0.5);
+$bg: rgba($background, 0.5);
 $text-selected: $background;
-$bg-selected: $foreground;
+$bg-selected: $text;
 $border: $color1;
 
-$font-size: 18px;
+$font-size: 15px;
 
 * {
   all: unset;
-  font-family: "FiraCode Nerd Font";
+  font-family: "Inter Nerd Font";
   font-weight: bold;
+  font-size: $font-size;
   transition: color 0.25s ease-in-out;
   transition: background 0.25s ease-in-out;
+}
+
+.bar {
+  margin: 0px 5px 5px 5px;
+}
+
+button {
+  min-width: 40px;
+  color: $text;
 }
 
 button:hover {
@@ -42,114 +52,49 @@ button:hover {
   color: $text-selected;
 }
 
-.workspace {
-  margin: 0px 4px;
-  font-size: $font-size;
-  padding: 0px 18px 0px 14px;
-  border: inset 4px $border;
-  border-radius: 25px;
+.workspaces {
   background-color: $bg;
-  color: $text;
+  border: 2px inset $border;
 }
 
 .active-workspace {
-  color: $text-selected;
-  background-color: $bg-selected;
+  min-width: 34px;
+  margin: 3px;
+  padding-top: 3px;
+  border-bottom: 3px solid $text;
+  transition: border-bottom 0.25s ease-in-out;;
 }
 
-.util-button {
-  min-width: 42px;
-  font-size: $font-size - 2px;
-  padding: 5px 9px;
-  border: inset 4px $border;
-  border-radius: 25px;
+.util-bar {
   background-color: $bg;
-  color: $text;
+  border: 2px inset $border;
 }
 
-.notifications {
-  min-width: 40px;
-  font-size: $font-size - 2px;
-  padding: 5px 2px 5px 0px;
-  border: inset 4px $border;
-  border-radius: 25px;
-  background-color: $bg;
+.util {
+  padding: 0px 10px;
   color: $text;
+  // border: 1px solid #f00;
 }
 
-scale {
-  border-radius: 25px;
-  margin-left: 10px;
-  padding-right: 8px;
-  transition: 0ms cubic-bezier(0.05, 0.7, 0.1, 1);
-
-  trough {
-    min-height: 15px;
-    min-width: 100px;
-    border-radius: 25px;
-    background-color: $border;
-    // border: 2px inset $border;
-  }
-
-  highlight {
-    min-width: 3px;
-    border-radius: 25px;
-    background-color: $bg-selected;
-    transition: 0ms cubic-bezier(0.05, 0.7, 0.1, 1);
-  }
-
-  slider {
-    min-width: 5px;
-    margin: -8px;
-    border-radius: 25px;
-    background-color: $border;
-    border: 5px inset $border;
-  }
-}
-
-.title {
-  padding: 10px;
-  font-size: $font-size;
-  border: inset 4px $border;
-  border-radius: 25px;
-  color: $text;
-  background-color: $bg;
-}
-
-.notification-box {
-  margin-top: 5px;
-  color: $text;
-  background: transparent;
-}
-
-.notification {
-  padding: 10px;
-  font-size: $font-size - 4px;
-  border: inset 4px $border;
-  border-radius: 25px;
-  color: $text;
-  background-color: $bg;
+.util-reveal {
+  margin-left: 5px;
 }
 
 .cal-box {
-  padding: 5px;
-  padding-left: 9px;
-  padding-right: 4px;
-  margin: 4px;
-  border: inset 5px $border;
-  border-radius: 25px;
+  // padding: 5px;
+  // padding-left: 9px;
+  // padding-right: 4px;
+  border: 2px inset $border;
+  margin: 5px;
   background-color: $bg;
-  color: $text;
 }
 
 calendar {
-  color: $text;
+  color: $color8;
 }
 
 calendar:selected {
-  color: $text-selected;
-  background-color: $bg-selected;
-  border-radius: 10px;
+  color: $text;
 }
 
 calendar.header {
@@ -157,7 +102,7 @@ calendar.header {
 }
 
 calendar.button {
-  color: $text;
+  color: $color8;
 }
 
 calendar.highlight {
@@ -165,14 +110,34 @@ calendar.highlight {
 }
 
 calendar:indeterminate {
-  color: $color2;
+  color: $border;
 }
 
 tooltip {
   color: $text;
   background-color: $bg;
-  border-radius: 25px;
-  border: inset 4px $border;
-  padding: 50px;
-  font-size: $font-size - 2px;
+}
+
+scale {
+  transition: 0ms cubic-bezier(0.05, 0.7, 0.1, 1);
+
+  trough { //bg
+    border: 2px inset $border;
+    min-height: 12px;
+    min-width: 100px;
+    background-color: $bg;
+    // border: 2px inset $border;
+  }
+
+  highlight { //fill
+    background-color: $bg-selected;
+    transition: 0ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  }
+
+  slider { // ball
+    min-width: 0px;
+    margin: 0px;
+    background-color: $border;
+    // border: 5px inset $border;
+  }
 }

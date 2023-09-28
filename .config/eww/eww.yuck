@@ -1,3 +1,7 @@
+(defvar workspaces
+  '[{"icon":"","index":1},{"icon":"","index":2},{"icon":"","index":3},{"icon":"󰈹","index":4},{"icon":"","index":5},{"icon":"󰙯","index":6},{"icon":"","index":7},{"icon":"","index":8}]'
+)
+
 (defvar is-bar-visible
   "true"
 )
@@ -27,7 +31,7 @@
 )
 
 (defpoll time
-  :interval "5s"
+  :interval "1s"
   "date +%H:%M"
 )
 
@@ -98,11 +102,9 @@
       :reveal is-bar-visible
       :duration "250ms"
       (centerbox
-        :height 56
+        :class "bar"
+        :height 45
         :orientation "h"
-        :style "
-          margin: 0px 5px 5px 5px;
-        "
         (workspaces
           :n n
         )
@@ -119,38 +121,39 @@
 
 (defwidget workspaces [n]
   (box
+    :class "workspaces"
     :space-evenly true
     :halign "start"
     :spacing 0
-    (button :class "workspace${active-workspaces[n] == 1 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 1" "")
-    (button :class "workspace${active-workspaces[n] == 2 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 2" "")
-    (button :class "workspace${active-workspaces[n] == 3 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 3" "")
-    (button :class "workspace${active-workspaces[n] == 4 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 4" "󰈹")
-    (button :class "workspace${active-workspaces[n] == 5 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 5" "")
-    (button :class "workspace${active-workspaces[n] == 6 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 6" "󰙯")
-    (button :class "workspace${active-workspaces[n] == 7 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 7" "")
-    (button :class "workspace${active-workspaces[n] == 8 ? ' active-workspace' : ''}" :onclick "~/.config/hypr/scripts/workspaces 8" "")
+    (for workspace in workspaces
+      (button
+        :onclick "~/.config/hypr/scripts/workspaces ${workspace.index}"
+        (box
+         :class "${active-workspaces[n] == workspace.index ? 'active-workspace' : ''}"
+         {workspace.icon}
+        )
+      )
+    )
   )
 )
 
 (defwidget battery-indicator []
   (eventbox
     :visible {battery != ""}
-    :class "util-button"
     :onhover "eww update selected-util='battery-indicator'"
     :onhoverlost "eww update selected-util=''"
     (box
-      :spacing 4
+      :class "util"
       :space-evenly false
-      :style "
-        padding: 0px 16px 0px 20px;
-      "
       '${(battery-state == "Charging") ? battery-icons[battery-state] : battery-icons["Discharging"][(battery - battery%10)/10]}'
       (revealer
         :transition "slideleft"
         :duration "250ms"
         :reveal {selected-util == 'battery-indicator'}
-        ' ${battery}%'
+        (label
+          :class "util-reveal"
+          :text ' ${battery}%'
+        )
       )
     )
   )
@@ -159,22 +162,19 @@
 (defwidget brightness-indicator []
   (eventbox
     :visible {brightness != ""}
-    :class "util-button"
     :onhover "eww update selected-util='brightness-indicator'"
     :onhoverlost "eww update selected-util=''"
     :tooltip "${brightness}%"
     (box
-      :spacing 4
+      :class "util"
       :space-evenly false
-      :style "
-        padding: 0px 8px 0px 18px;
-      "
-      '󰃟 '
+      '󰃟'
       (revealer
         :transition "slideleft"
         :duration "250ms"
         :reveal {selected-util == 'brightness-indicator'}
         (scale
+          :class "util-reveal"
           :onchange "brightnessctl set {}% && swayosd-client --brightness 0"
           :value brightness
         )
@@ -185,26 +185,21 @@
 
 (defwidget net-indicator []
   (eventbox
-    :class "util-button"
     :onclick "networkmanager_dmenu"
-    :onmiddle "nmcli networking ${net-enabled == 'enabled' ? 'off' : 'on'}"
     :onhover "eww update selected-util='net-indicator'"
     :onhoverlost "eww update selected-util=''"
     (box
-      :spacing 4
+      :class "util"
       :space-evenly false
-      :style "
-        padding: 0px 18px;
-      "
       "${net-enabled == 'enabled' ? net-icons[net-state] : '󰖪'}"
       (revealer
         :transition "slideleft"
         :duration "250ms"
         :reveal {selected-util == 'net-indicator'}
-        :style "
-          padding-left: 4px;
-        "
-        ' ${net-state}'
+        (label
+          :class "util-reveal"
+          :text '${net-state}'
+        )
       )
     )
   )
@@ -212,23 +207,21 @@
 
 (defwidget bt-indicator []
   (eventbox
-    :class "util-button"
-    :onclick "bluetoothctl power ${bluetooth == 'yes' ? 'off' : 'on'}"
-    :onmiddleclick "blueberry"
+    :onclick "blueberry"
     :onhover "eww update selected-util='bt-indicator'"
     :onhoverlost "eww update selected-util=''"
     (box
-      :spacing 4
+      :class "util"
       :space-evenly false
-      :style "
-        padding: 0px 16px 0px 20px;
-      "
       {bluetooth == "yes" ? "󰂯" : "󰂲"}
       (revealer
         :transition "slideleft"
         :duration "250ms"
         :reveal {selected-util == 'bt-indicator'}
-        " ${bluetooth == "yes" ? "on" : "off"}"
+        (label
+          :class "util-reveal"
+          :text "${bluetooth == "yes" ? "on" : "off"}"
+        )
       )
     )
   )
@@ -236,24 +229,20 @@
 
 (defwidget vol-indicator []
   (eventbox
-    :class "util-button"
-    :onclick "swayosd-client --output-volume mute-toggle"
-    :onmiddleclick "hyprctl dispatch exec pavucontrol"
+    :onclick "hyprctl dispatch exec pavucontrol"
     :onhover "eww update selected-util='vol-indicator'"
     :onhoverlost "eww update selected-util=''"
     :tooltip "${vol[0].volume}%"
     (box
-      :spacing 4
+      :class "util"
       :space-evenly false
-      :style "
-        padding: 0px 18px;
-      "
       {vol[0].muted == 1 ? '󰖁' : ''}
       (revealer
         :transition "slideleft"
         :duration "250ms"
         :reveal {selected-util == 'vol-indicator'}
         (scale
+          :class "util-reveal"
           :onchange "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ {}% && swayosd-client --output-volume 0"
           :value {vol[0].volume}
         )
@@ -264,24 +253,20 @@
 
 (defwidget mic-indicator []
   (eventbox
-    :class "util-button"
-    :onclick "swayosd-client --input-volume mute-toggle"
-    :onmiddleclick "hyprctl dispatch exec pavucontrol"
+    :onclick "hyprctl dispatch exec pavucontrol"
     :onhover "eww update selected-util='mic-indicator'"
     :onhoverlost "eww update selected-util=''"
     :tooltip "${vol[1].volume}%"
     (box
-      :spacing 4
+      :class "util"
       :space-evenly false
-      :style "
-        padding: 0px 16px 0px 20px;
-      "
       {vol[1].muted == 1 ? '' : ''}
       (revealer
         :transition "slideleft"
         :duration "250ms"
         :reveal {selected-util == 'mic-indicator'}
         (scale
+          :class "util-reveal"
           :onchange "wpctl set-volume -l 1 @DEFAULT_AUDIO_SOURCE@ {}% && swayosd-client --input-volume 0"
           :value {vol[1].volume}
         )
@@ -292,21 +277,23 @@
 
 (defwidget clock [n]
   (eventbox
-    :class "clock"
     :onclick "eww open --toggle cal-window-${n}"
     (button
-      :class "util-button"
+      :class "util"
       :onclick "eww open --toggle cal-window-${n}"
-      time
+      (label
+        :xalign 0.5
+        :text time
+      )
     )
   )
 )
 
 (defwidget util-bar [n]
   (box
+    :class "util-bar"
     :halign "end"
     :space-evenly false
-    :spacing 4
     (battery-indicator)
     (brightness-indicator)
     (net-indicator)
@@ -326,7 +313,7 @@
       :day cal-day
       :month cal-month
       :year cal-year
-      :show-week-numbers true
+      :show-week-numbers false
     )
   )
 )
@@ -334,8 +321,7 @@
 (defwindow cal-window-0
   :monitor 0
   :geometry (geometry
-    :width "15%"
-    :height "19%"
+    :width "255px"
     :anchor "bottom right"
   )
   :stacking "overlay"
@@ -347,10 +333,8 @@
 (defwindow cal-window-1
   :monitor 1
   :geometry (geometry
-    :x "85%"
-    :y "76%"
-    :width "15%"
-    :height "10%"
+    :width "255px"
+    :anchor "bottom right"
   )
   :stacking "overlay"
   :focusable false
