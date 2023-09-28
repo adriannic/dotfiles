@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Random Wallpaper
+Comment=
+Exec=sh -c '$HOME/.config/wal/random-bg.sh'
+Icon=folder-pictures
+Terminal=false
+Type=Application
