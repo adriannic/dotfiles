@@ -90,7 +90,7 @@ button:hover {
 }
 
 calendar {
-  color: $text;
+  color: $color8;
 }
 
 calendar:selected {
@@ -102,15 +102,15 @@ calendar.header {
 }
 
 calendar.button {
-  color: $text;
+  color: $color8;
 }
 
 calendar.highlight {
-  color: $text; 
+  color: $color8; 
 }
 
 calendar:indeterminate {
-  color: $color8;
+  color: $border;
 }
 
 tooltip {
