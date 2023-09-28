@@ -195,7 +195,6 @@
   font-size: initial;
   color: @foreground;
   text-shadow: none;
-  background: @background;
   border: 2px inset @color1;
   box-shadow: none;
   padding: 5px;
