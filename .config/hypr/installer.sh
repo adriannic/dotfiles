@@ -43,7 +43,6 @@ packages=(
 	discord
 	dolphin
 	dolphin-plugins
-	eww-wayland
 	firefox
 	fish
 	flatpak
