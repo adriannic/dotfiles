@@ -36,6 +36,7 @@ nvidia=(
 packages=(
 	ani-cli
 	ark
+	aylurs-gtk-shell
 	blueberry
 	bottom
 	brightnessctl
@@ -68,6 +69,7 @@ packages=(
 	neofetch
 	neovim
 	nerd-fonts-inter
+	network-manager-applet
 	networkmanager
 	networkmanager-dmenu-git
 	nm-connection-editor
