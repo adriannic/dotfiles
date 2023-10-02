@@ -7,7 +7,7 @@ show-failed-attempts
 ignore-empty-password
 indicator-caps-lock
 indicator-radius=100
-font=FiraCode Nerd Font
+font=Inter Nerd Font
 clock
 line-color=0E1113
 inside-color=0E1113
