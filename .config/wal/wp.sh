@@ -8,7 +8,9 @@ function wallpaper() {
 		eww reload &
 	  bash ~/.config/hypr/scripts/pywal.sh &
 	  swaync-client -rs &
-	) 2>&1 > /dev/null
+	  killall ags && ags &
+	  disown
+	) > /dev/null 2>&1
 }
 
 wallpaper "$1"

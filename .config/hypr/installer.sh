@@ -36,6 +36,7 @@ nvidia=(
 packages=(
 	ani-cli
 	ark
+	aylurs-gtk-shell
 	blueberry
 	bottom
 	brightnessctl
@@ -43,7 +44,6 @@ packages=(
 	discord
 	dolphin
 	dolphin-plugins
-	eww-wayland
 	firefox
 	fish
 	flatpak
@@ -69,6 +69,7 @@ packages=(
 	neofetch
 	neovim
 	nerd-fonts-inter
+	network-manager-applet
 	networkmanager
 	networkmanager-dmenu-git
 	nm-connection-editor
