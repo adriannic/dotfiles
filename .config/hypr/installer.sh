@@ -66,7 +66,6 @@ packages=(
 	megasync-bin
 	mpv
 	ncdu
-	neofetch
 	neovim
 	nerd-fonts-inter
 	network-manager-applet
@@ -75,6 +74,7 @@ packages=(
 	nm-connection-editor
 	npm
 	obs-studio
+	paleofetch-git
 	partitionmanager
 	pavucontrol
 	playerctl
