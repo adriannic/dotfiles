@@ -94,6 +94,7 @@ packages=(
 	starship
 	steam-devices
 	swappy
+	swayidle
 	swaylock-effects
 	swaync-git
 	swayosd-git
