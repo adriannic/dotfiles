@@ -72,6 +72,7 @@ packages=(
 	networkmanager
 	networkmanager-dmenu-git
 	nm-connection-editor
+	noise-suppression-for-voice
 	npm
 	obs-studio
 	paleofetch-git
