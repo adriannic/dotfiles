@@ -103,6 +103,7 @@ packages=(
 	sweet-theme-full-git
 	swww
 	telegram-desktop
+	thunderbird
 	time
 	tldr
 	ttf-firacode-nerd
@@ -123,6 +124,9 @@ packages=(
 	zathura-pdf-mupdf
 	zip
 	zoxide
+catppuccin-cursors-mocha
+catppuccin-gtk-theme-mocha
+kvantum-theme-catppuccin-git
 )
 
 sudo pacman -S --needed --noconfirm base-devel git
