@@ -90,7 +90,7 @@ packages=(
 	ripgrep
 	ripgrep-all
 	rsync
-	spotify-adblock
+	spotify
 	stacer
 	starship
 	steam-devices
