@@ -1,8 +1,10 @@
-/*
- * vim: ft=less
- */
-
 @import url('file:///home/adriannic/.cache/wal/colors-waybar.css');
+
+@define-color bg alpha(@background, 0.75);
+@define-color fg #fff;
+@define-color bg-selected alpha(#fff, 0.85);
+@define-color fg-selected @background;
+@define-color border @color1;
 
 * {
   all: unset;
@@ -49,7 +51,7 @@
   padding: 15px;
 }
 .close-button {
-  background: @background;
+  background: @bg;
   color: @color8;
   text-shadow: none;
   padding: 0;
@@ -62,7 +64,7 @@
 }
 
 .close-button:hover {
-  color: @foreground;
+  color: @bg-selected;
 }
 
 .notification-default-action,
@@ -70,9 +72,9 @@
   padding: 2px;
   margin: 0;
   box-shadow: none;
-  background: @background;
-  border: 1px inset @color1;
-  color: @foreground;
+  background: @bg;
+  border: 1px solid @border;
+  color: @fg;
 }
 
 .notification-default-action:hover,
@@ -98,32 +100,32 @@
 }
 
 .notification-action:last-child {
-  border-right: 1px inset @color1;
+  border-right: 1px solid @border;
 }
 
 .inline-reply {
   margin-top: 8px;
 }
 .inline-reply-entry {
-  color: @foreground;
-  background: @background;
-  caret-color: @foreground;
-  border: 1px inset @color1;
+  color: @fg;
+  background: @bg;
+  caret-color: @fg;
+  border: 1px solid @border;
 }
 .inline-reply-button {
   margin-left: 2px;
-  background: @background;
-  border: 1px inset @color1;
-  color: @foreground;
+  background: @bg;
+  border: 1px solid @border;
+  color: @fg;
 }
 .inline-reply-button:disabled {
   background: initial;
   color: @color8;
-  border: 1px inset transparent;
+  border: 1px solid transparent;
 }
 .inline-reply-button:hover {
-  color: @background;
-  background: @foreground;
+  color: @fg-selected;
+  background: @bg-selected;
 }
 
 .image {
@@ -138,7 +140,7 @@
   font-size: 16px;
   font-weight: bold;
   background: transparent;
-  color: @foreground;
+  color: @fg;
   text-shadow: none;
 }
 
@@ -146,7 +148,7 @@
   font-size: 16px;
   font-weight: bold;
   background: transparent;
-  color: @foreground;
+  color: @fg;
   text-shadow: none;
   margin-right: 18px;
 }
@@ -155,14 +157,14 @@
   font-size: 15px;
   font-weight: normal;
   background: transparent;
-  color: @foreground;
+  color: @fg;
   text-shadow: none;
 }
 
 .control-center {
-  background: alpha(@background, 0.5);
+  background: @bg;
   margin: 4px;
-  border: 1px inset @color1;
+  border: 1px solid @border;
   padding: 15px;
 }
 
@@ -189,49 +191,49 @@
 .widget-title {
   margin: 8px;
   font-size: 1.5rem;
-  color: @foreground;
+  color: @fg;
 }
 .widget-title > button {
   font-size: initial;
-  color: @foreground;
+  color: @fg;
   text-shadow: none;
-  border: 1px inset @color1;
+  border: 1px solid @border;
   box-shadow: none;
   padding: 4px;
 }
 .widget-title > button:hover {
-  color: @background;
-  background: @foreground;
+  color: @fg-selected;
+  background: @bg-selected;
 }
 
 /* DND widget */
 .widget-dnd {
   margin: 8px;
   font-size: 1.1rem;
-  color: @foreground;
+  color: @fg;
 }
 .widget-dnd > switch {
   font-size: initial;
-  background: @background;
-  border: 1px inset @color1;
+  background: @bg;
+  border: 1px solid @border;
   box-shadow: none;
-  color: @background;
+  color: @bg;
 }
 .widget-dnd > switch:checked {
-  background: @background;
+  background: @fg-selected;
 }
 .widget-dnd > switch slider {
-  background: @foreground;
-  color: @foreground;
+  background: @fg;
+  color: @fg;
 }
 .widget-dnd > switch:checked slider {
-  background: @foreground;
+  background: @bg-selected;
 }
 
 /* Label widget */
 .widget-label {
   margin: 8px;
-  color: @foreground;
+  color: @fg;
 }
 .widget-label > label {
   font-size: 1.1rem;
@@ -240,7 +242,7 @@
 /* Mpris widget */
 .widget-mpris {
   /* The parent to all players */
-  color: @foreground;
+  color: @fg;
 }
 .widget-mpris-player {
   padding: 8px;
@@ -252,13 +254,13 @@
   transition: color 0.25s ease-in-out;
 }
 .image-button:hover {
-  color: @foreground;
+  color: @bg-selected;
   transition: color 0.25s ease-in-out;
 }
 .widget-mpris-title {
   font-weight: bold;
   font-size: 1.25rem;
-  color: @foreground;
+  color: @fg;
 }
 .widget-mpris-subtitle {
   font-size: 1.1rem;
@@ -269,16 +271,16 @@
 .widget-buttons-grid {
   padding: 8px;
   margin: 8px;
-  background-color: @background;
+  background-color: @bg;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button{
-  background: @background;
+  background: @bg;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
-  color: @background;
-  background: @foreground;
+  color: @fg-selected;
+  background: @bg-selected;
 }
 
 /* Menubar widget */
@@ -288,7 +290,7 @@
 }
 
 /* .AnyName { Name defined in config after #
-  background-color: @background;
+  background-color: @bg;
   padding: 8px;
   margin: 8px;
 }
@@ -299,8 +301,8 @@
 }
 
 .AnyName>button:hover {
-  color: @background;
-  background-color: @foreground;
+  color: @fg-selected;
+  background-color: @bg-selected;
 } */
 
 .topbar-buttons>button { /* Name defined in config after # */
@@ -311,7 +313,7 @@
 /* Volume widget */
 
 .widget-volume {
-  background-color: @background;
+  background-color: @bg;
   padding: 8px;
   margin: 8px;
 }
@@ -322,14 +324,14 @@
 }
 
 .per-app-volume {
-  background-color: @background-alt;
+  background-color: @bg-alt;
   padding: 2px 8px 8px 8px;
   margin: 0px 8px 8px 8px;
 }
 
 /* Backlight widget */
 .widget-backlight {
-  background-color: @background;
+  background-color: @bg;
   padding: 8px;
   margin: 8px;
 }
@@ -341,13 +343,13 @@
 }
 .widget-inhibitors > button {
   font-size: initial;
-  color: @foreground;
+  color: @fg;
   text-shadow: none;
-  background: @background;
-  border: 1px inset @color1;
+  background: @bg;
+  border: 1px solid @border;
   box-shadow: none;
 }
 .widget-inhibitors > button:hover {
-  color: @background;
-  background: @foreground;
+  color: @fg-selected;
+  background-color: @bg-selected;
 }
