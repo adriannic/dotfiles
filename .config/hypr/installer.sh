@@ -20,6 +20,7 @@ prep=(
 	rustup
 	tlp
 	udiskie
+	upower
 	wireplumber
 	wl-clip-persist-git
 	wl-clipboard
