@@ -41,6 +41,9 @@ packages=(
 	blueberry
 	bottom
 	brightnessctl
+	catppuccin-cursors-mocha
+	catppuccin-gtk-theme-mocha
+	cbatticon
 	cli-visualizer
 	discord
 	dolphin
@@ -56,6 +59,7 @@ packages=(
 	jre-openjdk
 	kcalc
 	kitty
+	kvantum-theme-catppuccin-git
 	less
 	lsd
 	luarocks
@@ -125,9 +129,6 @@ packages=(
 	zathura-pdf-mupdf
 	zip
 	zoxide
-catppuccin-cursors-mocha
-catppuccin-gtk-theme-mocha
-kvantum-theme-catppuccin-git
 )
 
 sudo pacman -S --needed --noconfirm base-devel git
