@@ -2,7 +2,7 @@
 
 function wallpaper() {
 	(
-		swww img "$@" --transition-type=simple --transition-step=255 &
+		swww img "$@" -t none &
 		wal -n -i "$@"
 		pywalfox update &
 	  bash ~/.config/hypr/scripts/pywal.sh &
