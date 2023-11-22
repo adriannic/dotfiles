@@ -9,10 +9,10 @@ window {
 
 #input {
   padding: 4px;
-  border: 1px inset --wofi-color1;
+  border: 1px solid --wofi-color1;
   border-radius: 0px;
-  color: --wofi-color7;
-  background-color: alpha(--wofi-color0, 0.5);
+  color: #fff;
+  background-color: alpha(--wofi-color0, 0.75);
   outline: none;
   margin: 10px;
   margin-bottom: 2px;
@@ -38,7 +38,7 @@ window {
   border: none;
   font-weight: bold;
   background-color: transparent;
-  color: --wofi-color8;
+  color: #fff;
 }
 
 #text:selected {
@@ -47,7 +47,7 @@ window {
 
 #entry {
   margin: 4px 0px;
-  border: 1px inset --wofi-color1;
+  border: 1px solid --wofi-color1;
   border-radius: 0px;
   padding: 10px;
   background: alpha(--wofi-color0, 0.5);
@@ -56,5 +56,5 @@ window {
 #entry:selected {
   margin: 4px 0px;
   color: --wofi-color0;
-  background-color: --wofi-color7;
+  background-color: alpha(#fff, 0.85);
 }
