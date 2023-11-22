@@ -2,10 +2,9 @@
 
 function wallpaper() {
 	(
+		swww img "$@" --transition-type=simple --transition-step=255 &
 		wal -n -i "$@"
 		pywalfox update &
-		swww img "$(<"${HOME}/.cache/wal/wal")" --transition-type=simple --transition-step=255 &
-		eww reload &
 	  bash ~/.config/hypr/scripts/pywal.sh &
 	  swaync-client -rs &
 	  killall ags && ags &
