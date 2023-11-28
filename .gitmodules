@@ -1,3 +1,6 @@
 [submodule ".config/ags"]
 	path = .config/ags
 	url = https://github.com/adriannic/ags-dotfiles
+[submodule ".config/astronvim/lua/user"]
+	path = .config/astronvim/lua/user
+	url = https://github.com/adriannic/astronvim-config
