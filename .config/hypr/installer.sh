@@ -159,15 +159,13 @@ else
 fi
 
 if [[ $ISNVIDIA = true ]]; then
-	ln -sf ~/.config/hypr/nvidia-env.conf ~/.config/hypr/nvidia-env
 	echo "Using nvidia. Installing nvidia-specific packages..."
 	yay -S --needed --noconfirm --sudoloop "${nvidia[@]}"
 	sudo sed -i 's/MODULES=()/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
 	sudo mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img
 	echo -e "options nvidia-drm modeset=1" | sudo tee -a /etc/modprobe.d/nvidia.conf
-	yay -S --needed --noconfirm --sudoloop hyprland-nvidia
+	yay -S --needed --noconfirm --sudoloop hyprland
 else
-	ln -sf ~/.config/hypr/empty.conf ~/.config/hypr/nvidia-env
 	echo "Not using nvidia."
 	yay -S --needed --noconfirm --sudoloop hyprland
 fi
@@ -192,11 +190,8 @@ yay -S --needed --noconfirm --sudoloop "${packages[@]}"
 
 # Nvim
 echo "Cloning astronvim config..."
-mkdir -p ~/.config/astronvim/lua/user
 rm -rf ~/.config/nvim
-
 git clone --depth=1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-git clone https://github.com/adriannic/astronvim-config ~/.config/astronvim/lua/user
 
 # Autologin
 echo "Setting up autologin..."
@@ -208,10 +203,6 @@ ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin adriannic %I $TE
 # Hack to be able to open term apps with wofi
 echo "Creating symlink to kitty from gnome-terminal..."
 sudo ln -s /usr/bin/kitty /usr/bin/gnome-terminal
-
-# Cava
-echo "Activating snd_aloop module for cava..."
-sudo modprobe snd_aloop
 
 # Flatpak
 echo "Setting up flathub..."
