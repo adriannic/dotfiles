@@ -41,6 +41,7 @@ packages=(
 	blueberry
 	bottom
 	brightnessctl
+	candy-icons-git
 	catppuccin-cursors-mocha
 	catppuccin-gtk-theme-mocha
 	cbatticon
@@ -104,8 +105,6 @@ packages=(
 	swaylock-effects
 	swaync-git
 	swayosd-git
-	sweet-folders-icons-git
-	sweet-theme-full-git
 	swww
 	telegram-desktop
 	thunderbird
