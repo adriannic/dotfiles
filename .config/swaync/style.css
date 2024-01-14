@@ -197,7 +197,8 @@
   font-size: initial;
   color: @fg;
   text-shadow: none;
-  border: 1px solid @border;
+  border: none;
+  border-radius: 5px;
   box-shadow: none;
   padding: 4px;
 }
