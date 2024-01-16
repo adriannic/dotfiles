@@ -1,7 +1,7 @@
 window {
   margin: 0px;
   background: transparent;
-  border-radius: 0px;
+  border-radius: 5px;
   font-family: Inter Nerd Font;
   font-weight: bold;
   font-size: 1em;
@@ -10,7 +10,7 @@ window {
 #input {
   padding: 4px;
   border: 1px solid --wofi-color1;
-  border-radius: 0px;
+  border-radius: 5px;
   color: #fff;
   background-color: alpha(--wofi-color0, 0.75);
   outline: none;
@@ -48,7 +48,7 @@ window {
 #entry {
   margin: 4px 0px;
   border: 1px solid --wofi-color1;
-  border-radius: 0px;
+  border-radius: 5px;
   padding: 10px;
   background: alpha(--wofi-color0, 0.5);
 }
