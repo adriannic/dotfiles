@@ -38,6 +38,7 @@ packages=(
 	ani-cli
 	ark
 	aylurs-gtk-shell
+	bat
 	blueberry
 	bottom
 	brightnessctl
@@ -55,6 +56,7 @@ packages=(
 	gamemode
 	gamescope
 	github-cli
+	glow
 	hyprpicker-git
 	hyprshot
 	jre-openjdk
@@ -66,16 +68,16 @@ packages=(
 	luarocks
 	lutris
 	man-db
-	man-pages
 	mangal-bin
 	mangohud
+	man-pages
 	megasync-bin
 	mpv
 	ncdu
 	neovim
 	nerd-fonts-inter
-	network-manager-applet
 	networkmanager
+	network-manager-applet
 	networkmanager-dmenu-git
 	nm-connection-editor
 	noise-suppression-for-voice
