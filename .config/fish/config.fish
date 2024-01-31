@@ -1,6 +1,6 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    [ "$USER" = "adriannic" ] && paleofetch
+    [ "$USER" = "adriannic" ] && neofetch
 
     # Aliases
     alias ls="lsd"

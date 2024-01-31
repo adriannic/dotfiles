@@ -74,6 +74,7 @@ packages=(
 	megasync-bin
 	mpv
 	ncdu
+	neofetch
 	neovim
 	nerd-fonts-inter
 	networkmanager
@@ -83,7 +84,6 @@ packages=(
 	noise-suppression-for-voice
 	npm
 	obs-studio
-	paleofetch-git
 	partitionmanager
 	pavucontrol
 	playerctl
