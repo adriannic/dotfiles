@@ -39,6 +39,8 @@ export TERMINFO="$XDG_DATA_HOME"/terminfo
 export TERMINFO_DIRS="$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 export ZDOTDIR="$HOME"/.config/zsh
+# shellcheck disable=2155
+export MAKEFLAGS="-j $(nproc)"
 
 [ "$(tty)" = "/dev/tty1" ] && exec Hyprland
 
