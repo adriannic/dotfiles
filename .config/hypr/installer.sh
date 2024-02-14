@@ -73,6 +73,7 @@ packages=(
 	man-pages
 	megasync-bin
 	mpv
+	mypy
 	ncdu
 	neofetch
 	neovim
