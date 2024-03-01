@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 function wallpaper() {
 	tmp="$(mktemp).png"
