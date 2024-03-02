@@ -45,3 +45,7 @@ export MAKEFLAGS="-j $(nproc)"
 [ "$(tty)" = "/dev/tty1" ] && exec Hyprland
 
 [[ -f ~/.bashrc ]] && . "$HOME"/.bashrc
+
+[[ $- != *i* ]] && return
+
+fish && exit
