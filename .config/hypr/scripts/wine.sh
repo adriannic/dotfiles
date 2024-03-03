@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#! /usr/bin/env bash
 rm -rf ~/.local/share/mime/packages/x-wine*
 rm -rf ~/.local/share/applications/wine-extension*
 rm -rf ~/.local/share/icons/hicolor/*/*/application-x-wine-extension*

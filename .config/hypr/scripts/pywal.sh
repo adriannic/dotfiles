@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 source "$HOME/.cache/wal/colors.sh"
 

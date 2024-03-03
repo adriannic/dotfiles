@@ -46,7 +46,6 @@ packages=(
 	catppuccin-cursors-mocha
 	catppuccin-gtk-theme-mocha
 	cbatticon
-	cli-visualizer
 	discord
 	dolphin
 	dolphin-plugins
@@ -89,7 +88,6 @@ packages=(
 	pavucontrol
 	playerctl
 	polkit-kde-agent
-	pulsemixer
 	python-pywalfox
 	pywal-git
 	qbittorrent
@@ -98,13 +96,9 @@ packages=(
 	reflector
 	ripgrep
 	ripgrep-all
-	rsync
-	spotify
-	stacer
 	starship
 	steam-devices
 	swappy
-	swayidle
 	swaylock-effects
 	swaync-git
 	swayosd-git
@@ -119,7 +113,6 @@ packages=(
 	v4l2loopback-dkms
 	wev
 	whatsdesk-bin
-	wlrobs-hg
 	wofi
 	xdg-desktop-portal
 	xdg-desktop-portal-hyprland
