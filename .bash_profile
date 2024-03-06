@@ -19,7 +19,7 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_QPA_PLATFORM="wayland;xcb"
 export QT_QPA_PLATFORMTHEME=qt6ct
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons
+export XCURSOR_PATH=/usr/share/icons/:${XDG_DATA_HOME}/icons/:${HOME}/.icons/:${HOME}/.nix-profile/share/icons/
 export XCURSOR_SIZE=24
 
 export ANDROID_HOME="$XDG_DATA_HOME"/android
