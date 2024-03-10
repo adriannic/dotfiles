@@ -61,6 +61,8 @@ packages=(
 	jre-openjdk
 	kcalc
 	kitty
+	kvantum
+	kvantum-qt5
 	kvantum-theme-catppuccin-git
 	less
 	lsd
