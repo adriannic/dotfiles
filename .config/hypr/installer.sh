@@ -72,7 +72,7 @@ packages=(
 	mangal-bin
 	mangohud
 	man-pages
-	megasync-bin
+	megacmd
 	mpv
 	mypy
 	ncdu
@@ -106,6 +106,7 @@ packages=(
 	swayosd-git
 	swww
 	telegram-desktop
+	thefuck
 	thunderbird
 	time
 	tldr
@@ -134,6 +135,8 @@ sudo pacman -S --needed --noconfirm base-devel git
 echo "Cloning dotfiles..."
 git clone --bare https://github.com/adriannic/dotfiles "$HOME"/.dotfiles
 git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" checkout -f
+git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" submodule update --init --recursive
+git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" submodule foreach git checkout main
 
 # Installing yay
 echo "Checking if yay is installed..."
@@ -174,6 +177,7 @@ yay -S --needed --noconfirm --sudoloop "${prep[@]}"
 echo "Installing rust toolchains..."
 rustup toolchain install stable
 rustup toolchain install nightly
+rustup default stable
 
 echo "Enabling bluetooth..."
 sudo systemctl enable --now bluetooth

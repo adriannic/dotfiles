@@ -23,7 +23,6 @@ Places Icons Static Size=22
 2 screens: Window-Maximized=true
 
 [MainWindow]
-MenuBar=Disabled
 ToolBarsMovable=Disabled
 
 [PreviewSettings]
