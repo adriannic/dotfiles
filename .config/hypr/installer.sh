@@ -85,6 +85,10 @@ packages=(
 	nm-connection-editor
 	noise-suppression-for-voice
 	npm
+	noto-fonts
+	noto-fonts-cjk
+	noto-fonts-emoji
+	noto-fonts-extra
 	obs-studio
 	partitionmanager
 	pavucontrol
