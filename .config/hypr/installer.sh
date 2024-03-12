@@ -30,7 +30,7 @@ nvidia=(
 	libva
 	libva-nvidia-driver-git
 	linux-headers
-	nvidia
+	nvidia-open
 	nvidia-settings
 )
 
@@ -152,7 +152,7 @@ echo "Checking if yay is installed..."
 
 # Check for nvidia
 echo "Checking for nvidia gpu..."
-if lspci -k | grep -A 2 -E "(VGA|3D)" | grep -iq nvidia; then
+if [[ $(lspci | grep -i '.* vga .* nvidia .*' | count -l) = 2 ]]; then
 	ISNVIDIA=true
 else
 	ISNVIDIA=false
@@ -178,6 +178,14 @@ echo "Installing rust toolchains..."
 rustup toolchain install stable
 rustup toolchain install nightly
 rustup default stable
+
+echo "Installing hypr-workspaces..."
+git clone https://github.com/adriannic/hypr-workspaces
+(
+	cd hypr-workspaces || exit
+	makepkg -si --noconfirm --needed
+)
+rm -rf hypr-workspaces
 
 echo "Enabling bluetooth..."
 sudo systemctl enable --now bluetooth
