@@ -14,7 +14,7 @@ if status is-interactive
     alias bye="shutdown now"
     alias cya="reboot"
     alias open="xdg-open"
-    alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+    alias dot="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
     ## Desktop specific aliases
     alias towindows="systemctl reboot --boot-loader-entry=auto-windows"
