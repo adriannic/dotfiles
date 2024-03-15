@@ -42,6 +42,7 @@ packages=(
 	blueberry
 	bottom
 	brightnessctl
+	bun-bin
 	candy-icons-git
 	catppuccin-cursors-mocha
 	catppuccin-gtk-theme-mocha
