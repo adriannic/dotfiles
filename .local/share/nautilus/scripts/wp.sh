@@ -1,0 +1,1 @@
+/home/adriannic/.config/wal/wp.sh

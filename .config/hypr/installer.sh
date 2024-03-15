@@ -48,8 +48,6 @@ packages=(
 	catppuccin-gtk-theme-mocha
 	cbatticon
 	discord
-	dolphin
-	dolphin-plugins
 	firefox
 	fish
 	flatpak
@@ -76,6 +74,7 @@ packages=(
 	megacmd
 	mpv
 	mypy
+	nautilus
 	ncdu
 	neofetch
 	neovim
@@ -85,11 +84,11 @@ packages=(
 	networkmanager-dmenu-git
 	nm-connection-editor
 	noise-suppression-for-voice
-	npm
 	noto-fonts
 	noto-fonts-cjk
 	noto-fonts-emoji
 	noto-fonts-extra
+	npm
 	obs-studio
 	partitionmanager
 	pavucontrol

@@ -1,0 +1,1 @@
+/home/adriannic/.config/wal/random-bg.sh
