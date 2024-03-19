@@ -55,10 +55,10 @@ packages=(
 	gamescope
 	github-cli
 	glow
+	gnome-calculator
 	hyprpicker-git
 	hyprshot
 	jre-openjdk
-	kcalc
 	kitty
 	kvantum
 	kvantum-qt5
