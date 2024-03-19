@@ -93,7 +93,7 @@ packages=(
 	partitionmanager
 	pavucontrol
 	playerctl
-	polkit-kde-agent
+	polkit-gnome
 	python-pywalfox
 	pywal-git
 	qbittorrent
