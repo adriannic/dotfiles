@@ -48,6 +48,7 @@ packages=(
 	catppuccin-gtk-theme-mocha
 	cbatticon
 	discord
+	eog
 	firefox
 	fish
 	flatpak
@@ -104,7 +105,6 @@ packages=(
 	ripgrep-all
 	starship
 	steam-devices
-	swappy
 	swaylock-effects
 	swaync-git
 	swayosd-git
