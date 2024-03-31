@@ -48,6 +48,7 @@ packages=(
 	catppuccin-gtk-theme-mocha
 	cbatticon
 	discord
+	dosfstools
 	eog
 	firefox
 	fish
