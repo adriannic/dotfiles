@@ -202,11 +202,6 @@ sudo systemctl enable --now tlp
 echo "Installing packages..."
 yay -S --needed --noconfirm --sudoloop "${packages[@]}"
 
-# Nvim
-echo "Cloning astronvim config..."
-rm -rf ~/.config/nvim
-git clone --depth=1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-
 # Autologin
 echo "Setting up autologin..."
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d/
