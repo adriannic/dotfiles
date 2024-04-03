@@ -24,6 +24,7 @@ x-scheme-handler/nntp=userapp-Thunderbird-4CGXD2.desktop;
 x-scheme-handler/snews=userapp-Thunderbird-4CGXD2.desktop;
 x-scheme-handler/webcal=userapp-Thunderbird-7LVXD2.desktop;
 x-scheme-handler/webcals=userapp-Thunderbird-7LVXD2.desktop;
+text/csv=libreoffice-calc.desktop;
 
 [Default Applications]
 application/epub+zip=org.pwmt.zathura.desktop
@@ -62,7 +63,6 @@ audio/x-wavpack=mpv.desktop
 image/gif=org.gnome.eog.desktop
 image/jpeg=org.gnome.eog.desktop
 image/png=org.gnome.eog.desktop
-inode/directory=org.kde.dolphin.desktop
 message/rfc822=userapp-Thunderbird-B1NWD2.desktop
 text/calendar=userapp-Thunderbird-7LVXD2.desktop
 text/plain=nvim.desktop
@@ -109,3 +109,5 @@ x-scheme-handler/snews=userapp-Thunderbird-4CGXD2.desktop
 x-scheme-handler/webcal=userapp-Thunderbird-7LVXD2.desktop
 x-scheme-handler/webcals=userapp-Thunderbird-7LVXD2.desktop
 x-scheme-handler/ror2mm=r2modman.desktop
+inode/directory=org.gnome.Nautilus.desktop
+text/csv=libreoffice-calc.desktop
