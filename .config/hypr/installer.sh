@@ -183,6 +183,7 @@ echo "Installing rust toolchains..."
 rustup toolchain install stable
 rustup toolchain install nightly
 rustup default stable
+rustup component add rust-analyzer
 
 echo "Installing hypr-workspaces..."
 git clone https://github.com/adriannic/hypr-workspaces
