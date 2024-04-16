@@ -9,3 +9,5 @@
 	name = adriannic
 [init]
 	defaultBranch = main
+[core]
+	pager = bat
