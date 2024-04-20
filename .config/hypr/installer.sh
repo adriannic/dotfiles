@@ -2,11 +2,8 @@
 
 prep=(
 	base-devel
-	bluez
-	bluez-utils
 	cliphist
 	gtk3
-	jq
 	nwg-look
 	pipewire
 	pipewire-alsa
@@ -22,8 +19,6 @@ prep=(
 	udiskie
 	upower
 	wireplumber
-	wl-clip-persist-git
-	wl-clipboard
 )
 
 nvidia=(
@@ -39,7 +34,6 @@ packages=(
 	ark
 	aylurs-gtk-shell
 	bat
-	blueberry
 	bottom
 	brightnessctl
 	bun-bin
@@ -92,6 +86,7 @@ packages=(
 	noto-fonts-extra
 	npm
 	obs-studio
+	overskride
 	partitionmanager
 	pavucontrol
 	playerctl
