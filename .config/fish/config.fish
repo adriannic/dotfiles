@@ -1,6 +1,9 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
 
+    # Increase max number of file descriptors (fixes nvim needing a lot of files open at the same time)
+    ulimit -n 4096
+
     # Aliases
     alias ls="lsd"
     alias ip="ip -color=auto"
