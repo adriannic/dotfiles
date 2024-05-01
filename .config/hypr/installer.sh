@@ -44,6 +44,7 @@ packages=(
 	discord
 	dosfstools
 	eog
+	fastfetch
 	firefox
 	fish
 	flatpak
@@ -72,7 +73,6 @@ packages=(
 	mypy
 	nautilus
 	ncdu
-	neofetch
 	neovim
 	nerd-fonts-inter
 	networkmanager
