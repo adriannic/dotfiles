@@ -24,11 +24,11 @@ if status is-interactive
 
     [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
-
     thefuck --alias | source
     starship init fish | source
     zoxide init fish --cmd cd | source
     enable_transience
+    fastfetch
 end
 
 
