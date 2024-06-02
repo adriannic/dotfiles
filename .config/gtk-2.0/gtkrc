@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/adriannic/.gtkrc-2.0.mine"
-gtk-theme-name="catppuccin-mocha-mauve-standard+default-dark"
+gtk-theme-name="catppuccin-mocha-mauve-standard+default"
 gtk-icon-theme-name="candy-icons"
 gtk-font-name="Inter Nerd Font Propo 11"
 gtk-cursor-theme-name="Catppuccin-Mocha-Dark-Cursors"
