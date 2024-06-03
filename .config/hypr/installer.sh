@@ -34,8 +34,8 @@ packages=(
 	ark
 	aylurs-gtk-shell
 	bat
-	bottom
 	brightnessctl
+	btop
 	bun-bin
 	candy-icons-git
 	catppuccin-cursors-mocha
@@ -99,6 +99,7 @@ packages=(
 	reflector
 	ripgrep
 	ripgrep-all
+	slimbookbattery
 	starship
 	steam-devices
 	swaylock-effects
