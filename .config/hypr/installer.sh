@@ -34,6 +34,7 @@ packages=(
 	ark
 	aylurs-gtk-shell
 	bat
+	bear
 	brightnessctl
 	btop
 	bun-bin
