@@ -10,3 +10,6 @@ StatFontsColor=255,255,255
 
 [General]
 CalculatorMode=science
+
+[KCalcMainWindow]
+ToolBarsMovable=Disabled
