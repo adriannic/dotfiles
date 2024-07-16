@@ -42,7 +42,6 @@ packages=(
 	catppuccin-cursors-mocha
 	catppuccin-gtk-theme-mocha
 	cbatticon
-	discord
 	dosfstools
 	eog
 	fastfetch
@@ -117,6 +116,7 @@ packages=(
 	unrar
 	unzip
 	v4l2loopback-dkms
+	vesktop-bin
 	wev
 	whatsdesk-bin
 	wofi
