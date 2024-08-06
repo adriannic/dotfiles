@@ -113,6 +113,7 @@ packages=(
 	time
 	tldr
 	ttf-firacode-nerd
+	ttf-ms-win11-auto
 	unrar
 	unzip
 	v4l2loopback-dkms
@@ -153,6 +154,9 @@ echo "Checking if yay is installed..."
 	rm -rf yay
 )
 
+# Updating system packages
+yay --noconfirm
+
 # Check for nvidia
 echo "Checking for nvidia gpu..."
 if [[ $(lspci | grep -i '.* vga .* nvidia .*' | count -l) = 2 ]]; then
@@ -167,11 +171,11 @@ if [[ $ISNVIDIA = true ]]; then
 	sudo sed -i 's/MODULES=()/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
 	sudo mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img
 	echo -e "options nvidia-drm modeset=1" | sudo tee -a /etc/modprobe.d/nvidia.conf
-	yay -S --needed --noconfirm --sudoloop hyprland
 else
 	echo "Not using nvidia."
-	yay -S --needed --noconfirm --sudoloop hyprland
 fi
+
+yay -S --needed --noconfirm --sudoloop hyprland
 
 # Prep
 echo "Installing prep stage packages..."
@@ -214,9 +218,5 @@ sudo ln -s /usr/bin/kitty /usr/bin/gnome-terminal
 # Flatpak
 echo "Setting up flathub..."
 flatpak --user remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
-# Steam
-echo "Installing steam..."
-flatpak --user install flathub com.valvesoftware.Steam
 
 echo "Installation complete!"
