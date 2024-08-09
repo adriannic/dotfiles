@@ -44,6 +44,7 @@ packages=(
 	cbatticon
 	dosfstools
 	eog
+	exfat-utils
 	fastfetch
 	firefox
 	fish
