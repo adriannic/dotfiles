@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=X-Gnome-Metatheme
+Name=Pywal-ADR
+Comment=Adriannic's pywal theme
+Encoding=UTF-8
+
+[X-Gnome-Metatheme]
+GtkTheme=Pywal-ADR
+MetacityTheme=Pywal-ADR
+IconTheme=candy-icons
+CursorTheme=Catppuccin-Mocha-Dark
+ButtonLayout=minimize,maximize,close:
+X-Ubuntu-UseOverlayScrollbars=true
