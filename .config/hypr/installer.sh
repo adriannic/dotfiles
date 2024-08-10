@@ -23,9 +23,9 @@ prep=(
 
 nvidia=(
 	libva
-	libva-nvidia-driver-git
+	libva-nvidia-driver
 	linux-headers
-	nvidia-open
+	nvidia
 	nvidia-settings
 )
 
@@ -92,6 +92,7 @@ packages=(
 	pavucontrol
 	playerctl
 	polkit-gnome
+	protonup-qt-bin
 	python-pywalfox
 	pywal-git
 	qbittorrent
@@ -104,6 +105,7 @@ packages=(
 	slimbookbattery
 	starship
 	steam-devices
+	steamtinkerlaunch
 	swaylock-effects
 	swaync-git
 	swayosd-git
@@ -119,8 +121,10 @@ packages=(
 	unzip
 	v4l2loopback-dkms
 	vesktop-bin
+	vim
 	wev
 	whatsdesk-bin
+	wine
 	wofi
 	xdg-desktop-portal
 	xdg-desktop-portal-hyprland
