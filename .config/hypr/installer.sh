@@ -4,7 +4,9 @@ prep=(
 	archlinux-xdg-menu
 	base-devel
 	cliphist
+	frameworkintegration
 	gtk3
+	kdecoration
 	nwg-look
 	pipewire
 	pipewire-alsa
@@ -63,6 +65,8 @@ packages=(
 	kvantum-qt5
 	kvantum-theme-catppuccin-git
 	less
+	lightly-kf5-git
+	lightly-kf6-git
 	lsd
 	luarocks
 	lutris
