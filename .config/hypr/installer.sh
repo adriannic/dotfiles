@@ -1,6 +1,7 @@
 #! /bin/bash
 
 prep=(
+	archlinux-xdg-menu
 	base-devel
 	cliphist
 	gtk3
@@ -9,11 +10,11 @@ prep=(
 	pipewire-alsa
 	pipewire-audio
 	pipewire-pulse
+	qt5ct
 	qt5-svg
 	qt5-wayland
-	qt5ct
-	qt6-wayland
 	qt6ct
+	qt6-wayland
 	rustup
 	tlp
 	udiskie
@@ -204,6 +205,9 @@ sudo systemctl enable --now bluetooth
 
 echo "Enabling tlp..."
 sudo systemctl enable --now tlp
+
+echo "Setting up archlinux-xdg-menu..."
+XDG_MENU_PREFIX=arch- kbuildsycoca6
 
 # Packages
 echo "Installing packages..."
