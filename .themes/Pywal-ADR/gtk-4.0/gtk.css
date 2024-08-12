@@ -32,6 +32,11 @@
   }
 }
 
+* {
+  transition: color 0.25s ease-in-out;
+  transition: background 0.25s ease-in-out;
+}
+
 /***************
  * Base States *
  ***************/
