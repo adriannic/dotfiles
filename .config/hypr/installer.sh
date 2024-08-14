@@ -228,8 +228,4 @@ ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin adriannic %I $TE
 echo "Creating symlink to kitty from gnome-terminal..."
 sudo ln -s /usr/bin/kitty /usr/bin/gnome-terminal
 
-# Flatpak
-echo "Setting up flathub..."
-flatpak --user remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
 echo "Installation complete!"
