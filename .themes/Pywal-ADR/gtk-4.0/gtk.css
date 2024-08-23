@@ -6,9 +6,9 @@
 @define-color fg-selected @background;
 @define-color accent @color5;
 @define-color button-bg alpha(@fg, 0.08);
-@define-color error #f38ba8
-@define-color warning #f9e2af
-@define-color success #a6e3a1
+@define-color error #f38ba8;
+@define-color warning #f9e2af;
+@define-color success #a6e3a1;
 
 
 @keyframes ripple {

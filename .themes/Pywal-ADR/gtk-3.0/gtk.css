@@ -6,8 +6,8 @@
 @define-color fg-selected @background;
 @define-color accent @color5;
 @define-color button-bg rgba(239, 241, 245, 0.08);
-@define-color error #f38ba8
-@define-color warning #f9e2af
+@define-color error #f38ba8;
+@define-color warning #f9e2af;
 
 @keyframes ripple {
   to {
