@@ -106,7 +106,6 @@ packages=(
 	reflector
 	ripgrep
 	ripgrep-all
-	rust-analyzer
 	slimbookbattery
 	starship
 	steam-devices
