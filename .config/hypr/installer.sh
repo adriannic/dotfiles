@@ -168,19 +168,23 @@ echo "Checking if yay is installed..."
 yay --noconfirm
 
 # Check for nvidia
-echo "Checking for nvidia gpu..."
-if [[ $(lspci | grep -i '.* vga .* nvidia .*' | count -l) = 2 ]]; then
-	ISNVIDIA=true
-else
-	ISNVIDIA=false
-fi
+echo "Using nvidia?"
+select yn in "Yes" "No"; do
+	case $yn in
+	Yes)
+		ISNVIDIA=true
+		break
+		;;
+	No) ISNVIDIA=false ;;
+	esac
+done
 
 if [[ $ISNVIDIA = true ]]; then
 	echo "Using nvidia. Installing nvidia-specific packages..."
 	yay -S --needed --noconfirm --sudoloop "${nvidia[@]}"
 	sudo sed -i 's/MODULES=()/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
-	sudo mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img
-	echo -e "options nvidia-drm modeset=1" | sudo tee -a /etc/modprobe.d/nvidia.conf
+	sudo mkinitcpio -P
+	echo -e "options nvidia-drm modeset=1 fbdev=1" | sudo tee -a /etc/modprobe.d/nvidia.conf
 else
 	echo "Not using nvidia."
 fi
