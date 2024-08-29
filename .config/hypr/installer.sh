@@ -59,7 +59,6 @@ packages=(
 	hyprpicker-git
 	hyprshot
 	jre-openjdk
-	kcalc
 	kitty
 	kvantum
 	kvantum-qt5
@@ -100,6 +99,7 @@ packages=(
 	protonup-qt-bin
 	python-pywalfox
 	pywal-git
+	qalculate-gtk
 	qbittorrent
 	ranger
 	rclone
