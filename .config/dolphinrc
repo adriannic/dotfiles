@@ -3,17 +3,20 @@ update_info=dolphin_detailsmodesettings.upd:rename-leading-padding,dolphin_detai
 
 [ContentDisplay]
 DirectorySizeCount=false
+UsePermissionsFormat=CombinedFormat
 
 [General]
+AutoExpandFolders=true
 BrowseThroughArchives=true
-GlobalViewProps=false
-RememberOpenedTabs=false
 Version=202
 ViewPropsTimestamp=2023,8,30,19,13,48.621
 
 [IconsMode]
 IconSize=64
 PreviewSize=96
+
+[InformationPanel]
+dateFormat=ShortFormat
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false

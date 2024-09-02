@@ -16,6 +16,7 @@ prep=(
 	qt5-svg
 	qt5-wayland
 	qt6ct
+	qt6-multimedia-ffmpeg
 	qt6-wayland
 	rustup
 	tlp
@@ -45,6 +46,7 @@ packages=(
 	catppuccin-cursors-mocha
 	catppuccin-gtk-theme-mocha
 	cbatticon
+	dolphin
 	dosfstools
 	eog
 	exfat-utils
@@ -76,7 +78,6 @@ packages=(
 	megacmd
 	mpv
 	mypy
-	nautilus
 	ncdu
 	neovim
 	nerd-fonts-inter
