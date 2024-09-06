@@ -1,10 +1,13 @@
 #! /usr/bin/env bash
 
 function wallpaper() {
+	mkdir -p ~/.cache/wallpaper/
+	echo -n "$(readlink -f "$1")" > ~/.cache/wallpaper/selected
 	tmp="$(mktemp).png"
 	ffmpeg -i "$1" -vf "select=eq(n\,0)" -q:v 3 "$tmp"
 	(
-		swww img "$1" -t none &
+		pkill mpvpaper
+		mpvpaper -o "no-audio loop" '*' "$1" --fork &
 		wal -n -i "$1"
 		pywalfox update &
 		bash ~/.config/hypr/scripts/pywal.sh &

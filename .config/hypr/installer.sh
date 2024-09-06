@@ -77,6 +77,7 @@ packages=(
 	man-pages
 	megacmd
 	mpv
+	mpvpaper
 	mypy
 	ncdu
 	neovim
@@ -114,7 +115,6 @@ packages=(
 	swaylock-effects
 	swaync-git
 	swayosd-git
-	swww
 	telegram-desktop
 	thefuck
 	thunderbird
