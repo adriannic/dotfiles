@@ -169,14 +169,8 @@ yay --noconfirm
 
 # Check for nvidia
 echo "Using nvidia?"
-select yn in "Yes" "No"; do
-	case $yn in
-	Yes)
-		ISNVIDIA=true
-		break
-		;;
-	No) ISNVIDIA=false ;;
-	esac
+select yn in "true" "false"; do
+	ISNVIDIA="$yn"
 done
 
 if [[ $ISNVIDIA = true ]]; then
