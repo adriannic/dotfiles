@@ -51,6 +51,7 @@ packages=(
 	eog
 	exfat-utils
 	fastfetch
+	ffmpegthumbs
 	firefox
 	fish
 	flatpak
