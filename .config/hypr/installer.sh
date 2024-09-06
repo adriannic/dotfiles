@@ -169,8 +169,20 @@ yay --noconfirm
 
 # Check for nvidia
 echo "Using nvidia?"
-select yn in "true" "false"; do
-	ISNVIDIA="$yn"
+select yn in "Yes" "No"; do
+	case $yn in
+	Yes)
+		ISNVIDIA=true
+		break
+		;;
+	No)
+		ISNVIDIA=false
+		break
+		;;
+	*)
+		echo "Invalid option"
+		;;
+	esac
 done
 
 if [[ $ISNVIDIA = true ]]; then
