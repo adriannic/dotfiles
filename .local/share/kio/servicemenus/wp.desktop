@@ -2,7 +2,7 @@
 Type=Service
 Icon=folder-pictures
 ServiceTypes=KonqPopupMenu/Plugin
-MimeType=image/*;
+MimeType=image/*;video/*;
 Actions=change-wp
 
 [Desktop Action change-wp]
