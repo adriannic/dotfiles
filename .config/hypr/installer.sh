@@ -8,6 +8,7 @@ prep=(
 	gtk3
 	kdecoration
 	nwg-look
+	phonon-qt6-mpv
 	pipewire
 	pipewire-alsa
 	pipewire-audio

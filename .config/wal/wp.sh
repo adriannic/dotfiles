@@ -2,13 +2,20 @@
 
 function wallpaper() {
 	mkdir -p ~/.cache/wallpaper/
-	echo -n "$(readlink -f "$1")" > ~/.cache/wallpaper/selected
 	tmp="$(mktemp).png"
-	ffmpeg -i "$1" -vf "select=eq(n\,0)" -q:v 3 "$tmp"
+
+	if echo "$1" | grep 'youtube'; then
+		echo -n "$1" >~/.cache/wallpaper/selected
+		ffmpeg -i "$(yt-dlp -g "$1" | head -n1)" -vf "select=eq(n\,180)" -vframes 1 -q:v 3 "$tmp" >/dev/null 2>&1
+	else
+		echo -n "$(readlink -f "$1")" >~/.cache/wallpaper/selected
+		ffmpeg -i "$1" -vf "select=eq(n\,0)" -vframes 1 -q:v 3 "$tmp" >/dev/null 2>&1
+	fi
+
 	(
 		pkill mpvpaper
-		mpvpaper -o "no-audio loop" '*' "$1" --fork &
-		wal -n -i "$1"
+		mpvpaper -o "volume=30 loop" '*' "$1" --fork &
+		wal -n -i "$tmp"
 		pywalfox update &
 		bash ~/.config/hypr/scripts/pywal.sh &
 		swaync-client -rs &
