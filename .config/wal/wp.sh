@@ -4,7 +4,7 @@ function wallpaper() {
 	mkdir -p ~/.cache/wallpaper/
 	tmp="$(mktemp).png"
 
-	if echo "$1" | grep 'youtube'; then
+	if echo "$1" | grep 'youtube|twitch'; then
 		echo -n "$1" >~/.cache/wallpaper/selected
 		ffmpeg -i "$(yt-dlp -g "$1" | head -n1)" -vf "select=eq(n\,180)" -vframes 1 -q:v 3 "$tmp" >/dev/null 2>&1
 	else
@@ -14,7 +14,7 @@ function wallpaper() {
 
 	(
 		pkill mpvpaper
-		mpvpaper -o "volume=30 loop" '*' "$1" --fork &
+		mpvpaper -o "volume=100 loop" '*' "$1" --fork &
 		wal -n -i "$tmp"
 		pywalfox update &
 		bash ~/.config/hypr/scripts/pywal.sh &
