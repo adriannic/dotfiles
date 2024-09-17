@@ -111,6 +111,7 @@ packages=(
 	ripgrep
 	ripgrep-all
 	slimbookbattery
+	spotify
 	starship
 	steam-devices
 	steamtinkerlaunch
@@ -239,5 +240,8 @@ ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin adriannic %I $TE
 # Hack to be able to open term apps with wofi
 echo "Creating symlink to kitty from gnome-terminal..."
 sudo ln -s /usr/bin/kitty /usr/bin/gnome-terminal
+
+# Crack spotify
+bash -c 'bash <(curl -sSL https://spotx-official.github.io/run.sh)'
 
 echo "Installation complete!"
