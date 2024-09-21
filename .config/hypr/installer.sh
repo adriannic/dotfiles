@@ -8,7 +8,6 @@ prep=(
 	gtk3
 	kdecoration
 	nwg-look
-	phonon-qt6-mpv
 	pipewire
 	pipewire-alsa
 	pipewire-audio
@@ -47,7 +46,6 @@ packages=(
 	catppuccin-cursors-mocha
 	catppuccin-gtk-theme-mocha
 	cbatticon
-	dolphin
 	dosfstools
 	eog
 	exfat-utils
@@ -78,6 +76,7 @@ packages=(
 	mpv
 	mpvpaper
 	mypy
+	nautilus
 	ncdu
 	neovim
 	nerd-fonts-inter
