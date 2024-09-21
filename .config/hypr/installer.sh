@@ -64,9 +64,6 @@ packages=(
 	hyprshot
 	jre-openjdk
 	kitty
-	kvantum
-	kvantum-qt5
-	kvantum-theme-catppuccin-git
 	less
 	lightly-kf5-git
 	lightly-kf6-git
