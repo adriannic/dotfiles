@@ -126,6 +126,7 @@ packages=(
 	v4l2loopback-dkms
 	vesktop-bin
 	vim
+	walogram-git
 	wev
 	whatsdesk-bin
 	wine

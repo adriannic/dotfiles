@@ -17,6 +17,7 @@ function wallpaper() {
 		mpvpaper -o "volume=100 loop" '*' "$1" --fork &
 		wal -n -i "$tmp"
 		pywalfox update &
+		walogram &
 		bash ~/.config/hypr/scripts/pywal.sh &
 		swaync-client -rs &
 		notify-send -i "$tmp" "Fondo de pantalla cambiado" "Fondo de pantalla y esquema de colores cambiado a $(basename "$1")"
