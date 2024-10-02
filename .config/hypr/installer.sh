@@ -44,7 +44,6 @@ packages=(
 	bun-bin
 	candy-icons-git
 	catppuccin-cursors-mocha
-	catppuccin-gtk-theme-mocha
 	cbatticon
 	dosfstools
 	eog
