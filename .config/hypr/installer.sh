@@ -57,7 +57,7 @@ packages=(
 	gamescope
 	github-cli
 	glow
-	hyprpicker-git
+	hyprpicker
 	hyprshot
 	jre-openjdk
 	kitty
