@@ -18,6 +18,7 @@ if status is-interactive
     alias cya="reboot"
     alias open="xdg-open"
     alias dot="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+    alias rdp="WAYLAND_DISPLAY=wayland-1 wayvnc & remmina vnc://localhost"
 
     ## Desktop specific aliases
     alias towindows="systemctl reboot --boot-loader-entry=auto-windows"

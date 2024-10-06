@@ -8,6 +8,7 @@ prep=(
 	frameworkintegration
 	gtk3
 	kdecoration
+	libvncserver
 	nwg-look
 	pipewire
 	pipewire-alsa
@@ -104,6 +105,7 @@ packages=(
 	ranger
 	rclone
 	reflector
+	remmina
 	ripgrep
 	ripgrep-all
 	slimbookbattery
@@ -127,6 +129,7 @@ packages=(
 	vesktop-bin
 	vim
 	walogram-git
+	wayvnc
 	wev
 	whatsdesk-bin
 	wine
