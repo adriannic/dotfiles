@@ -4,6 +4,7 @@ prep=(
 	archlinux-xdg-menu
 	base-devel
 	cliphist
+	firewalld
 	frameworkintegration
 	gtk3
 	kdecoration
@@ -218,6 +219,9 @@ sudo systemctl enable --now bluetooth
 
 echo "Enabling tlp..."
 sudo systemctl enable --now tlp
+
+echo "Enabling firewalld..."
+sudo systemctl enable --now firewalld
 
 echo "Setting up archlinux-xdg-menu..."
 XDG_MENU_PREFIX=arch- kbuildsycoca6
