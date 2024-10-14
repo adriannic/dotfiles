@@ -4,8 +4,11 @@ prep=(
 	archlinux-xdg-menu
 	base-devel
 	cliphist
+	ffmpegthumbnailer
 	firewalld
 	frameworkintegration
+	gst-libav
+	gst-plugins-ugly
 	gtk3
 	kdecoration
 	libvncserver
