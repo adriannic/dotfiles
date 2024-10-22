@@ -1,10 +1,10 @@
 @import url("/home/adriannic/.cache/wal/colors-waybar.css");
-@define-color bg alpha(@background, 0.55);
+@define-color bg alpha(@background, 0.9);
 @define-color bg-selected alpha(@fg, 0.85);
 @define-color border @color1;
 @define-color fg @foreground;
 @define-color fg-selected @background;
-@define-color accent @color5;
+@define-color accent @color2;
 @define-color button-bg alpha(@fg, 0.08);
 @define-color error #f38ba8;
 @define-color warning #f9e2af;

@@ -14,7 +14,7 @@ window {
 
 #input {
   padding: 4px;
-  border: 1px solid --wofi-color1;
+  border: 1px solid --wofi-color2;
   border-radius: 5px;
   color: --wofi-color7;
   background-color: alpha(--wofi-color0, 0.75);
@@ -50,7 +50,7 @@ window {
 
 #entry {
   margin: 4px 0px;
-  border: 1px solid --wofi-color1;
+  border: 1px solid --wofi-color2;
   border-radius: 5px;
   padding: 10px;
   background: alpha(--wofi-color0, 0.5);
