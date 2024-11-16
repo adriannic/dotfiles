@@ -13,8 +13,8 @@ function wallpaper() {
 	fi
 
 	(
-		pkill mpvpaper
-		mpvpaper -o "volume=100 loop" '*' "$1" --fork &
+		procs="$(pgrep mpvpaper)"
+		mpvpaper -o "volume=100 loop" '*' "$1" --fork
 		wal -n -i "$tmp"
 		pywalfox update &
 		walogram &
@@ -22,6 +22,10 @@ function wallpaper() {
 		swaync-client -rs &
 		notify-send -i "$tmp" "Fondo de pantalla cambiado" "Fondo de pantalla y esquema de colores cambiado a $(basename "$1")"
 		ags quit && ags run &
+		sleep 0.5
+		for p in $procs; do
+			kill "$p"
+		done
 		disown
 	) >/dev/null 2>&1
 }
