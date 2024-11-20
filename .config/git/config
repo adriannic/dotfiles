@@ -5,7 +5,7 @@
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [user]
-	email = spamadriannic@gmail.com
+	email = nicolas.aguilera.adrian@gmail.com
 	name = adriannic
 [init]
 	defaultBranch = main
