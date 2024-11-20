@@ -44,11 +44,11 @@ packages=(
 	aylurs-gtk-shell
 	bat
 	bear
+	blueberry
 	brightnessctl
 	btop
 	bun-bin
 	candy-icons-git
-	catppuccin-cursors-mocha
 	cbatticon
 	dosfstools
 	eog
@@ -95,7 +95,6 @@ packages=(
 	noto-fonts-extra
 	npm
 	obs-studio
-	overskride
 	partitionmanager
 	pavucontrol
 	playerctl
