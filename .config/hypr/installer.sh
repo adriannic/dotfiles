@@ -81,6 +81,9 @@ packages=(
 	mpvpaper
 	mypy
 	nautilus
+	nautilus-admin-gtk4
+	nautilus-image-converter
+	nautilus-open-any-terminal
 	ncdu
 	neovim
 	nerd-fonts-inter
