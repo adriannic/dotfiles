@@ -22,6 +22,8 @@ function wallpaper() {
 		swaync-client -rs &
 		notify-send -i "$tmp" "Fondo de pantalla cambiado" "Fondo de pantalla y esquema de colores cambiado a $(basename "$1")"
 		ags quit && ags run &
+		pkill swayosd-server
+		swayosd-server &
 		sleep 0.5
 		for p in $procs; do
 			kill "$p"

@@ -247,7 +247,7 @@ popover.magnifier > contents, .osd {
   background-clip: padding-box;
   border-radius: 6px;
   border: none;
-  box-shadow: 0 1px 2px 0 alpha(black, 0.15), 0 3px 3px 0 alpha(black, 0.18), 0 3px 6px 0 alpha(black, 0.12), inset 0 1px alpha(@fg, 0.1);
+  box-shadow: 0 1px 2px 0 alpha(black, 0), 0 3px 3px 0 alpha(black, 0), 0 3px 6px 0 alpha(black, 0), inset 0 1px alpha(@fg, 0.1);
 }
 
 .osd {
@@ -990,19 +990,19 @@ button.opaque:hover {
 }
 
 button.keyboard-activating.opaque, button.opaque:active {
-  background-image: image(alpha(black, 0.2));
+  background-image: image(alpha(black, 0));
 }
 
 button.opaque:checked {
-  background-image: image(alpha(black, 0.15));
+  background-image: image(alpha(black, 0));
 }
 
 button.opaque:checked:hover {
-  background-image: image(alpha(black, 0.05));
+  background-image: image(alpha(black, 0));
 }
 
 button.opaque:checked.keyboard-activating, button.opaque:checked:active {
-  background-image: image(alpha(black, 0.3));
+  background-image: image(alpha(black, 0));
 }
 
 .nautilus-window .floating-bar button, placessidebar row button.sidebar-button, notebook > header > tabs > tab button.flat, popover.menu box.circular-buttons button.circular.image-button.model, spinbutton > button {
@@ -1191,7 +1191,7 @@ button.osd {
   min-width: 24px;
   padding: 6px;
   box-shadow: none;
-  background-color: alpha(black, 0.35);
+  background-color: alpha(black, 0);
   color: white;
   margin: 0;
 }
@@ -1209,17 +1209,17 @@ button.osd:focus {
 }
 
 button.osd:hover {
-  background-color: alpha(black, 0.45);
+  background-color: alpha(black, 0);
   color: white;
 }
 
 button.osd:active {
-  background-color: alpha(black, 0.65);
+  background-color: alpha(black, 0);
   color: white;
 }
 
 button.osd:disabled {
-  background-color: alpha(black, 0.15);
+  background-color: alpha(black, 0);
   color: alpha(white, 0.35);
 }
 
@@ -1236,7 +1236,7 @@ button.suggested-action:disabled {
 }
 
 button.suggested-action:hover {
-  box-shadow: inset 0 0 0 9999px transparent, 0 2px 2.4px -1px alpha(black, 0.1), 0 4px 3px 0 alpha(black, 0.07), 0 1px 6px 0 alpha(black, 0.06);
+  box-shadow: inset 0 0 0 9999px transparent, 0 2px 2.4px -1px alpha(black, 0), 0 4px 3px 0 alpha(black, 0), 0 1px 6px 0 alpha(black, 0);
 }
 
 button.suggested-action:checked {
@@ -1244,7 +1244,7 @@ button.suggested-action:checked {
 }
 
 button.suggested-action:checked:hover {
-  box-shadow: inset 0 0 0 9999px transparent, 0 3px 3px -3px alpha(black, 0.15), 0 2px 3px -1px alpha(black, 0.12), 0 2px 5px 0 alpha(black, 0.06);
+  box-shadow: inset 0 0 0 9999px transparent, 0 3px 3px -3px alpha(black, 0), 0 2px 3px -1px alpha(black, 0), 0 2px 5px 0 alpha(black, 0);
 }
 
 button.suggested-action:focus {
@@ -1278,7 +1278,7 @@ button.destructive-action:disabled {
 }
 
 button.destructive-action:hover {
-  box-shadow: inset 0 0 0 9999px transparent, 0 2px 2.4px -1px alpha(black, 0.1), 0 4px 3px 0 alpha(black, 0.07), 0 1px 6px 0 alpha(black, 0.06);
+  box-shadow: inset 0 0 0 9999px transparent, 0 2px 2.4px -1px alpha(black, 0), 0 4px 3px 0 alpha(black, 0), 0 1px 6px 0 alpha(black, 0);
 }
 
 button.destructive-action:checked {
@@ -1286,7 +1286,7 @@ button.destructive-action:checked {
 }
 
 button.destructive-action:checked:hover {
-  box-shadow: inset 0 0 0 9999px transparent, 0 3px 3px -3px alpha(black, 0.15), 0 2px 3px -1px alpha(black, 0.12), 0 2px 5px 0 alpha(black, 0.06);
+  box-shadow: inset 0 0 0 9999px transparent, 0 3px 3px -3px alpha(black, 0), 0 2px 3px -1px alpha(black, 0), 0 2px 5px 0 alpha(black, 0);
 }
 
 button.destructive-action:focus {
@@ -1923,13 +1923,13 @@ button.combo:only-child:disabled {
   transition: box-shadow 200ms ease-out;
   padding: 6px;
   border-radius: 12px;
-  box-shadow: 0 1px 2px 0 alpha(black, 0.15), 0 3px 3px 0 alpha(black, 0.18), 0 3px 6px 0 alpha(black, 0.12), inset 0 1px alpha(@fg, 0.1);
+  box-shadow: 0 1px 2px 0 alpha(black, 0), 0 3px 3px 0 alpha(black, 0), 0 3px 6px 0 alpha(black, 0), inset 0 1px alpha(@fg, 0.1);
   background-color: @fg-selected;
   color: @fg;
 }
 
 .app-notification:backdrop, .toolbar.osd:backdrop {
-  box-shadow: 0 4px 3px -3px alpha(black, 0.2), 0 2px 2px -1px alpha(black, 0.24), 0 1px 3px 0 alpha(black, 0.12), inset 0 1px alpha(@fg, 0.1);
+  box-shadow: 0 4px 3px -3px alpha(black, 0), 0 2px 2px -1px alpha(black, 0), 0 1px 3px 0 alpha(black, 0), inset 0 1px alpha(@fg, 0.1);
 }
 
 .left.app-notification, .right.app-notification, .top.app-notification, .bottom.app-notification, .toolbar.osd.left, .toolbar.osd.right, .toolbar.osd.top, .toolbar.osd.bottom {
@@ -1939,7 +1939,7 @@ button.combo:only-child:disabled {
 .bottom.app-notification, .toolbar.osd.bottom {
   box-shadow: none;
   background-color: transparent;
-  background-image: linear-gradient(to bottom, transparent, alpha(black, 0.1) 30%, alpha(black, 0.2) 50%, alpha(black, 0.4));
+  background-image: linear-gradient(to bottom, transparent, alpha(black, 0) 30%, alpha(black, 0) 50%, alpha(black, 0));
 }
 
 .toolbar.horizontal > separator {
@@ -2658,7 +2658,7 @@ popover > contents {
   color: @fg;
   border: 1px solid alpha(@fg, 0.1);
   background-clip: border-box;
-  box-shadow: 0 0 0 1px alpha(@fg-selected, 0.75), 0 2px 3px -1px alpha(black, 0.05), 0 4px 6px 0 alpha(black, 0.06), 0 1px 10px 0 alpha(black, 0.05);
+  box-shadow: 0 0 0 1px alpha(@fg-selected, 0.75), 0 2px 3px -1px alpha(black, 0), 0 4px 6px 0 alpha(black, 0), 0 1px 10px 0 alpha(black, 0);
 }
 
 popover > contents > list,
@@ -2793,7 +2793,7 @@ notebook > header > tabs > tab:checked {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms, background-color 0ms;
   background-color: alpha(white, 0.15);
   color: @fg;
-  box-shadow: 0 1px 3px alpha(black, 0.1);
+  box-shadow: 0 1px 3px alpha(black, 0);
 }
 
 notebook > header > tabs > tab:checked:disabled {
@@ -3009,7 +3009,7 @@ tabbar tab:selected:not(:active) {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms, background-color 0ms;
   background-color: alpha(white, 0.15);
   color: @fg;
-  box-shadow: 0 1px 3px alpha(black, 0.1);
+  box-shadow: 0 1px 3px alpha(black, 0);
 }
 
 tabbar tab:selected:not(:active):disabled {
@@ -3142,7 +3142,7 @@ dnd tab {
   min-height: 24px;
   background-color: @bg;
   color: @fg;
-  box-shadow: 0 1px 5px 1px alpha(black, 0.09), 0 2px 14px 3px alpha(black, 0.05), 0 0 0 1px alpha(black, 0.05);
+  box-shadow: 0 1px 5px 1px alpha(black, 0), 0 2px 14px 3px alpha(black, 0), 0 0 0 1px alpha(black, 0);
   outline: 1px solid alpha(@fg-selected, 0.75);
   outline-offset: -1px;
   margin: 24px;
@@ -3452,7 +3452,7 @@ switch > slider {
   margin: 3px;
   border-radius: 9999px;
   outline: none;
-  box-shadow: 0 0 0 0 transparent, 0 3px 3px -2px alpha(black, 0.05), 0 2px 3px -1px alpha(black, 0.06), 0 1px 4px 0 alpha(black, 0.05);
+  box-shadow: 0 0 0 0 transparent, 0 3px 3px -2px alpha(black, 0), 0 2px 3px -1px alpha(black, 0), 0 1px 4px 0 alpha(black, 0);
   background-color: white;
   border: none;
 }
@@ -5465,7 +5465,7 @@ tooltip {
 tooltip.background {
   background-color: alpha(@fg-selected, 0.9);
   color: @fg;
-  box-shadow: 0 2px 3px -1px alpha(black, 0.05), 0 4px 6px 0 alpha(black, 0.06), 0 1px 10px 0 alpha(black, 0.05);
+  box-shadow: 0 2px 3px -1px alpha(black, 0), 0 4px 6px 0 alpha(black, 0), 0 1px 10px 0 alpha(black, 0);
   border-radius: 6px;
   margin: 2px 6px 8px 6px;
 }
@@ -5569,18 +5569,18 @@ colorswatch#editor-color-sample overlay {
 }
 
 colorswatch#editor-color-sample overlay:hover {
-  box-shadow: 0 2px 3px -2px alpha(black, 0.3), 0 1px 2px -1px alpha(black, 0.24), 0 1px 2px -1px alpha(black, 0.17);
+  box-shadow: 0 2px 3px -2px alpha(black, 0), 0 1px 2px -1px alpha(black, 0), 0 1px 2px -1px alpha(black, 0);
 }
 
 colorchooser .popover.osd {
   transition: box-shadow 200ms ease-out;
   border-radius: 6px;
-  box-shadow: 0 1px 2px 0 alpha(black, 0.15), 0 3px 3px 0 alpha(black, 0.18), 0 3px 6px 0 alpha(black, 0.12), inset 0 1px alpha(@fg, 0.1);
+  box-shadow: 0 1px 2px 0 alpha(black, 0), 0 3px 3px 0 alpha(black, 0), 0 3px 6px 0 alpha(black, 0), inset 0 1px alpha(@fg, 0.1);
   background-color: @fg-selected;
 }
 
 colorchooser .popover.osd:backdrop {
-  box-shadow: 0 4px 3px -3px alpha(black, 0.2), 0 2px 2px -1px alpha(black, 0.24), 0 1px 3px 0 alpha(black, 0.12), inset 0 1px alpha(@fg, 0.1);
+  box-shadow: 0 4px 3px -3px alpha(black, 0), 0 2px 2px -1px alpha(black, 0), 0 1px 3px 0 alpha(black, 0), inset 0 1px alpha(@fg, 0.1);
 }
 
 /********
@@ -5603,12 +5603,12 @@ window.csd {
   transition: none;
   outline-offset: -1px;
   outline: 1px solid alpha(@fg, 0.1);
-  box-shadow: 0 1px 3px 0 alpha(black, 0.2), 0 15px 16px 2px alpha(black, 0.14), 0 6px 18px 5px alpha(black, 0.12), 0 0 36px transparent, 0 0 0 1px alpha(@fg-selected, 0.75);
+  box-shadow: 0 1px 3px 0 alpha(black, 0), 0 15px 16px 2px alpha(black, 0), 0 6px 18px 5px alpha(black, 0), 0 0 36px transparent, 0 0 0 1px alpha(@fg-selected, 0.75);
 }
 
 window.csd:backdrop {
   transition: box-shadow 200ms ease-out;
-  box-shadow: 0 1px 2px 0 alpha(black, 0.15), 0 3px 3px 0 alpha(black, 0.18), 0 3px 6px 0 alpha(black, 0.12), 0 0 36px transparent, 0 0 0 1px alpha(@fg-selected, 0.75);
+  box-shadow: 0 1px 2px 0 alpha(black, 0), 0 3px 3px 0 alpha(black, 0), 0 3px 6px 0 alpha(black, 0), 0 0 36px transparent, 0 0 0 1px alpha(@fg-selected, 0.75);
 }
 
 window.csd.maximized, window.csd.fullscreen, window.csd.tiled, window.csd.tiled-top, window.csd.tiled-right, window.csd.tiled-bottom, window.csd.tiled-left {
@@ -5655,7 +5655,7 @@ windowcontrols > button.minimize:hover:not(.suggested-action):not(.destructive-a
 }
 
 windowcontrols > button.minimize:active:not(.suggested-action):not(.destructive-action) > image, windowcontrols > button.maximize:active:not(.suggested-action):not(.destructive-action) > image, windowcontrols > button.close:active:not(.suggested-action):not(.destructive-action) > image {
-  box-shadow: inset 0 0 0 9999px alpha(black, 0.25);
+  box-shadow: inset 0 0 0 9999px alpha(black, 0);
 }
 
 windowcontrols > button.minimize:hover:not(.suggested-action):not(.destructive-action), windowcontrols > button.minimize:active:not(.suggested-action):not(.destructive-action), windowcontrols > button.maximize:hover:not(.suggested-action):not(.destructive-action), windowcontrols > button.maximize:active:not(.suggested-action):not(.destructive-action), windowcontrols > button.close:hover:not(.suggested-action):not(.destructive-action), windowcontrols > button.close:active:not(.suggested-action):not(.destructive-action) {
@@ -5818,7 +5818,7 @@ stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destruc
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms, background-color 0ms;
   background-color: alpha(white, 0.15);
   color: @fg;
-  box-shadow: 0 1px 3px alpha(black, 0.1);
+  box-shadow: 0 1px 3px alpha(black, 0);
 }
 
 stackswitcher button.text-button {
@@ -5836,11 +5836,11 @@ stackswitcher button.text-button.circular {
  * App Icons *
  *************/
 .lowres-icon {
-  -gtk-icon-shadow: 0 1px 2px alpha(black, 0.1);
+  -gtk-icon-shadow: 0 1px 2px alpha(black, 0);
 }
 
 .icon-dropshadow {
-  -gtk-icon-shadow: 0 1px 12px alpha(black, 0.05), 0 1px 6px alpha(black, 0.1);
+  -gtk-icon-shadow: 0 1px 12px alpha(black, 0), 0 1px 6px alpha(black, 0);
 }
 
 /*********
@@ -5926,7 +5926,7 @@ popover.entry-completion > contents {
   border-radius: 6px;
   background-color: @accent;
   color: alpha(@fg-selected, 0.87);
-  box-shadow: 0 3px 3px -2px alpha(black, 0.05), 0 2px 3px -1px alpha(black, 0.06), 0 1px 4px 0 alpha(black, 0.05);
+  box-shadow: 0 3px 3px -2px alpha(black, 0), 0 2px 3px -1px alpha(black, 0), 0 1px 4px 0 alpha(black, 0);
 }
 
 .nautilus-window .floating-bar button {
@@ -6132,11 +6132,11 @@ event.slanted-end, event.slanted-start:dir(rtl) {
 
 event:not(.timed).color-dark {
   color: white;
-  outline-color: alpha(black, 0.3);
+  outline-color: alpha(black, 0);
 }
 
 event.timed, event:not(.timed).color-light {
-  color: alpha(black, 0.75);
+  color: alpha(black, 0);
   outline-color: alpha(white, 0.5);
 }
 
@@ -6167,7 +6167,7 @@ button:checked:not(:backdrop) .calendar-color-image,
 .calendars-list .calendar-color-image:not(:backdrop):not(:disabled),
 .calendar-list .calendar-color-image:not(:backdrop):not(:disabled),
 .sources-button:not(:backdrop):not(:disabled) .calendar-color-image {
-  -gtk-icon-shadow: 0 1px alpha(black, 0.1);
+  -gtk-icon-shadow: 0 1px alpha(black, 0);
 }
 
 datechooser navigator {
@@ -6459,7 +6459,7 @@ menubutton stack > box {
   background-color: @accent;
   border-radius: 0;
   color: alpha(@fg-selected, 0.87);
-  text-shadow: 0 1px 0 alpha(black, 0.2);
+  text-shadow: 0 1px 0 alpha(black, 0);
 }
 
 screenshot-carousel box.frame {
@@ -6516,7 +6516,7 @@ screenshot-carousel button,
   min-width: 140px;
   font-weight: 900;
   font-size: larger;
-  box-shadow: 0 3px 3px -2px alpha(black, 0.05), 0 2px 3px -1px alpha(black, 0.06), 0 1px 4px 0 alpha(black, 0.05);
+  box-shadow: 0 3px 3px -2px alpha(black, 0), 0 2px 3px -1px alpha(black, 0), 0 1px 4px 0 alpha(black, 0);
 }
 
 .category-tile.card.category-tile-iconless {
@@ -6975,7 +6975,7 @@ scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .title:not(
 }
 
 statuspage.icon-dropshadow image.icon {
-  -gtk-icon-shadow: 0 1px 12px alpha(black, 0.05), 0 -1px alpha(black, 0.05), 1px 0 alpha(black, 0.1), 0 1px alpha(black, 0.3), -1px 0 alpha(black, 0.1);
+  -gtk-icon-shadow: 0 1px 12px alpha(black, 0), 0 -1px alpha(black, 0), 1px 0 alpha(black, 0), 0 1px alpha(black, 0), -1px 0 alpha(black, 0);
 }
 
 window.info scrollbar.vertical {
@@ -7510,7 +7510,7 @@ toast {
   border-radius: 9999px;
   border-spacing: 6px;
   padding: 6px;
-  box-shadow: 0 2px 3px -1px alpha(black, 0.1), 0 4px 6px 0 alpha(black, 0.12), 0 1px 10px 0 alpha(black, 0.1), inset 0 1px alpha(@fg, 0.1);
+  box-shadow: 0 2px 3px -1px alpha(black, 0), 0 4px 6px 0 alpha(black, 0), 0 1px 10px 0 alpha(black, 0), inset 0 1px alpha(@fg, 0.1);
   background-color: @bg;
   color: @fg;
   border: none;
@@ -8239,7 +8239,7 @@ themeselector checkbutton.theme-selector radio:checked, themeselector checkbutto
 panelthemeselector checkbutton.theme-selector radio:checked,
 panelthemeselector checkbutton.theme-selector radio:checked:hover,
 panelthemeselector checkbutton.theme-selector radio:checked:active {
-  box-shadow: 0 2px 3px -1px alpha(black, 0.08), 0 1px 2px 0 alpha(black, 0.1);
+  box-shadow: 0 2px 3px -1px alpha(black, 0), 0 1px 2px 0 alpha(black, 0);
 }
 
 themeswitcher {
@@ -8258,7 +8258,7 @@ themeswitcher .check {
 }
 
 themeswitcher .check, themeswitcher .check:hover, themeswitcher .check:active {
-  box-shadow: 0 2px 3px -1px alpha(black, 0.08), 0 1px 2px 0 alpha(black, 0.1);
+  box-shadow: 0 2px 3px -1px alpha(black, 0), 0 1px 2px 0 alpha(black, 0);
 }
 
 themeswitcher checkbutton {
@@ -8290,7 +8290,7 @@ themeswitcher checkbutton.system {
 }
 
 themeswitcher checkbutton.light {
-  color: alpha(black, 0.8);
+  color: alpha(black, 0);
   background-color: white;
 }
 
