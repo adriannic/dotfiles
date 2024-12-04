@@ -24,7 +24,6 @@ prep=(
 	qt6-multimedia-ffmpeg
 	qt6-wayland
 	rustup
-	tlp
 	udiskie
 	upower
 	wireplumber
@@ -113,7 +112,6 @@ packages=(
 	remmina
 	ripgrep
 	ripgrep-all
-	slimbookbattery
 	spotify
 	starship
 	steam-devices
@@ -224,9 +222,6 @@ rm -rf hypr-workspaces
 
 echo "Enabling bluetooth..."
 sudo systemctl enable --now bluetooth
-
-echo "Enabling tlp..."
-sudo systemctl enable --now tlp
 
 echo "Enabling firewalld..."
 sudo systemctl enable --now firewalld
