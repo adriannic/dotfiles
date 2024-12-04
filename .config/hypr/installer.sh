@@ -49,6 +49,7 @@ packages=(
 	bun-bin
 	candy-icons-git
 	cbatticon
+	discord-canary
 	dosfstools
 	eog
 	exfat-utils
@@ -129,7 +130,6 @@ packages=(
 	unrar
 	unzip
 	v4l2loopback-dkms
-	vesktop-bin
 	vim
 	walogram-git
 	wayvnc
