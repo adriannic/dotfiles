@@ -141,6 +141,7 @@ packages=(
 	xdg-desktop-portal-hyprland
 	xdg-user-dirs
 	xdg-utils
+	yarn
 	ydotool
 	yt-dlp
 	zathura
