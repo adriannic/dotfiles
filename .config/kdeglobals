@@ -4,8 +4,12 @@ update_info=filepicker.upd:filepicker-remove-old-previews-entry
 [General]
 TerminalApplication=kitty
 
+[Icons]
+Theme=candy-icons
+
 [KDE]
 ShowDeleteCommand=false
+widgetStyle=qt6ct-style
 
 [KFileDialog Settings]
 Allow Expansion=false

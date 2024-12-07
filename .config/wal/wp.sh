@@ -28,6 +28,8 @@ function wallpaper() {
 		for p in $procs; do
 			kill "$p"
 		done
+		pkill polkit-gnome
+		/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 		disown
 	) >/dev/null 2>&1
 }
