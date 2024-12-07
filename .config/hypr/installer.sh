@@ -4,7 +4,7 @@ prep=(
 	archlinux-xdg-menu
 	base-devel
 	cliphist
-	ffmpegthumbnailer
+	ffmpegthumbs
 	firewalld
 	frameworkintegration
 	gst-libav
@@ -13,6 +13,7 @@ prep=(
 	kdecoration
 	libvncserver
 	nwg-look
+	phonon-qt6-mpv
 	pipewire
 	pipewire-alsa
 	pipewire-audio
@@ -20,7 +21,7 @@ prep=(
 	qt5ct
 	qt5-svg
 	qt5-wayland
-	qt6ct
+	qt6ct-kde
 	qt6-multimedia-ffmpeg
 	qt6-wayland
 	rustup
@@ -50,11 +51,11 @@ packages=(
 	candy-icons-git
 	cbatticon
 	discord-canary
+	dolphin
 	dosfstools
 	eog
 	exfat-utils
 	fastfetch
-	ffmpegthumbs
 	firefox
 	fish
 	flatpak
@@ -80,10 +81,6 @@ packages=(
 	mpv
 	mpvpaper
 	mypy
-	nautilus
-	nautilus-admin-gtk4
-	nautilus-image-converter
-	nautilus-open-any-terminal
 	ncdu
 	neovim
 	nerd-fonts-inter
@@ -233,6 +230,9 @@ XDG_MENU_PREFIX=arch- kbuildsycoca6
 # Packages
 echo "Installing packages..."
 yay -S --needed --noconfirm --sudoloop "${packages[@]}"
+
+# Remove phonon-qt6-vlc
+yay -Rns --needed --noconfirm --sudoloop phonon-qt6-vlc
 
 # Autologin
 echo "Setting up autologin..."

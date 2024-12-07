@@ -8,6 +8,7 @@ UsePermissionsFormat=CombinedFormat
 [General]
 AutoExpandFolders=true
 BrowseThroughArchives=true
+RememberOpenedTabs=false
 Version=202
 ViewPropsTimestamp=2023,8,30,19,13,48.621
 

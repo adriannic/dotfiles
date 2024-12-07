@@ -112,4 +112,4 @@ x-scheme-handler/webcals=userapp-Thunderbird-7LVXD2.desktop
 x-scheme-handler/ror2mm=r2modman.desktop
 text/csv=libreoffice-calc.desktop
 x-scheme-handler/tonsite=org.telegram.desktop.desktop
-inode/directory=org.gnome.Nautilus.desktop
+inode/directory=org.kde.dolphin.desktop
