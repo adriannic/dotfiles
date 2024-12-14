@@ -4,6 +4,8 @@ prep=(
 	archlinux-xdg-menu
 	base-devel
 	cliphist
+	cmake
+	cpio
 	ffmpegthumbs
 	firewalld
 	frameworkintegration
@@ -234,6 +236,11 @@ yay -S --needed --noconfirm --sudoloop "${packages[@]}"
 
 # Remove phonon-qt6-vlc
 yay -Rns --needed --noconfirm --sudoloop phonon-qt6-vlc
+
+# Hyprland plugins
+hyprpm update
+hyprpm add https://github.com/alexhulbert/Hyprchroma
+hyprpm enable hyprchroma
 
 # Autologin
 echo "Setting up autologin..."
