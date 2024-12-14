@@ -127,6 +127,7 @@ packages=(
 	unrar
 	unzip
 	v4l2loopback-dkms
+	vencord-hook
 	vim
 	walogram-git
 	wayvnc
