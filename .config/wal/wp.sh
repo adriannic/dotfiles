@@ -4,7 +4,7 @@ function wallpaper() {
 	mkdir -p ~/.cache/wallpaper/
 	tmp="$(mktemp).png"
 
-	if echo "$1" | grep 'youtube|twitch'; then
+	if echo "$1" | grep -E 'youtube|twitch' >/dev/null; then
 		echo -n "$1" >~/.cache/wallpaper/selected
 		ffmpeg -i "$(yt-dlp -g "$1" | head -n1)" -vf "select=eq(n\,180)" -vframes 1 -q:v 3 "$tmp" >/dev/null 2>&1
 	else
