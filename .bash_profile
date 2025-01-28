@@ -11,7 +11,6 @@ export XDG_SESSION_TYPE=wayland
 export XDG_STATE_HOME=$HOME/.local/state
 export XDG_MENU_PREFIX=arch-
 
-export NVD_BACKEND="direct"
 export CLUTTER_BACKEND=wayland
 export EDITOR="nvim"
 export GDK_BACKEND=wayland,x11
