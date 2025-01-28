@@ -23,6 +23,7 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export XCURSOR_PATH=/usr/share/icons/:${XDG_DATA_HOME}/icons/:${HOME}/.icons/:${HOME}/.nix-profile/share/icons/
 export XCURSOR_SIZE=24
 
+export GOPATH="$XDG_DATA_HOME"/go
 export ANDROID_HOME="$XDG_DATA_HOME"/android
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
