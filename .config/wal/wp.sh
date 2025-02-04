@@ -19,8 +19,7 @@ function wallpaper() {
 		pywalfox update &
 		walogram &
 		bash ~/.config/hypr/scripts/pywal.sh &
-		swaync-client -rs &
-		notify-send -i "$tmp" "Fondo de pantalla cambiado" "Fondo de pantalla y esquema de colores cambiado a $(basename "$1")"
+		# swaync-client -rs &
 		ags quit && ags run &
 		pkill swayosd-server
 		swayosd-server &
@@ -28,6 +27,7 @@ function wallpaper() {
 		for p in $procs; do
 			kill "$p"
 		done
+		notify-send -i "$tmp" "Fondo de pantalla cambiado" "Fondo de pantalla y esquema de colores cambiado a $(basename "$1")"
 		pkill polkit-gnome
 		/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 		disown

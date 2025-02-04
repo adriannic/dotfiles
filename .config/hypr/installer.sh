@@ -117,7 +117,6 @@ packages=(
 	steam-devices
 	steamtinkerlaunch
 	swaylock-effects
-	swaync-git
 	swayosd-git
 	telegram-desktop
 	thefuck
