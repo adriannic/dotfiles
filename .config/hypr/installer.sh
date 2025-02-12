@@ -20,12 +20,12 @@ prep=(
 	pipewire-alsa
 	pipewire-audio
 	pipewire-pulse
-	qt5ct
 	qt5-svg
 	qt5-wayland
-	qt6ct-kde
+	qt5ct-kde
 	qt6-multimedia-ffmpeg
 	qt6-wayland
+	qt6ct-kde
 	rustup
 	udiskie
 	upower
@@ -52,6 +52,7 @@ packages=(
 	bun-bin
 	candy-icons-git
 	cbatticon
+	darkly
 	discord-canary
 	dolphin
 	dosfstools
@@ -70,15 +71,13 @@ packages=(
 	jre-openjdk
 	kitty
 	less
-	lightly-kf5-git
-	lightly-kf6-git
 	lsd
 	luarocks
 	lutris
 	man-db
+	man-pages
 	mangal-bin
 	mangohud
-	man-pages
 	megacmd
 	mpv
 	mpvpaper
@@ -86,8 +85,8 @@ packages=(
 	ncdu
 	neovim
 	nerd-fonts-inter
-	networkmanager
 	network-manager-applet
+	networkmanager
 	networkmanager-dmenu-git
 	nm-connection-editor
 	noise-suppression-for-voice
