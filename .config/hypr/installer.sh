@@ -56,7 +56,6 @@ packages=(
 	discord-canary
 	dolphin
 	dosfstools
-	eog
 	exfat-utils
 	fastfetch
 	firefox
@@ -72,6 +71,7 @@ packages=(
 	kitty
 	less
 	lib32-gamemode
+	loupe
 	lsd
 	luarocks
 	lutris
