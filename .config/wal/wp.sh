@@ -1,5 +1,12 @@
 #! /usr/bin/env bash
 
+function fix_qt_contrast() {
+	BACKGROUND_COLOR=$(head -n1 ~/.cache/wal/colors)
+	BACKGROUND_COLOR=${BACKGROUND_COLOR:1}
+	COLOR=$(echo "0x$BACKGROUND_COLOR 0x101010" | awk --non-decimal-data '{printf("%06X\n", $1 + $2)}')
+	sed -i "23s/""$BACKGROUND_COLOR""/""$COLOR""/g" ~/.cache/wal/Pywal-ADR.colors
+}
+
 function wallpaper() {
 	mkdir -p ~/.cache/wallpaper/
 	tmp="$(mktemp).png"
@@ -16,6 +23,7 @@ function wallpaper() {
 		procs="$(pgrep mpvpaper)"
 		mpvpaper -o "volume=100 loop" '*' "$1" --fork
 		wal -n -i "$tmp"
+		fix_qt_contrast &
 		pywalfox update &
 		walogram &
 		bash ~/.config/hypr/scripts/pywal.sh &
