@@ -3,7 +3,7 @@
 prep=(
 	archlinux-xdg-menu
 	base-devel
-	cliphist
+	clipse
 	cmake
 	cpio
 	ffmpegthumbs
@@ -20,12 +20,12 @@ prep=(
 	pipewire-alsa
 	pipewire-audio
 	pipewire-pulse
+	qt5ct-kde
 	qt5-svg
 	qt5-wayland
-	qt5ct-kde
+	qt6ct-kde
 	qt6-multimedia-ffmpeg
 	qt6-wayland
-	qt6ct-kde
 	rustup
 	udiskie
 	upower
@@ -57,6 +57,7 @@ packages=(
 	dolphin
 	dosfstools
 	exfat-utils
+
 	fastfetch
 	firefox
 	fish

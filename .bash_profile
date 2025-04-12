@@ -6,10 +6,11 @@ export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CURRENT_DESKTOP=Hyprland
 export XDG_DATA_HOME=$HOME/.local/share
+export XDG_MENU_PREFIX=arch-
+export XDG_PICTURES_DIR=$HOME/Imágenes/Capturas
 export XDG_SESSION_DESKTOP=Hyprland
 export XDG_SESSION_TYPE=wayland
 export XDG_STATE_HOME=$HOME/.local/state
-export XDG_MENU_PREFIX=arch-
 
 export CLUTTER_BACKEND=wayland
 export EDITOR="nvim"
@@ -43,6 +44,9 @@ export WINEPREFIX="$XDG_DATA_HOME"/wine
 export ZDOTDIR="$HOME"/.config/zsh
 # shellcheck disable=2155
 export MAKEFLAGS="-j $(nproc)"
+
+export ROCM_PATH=/opt/rocm/
+export HSA_OVERRIDE_GFX_VERSION=10.3.0
 
 [ "$(tty)" = "/dev/tty1" ] && exec Hyprland
 
