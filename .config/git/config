@@ -11,3 +11,7 @@
 	defaultBranch = main
 [core]
 	pager = bat
+[submodule]
+	recurse = true
+[push]
+	recurseSubmodules = on-demand
