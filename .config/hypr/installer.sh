@@ -9,6 +9,7 @@ prep=(
 	ffmpegthumbs
 	firewalld
 	frameworkintegration
+	go
 	gst-libav
 	gst-plugins-ugly
 	gtk3
