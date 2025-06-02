@@ -58,13 +58,13 @@ packages=(
 	dolphin
 	dosfstools
 	exfat-utils
-
 	fastfetch
 	firefox
 	fish
 	flatpak
 	gamemode
 	gamescope
+	gdu
 	github-cli
 	glow
 	hyprpicker
@@ -85,7 +85,6 @@ packages=(
 	mpv
 	mpvpaper
 	mypy
-	ncdu
 	neovim
 	nerd-fonts-inter
 	network-manager-applet
