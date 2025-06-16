@@ -59,7 +59,7 @@ packages=(
 	dosfstools
 	exfat-utils
 	fastfetch
-	firefox
+	brave-bin
 	fish
 	flatpak
 	gamemode
