@@ -7,9 +7,37 @@ function fix_qt_contrast() {
 	sed -i "23s/""$BACKGROUND_COLOR""/""$COLOR""/g" ~/.cache/wal/Pywal-ADR.colors
 }
 
+function is_video() {
+	if [[ "$1" =~ ^https?:// ]]; then
+		return 0
+	fi
+
+	if [ -f "$1" ]; then
+		if [[ "$1" =~ \.(mp4|mov|avi|mkv|flv|wmv|webm|mpg|mpeg|3gp)$ ]]; then
+			return 0
+		fi
+
+		if file -b --mime-type "$1" | grep -q '^video/'; then
+			return 0
+		fi
+	fi
+
+	return 1
+}
+
 function wallpaper() {
 	mkdir -p ~/.cache/wallpaper/
 	tmp="$(mktemp).png"
+
+	mpvpaper_present=$(
+		mpvpaper --help >/dev/null 2>&1
+		echo $?
+	)
+
+	if is_video "$1" && [[ $(mpvpaper --help >/dev/null 2>&1; echo $?) != 0 ]]; then
+		notify-send "No se pudo cambiar el fondo de pantalla" "No está presente mpvpaper"
+		exit 1
+	fi
 
 	if echo "$1" | grep -E 'youtube|twitch' >/dev/null; then
 		echo -n "$1" >~/.cache/wallpaper/selected
@@ -21,7 +49,13 @@ function wallpaper() {
 
 	(
 		procs="$(pgrep mpvpaper)"
-		mpvpaper -o "volume=100 loop" '*' "$1" --fork
+		if is_video "$1"; then
+			swww kill
+			mpvpaper -o "volume=100 loop" '*' "$1" --fork
+		else
+			swww-daemon & disown
+			swww img --transition-type any --transition-fps 60 --transition-duration 1 "$1" &
+		fi
 		wal -n -i "$tmp"
 		fix_qt_contrast &
 		pywalfox update &

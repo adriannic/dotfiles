@@ -48,6 +48,7 @@ packages=(
 	bat
 	bear
 	blueberry
+	brave-bin
 	brightnessctl
 	btop
 	bun-bin
@@ -59,7 +60,6 @@ packages=(
 	dosfstools
 	exfat-utils
 	fastfetch
-	brave-bin
 	fish
 	flatpak
 	gamemode
@@ -119,6 +119,7 @@ packages=(
 	steamtinkerlaunch
 	swaylock-effects
 	swayosd-git
+	swww
 	telegram-desktop
 	thefuck
 	thunderbird
