@@ -121,7 +121,6 @@ packages=(
 	swayosd-git
 	swww
 	telegram-desktop
-	thefuck
 	thunderbird
 	time
 	tldr
