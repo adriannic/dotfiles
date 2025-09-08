@@ -21,12 +21,12 @@ prep=(
 	pipewire-alsa
 	pipewire-audio
 	pipewire-pulse
-	qt5ct-kde
 	qt5-svg
 	qt5-wayland
-	qt6ct-kde
+	qt5ct-kde
 	qt6-multimedia-ffmpeg
 	qt6-wayland
+	qt6ct-kde
 	rustup
 	udiskie
 	upower
@@ -42,7 +42,6 @@ nvidia=(
 )
 
 packages=(
-	ani-cli
 	ark
 	aylurs-gtk-shell
 	bat
@@ -54,14 +53,17 @@ packages=(
 	bun-bin
 	candy-icons-git
 	cbatticon
+	curl
 	darkly
-	discord-canary
+	dialog
+	discord
 	dolphin
 	dosfstools
 	exfat-utils
 	fastfetch
 	fish
 	flatpak
+	fzf
 	gamemode
 	gamescope
 	gdu
@@ -69,10 +71,12 @@ packages=(
 	glow
 	hyprpicker
 	hyprshot
+	iproute2
 	jre-openjdk
 	kitty
 	less
 	lib32-gamemode
+	libnotify
 	loupe
 	lsd
 	luarocks
@@ -98,6 +102,7 @@ packages=(
 	noto-fonts-extra
 	npm
 	obs-studio
+	openbsd-netcat
 	partitionmanager
 	pavucontrol
 	playerctl
@@ -107,13 +112,11 @@ packages=(
 	pywal-git
 	qalculate-gtk
 	qbittorrent
-	ranger
 	rclone
 	reflector
 	remmina
 	ripgrep
 	ripgrep-all
-	spotify
 	starship
 	steam-devices
 	steamtinkerlaunch
@@ -130,7 +133,6 @@ packages=(
 	unzip
 	v4l2loopback-dkms
 	vencord-hook
-	vim
 	walogram-git
 	wayvnc
 	wev
@@ -143,6 +145,7 @@ packages=(
 	xdg-utils
 	yarn
 	ydotool
+	youtube-music
 	yt-dlp
 	zathura
 	zathura-pdf-mupdf
@@ -175,24 +178,7 @@ echo "Checking if yay is installed..."
 yay --noconfirm
 
 # Check for nvidia
-echo "Using nvidia?"
-select yn in "Yes" "No"; do
-	case $yn in
-	Yes)
-		ISNVIDIA=true
-		break
-		;;
-	No)
-		ISNVIDIA=false
-		break
-		;;
-	*)
-		echo "Invalid option"
-		;;
-	esac
-done
-
-if [[ $ISNVIDIA = true ]]; then
+if lspci -k -d ::03xx | grep NV >/dev/null 2>&1; then
 	echo "Using nvidia. Installing nvidia-specific packages..."
 	yay -S --needed --noconfirm --sudoloop "${nvidia[@]}"
 	sudo sed -i 's/MODULES=()/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
@@ -238,7 +224,7 @@ yay -S --needed --noconfirm --sudoloop "${packages[@]}"
 yay -Rns --needed --noconfirm --sudoloop phonon-qt6-vlc
 
 # Hyprland plugins
-hyprpm update
+# hyprpm update
 # hyprpm add https://github.com/alexhulbert/Hyprchroma
 # hyprpm enable hyprchroma
 
@@ -252,8 +238,5 @@ ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin adriannic %I $TE
 # Hack to be able to open term apps with wofi
 echo "Creating symlink to kitty from gnome-terminal..."
 sudo ln -s /usr/bin/kitty /usr/bin/gnome-terminal
-
-# Crack spotify
-bash -c 'bash <(curl -sSL https://spotx-official.github.io/run.sh)'
 
 echo "Installation complete!"
