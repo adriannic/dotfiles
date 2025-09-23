@@ -69,6 +69,7 @@ packages=(
 	gdu
 	github-cli
 	glow
+	hyprlock
 	hyprpicker
 	hyprshot
 	iproute2
@@ -108,7 +109,6 @@ packages=(
 	playerctl
 	polkit-gnome
 	protonup-qt-bin
-	python-pywalfox
 	pywal-git
 	qalculate-gtk
 	qbittorrent
@@ -120,7 +120,6 @@ packages=(
 	starship
 	steam-devices
 	steamtinkerlaunch
-	swaylock-effects
 	swayosd-git
 	swww
 	telegram-desktop

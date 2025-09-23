@@ -58,9 +58,8 @@ function wallpaper() {
 		fi
 		wal -n -i "$tmp"
 		fix_qt_contrast &
-		pywalfox update &
+		# pywalfox update &
 		walogram &
-		bash ~/.config/hypr/scripts/pywal.sh &
 		# swaync-client -rs &
 		ags quit && ags run &
 		pkill swayosd-server
