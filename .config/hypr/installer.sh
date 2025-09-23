@@ -54,7 +54,7 @@ packages=(
 	candy-icons-git
 	cbatticon
 	curl
-	darkly
+	darkly-bin
 	dialog
 	discord
 	dolphin
@@ -118,7 +118,7 @@ packages=(
 	ripgrep
 	ripgrep-all
 	starship
-	steam-devices
+	steam
 	steamtinkerlaunch
 	swayosd-git
 	swww
@@ -220,7 +220,7 @@ echo "Installing packages..."
 yay -S --needed --noconfirm --sudoloop "${packages[@]}"
 
 # Remove phonon-qt6-vlc
-yay -Rns --needed --noconfirm --sudoloop phonon-qt6-vlc
+yay -Rns --noconfirm --sudoloop phonon-qt6-vlc
 
 # Hyprland plugins
 # hyprpm update
