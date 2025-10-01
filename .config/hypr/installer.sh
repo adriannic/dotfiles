@@ -28,6 +28,7 @@ prep=(
 	qt6-wayland
 	qt6ct-kde
 	rustup
+	tbb
 	udiskie
 	upower
 	wireplumber
@@ -66,6 +67,7 @@ packages=(
 	fzf
 	gamemode
 	gamescope
+	gdb
 	gdu
 	github-cli
 	glow
