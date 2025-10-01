@@ -106,6 +106,7 @@ packages=(
 	npm
 	obs-studio
 	openbsd-netcat
+	pacman-contrib
 	partitionmanager
 	pavucontrol
 	playerctl
