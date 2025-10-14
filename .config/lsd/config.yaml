@@ -90,7 +90,7 @@ recursion:
 # == Size ==
 # Specifies the format of the size column.
 # Possible values: default, short, bytes
-size: default
+size: short
 
 # == Permission ==
 # Specify the format of the permission column
@@ -123,7 +123,7 @@ total-size: false
 # == Hyperlink ==
 # Attach hyperlink to filenames
 # Possible values: always, auto, never
-hyperlink: never
+hyperlink: auto
 
 # == Symlink arrow ==
 # Specifies how the symlink arrow display, chars in both ascii and utf8
