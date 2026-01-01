@@ -3,7 +3,6 @@
 prep=(
 	archlinux-xdg-menu
 	base-devel
-	clipse
 	cmake
 	cpio
 	ffmpegthumbs
@@ -54,6 +53,7 @@ packages=(
 	bun-bin
 	candy-icons-git
 	cbatticon
+	cliphist
 	curl
 	darkly-bin
 	dialog
@@ -71,6 +71,7 @@ packages=(
 	gdu
 	github-cli
 	glow
+	hypridle
 	hyprlock
 	hyprpicker
 	hyprshot
@@ -140,6 +141,7 @@ packages=(
 	wev
 	whatsdesk-bin
 	wine
+	wl-clip-persist
 	wofi
 	xdg-desktop-portal
 	xdg-desktop-portal-hyprland
