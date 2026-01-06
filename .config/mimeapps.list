@@ -119,10 +119,11 @@ x-scheme-handler/mailto=userapp-Thunderbird-B1NWD2.desktop
 x-scheme-handler/mid=userapp-Thunderbird-B1NWD2.desktop
 x-scheme-handler/news=userapp-Thunderbird-4CGXD2.desktop
 x-scheme-handler/nntp=userapp-Thunderbird-4CGXD2.desktop
-x-scheme-handler/nxm=vortex-steamtinkerlaunch-dl.desktop
-x-scheme-handler/nxm-protocol=vortex-steamtinkerlaunch-dl.desktop
 x-scheme-handler/ror2mm=r2modman.desktop
 x-scheme-handler/snews=userapp-Thunderbird-4CGXD2.desktop
 x-scheme-handler/tonsite=org.telegram.desktop.desktop
 x-scheme-handler/webcal=userapp-Thunderbird-7LVXD2.desktop
 x-scheme-handler/webcals=userapp-Thunderbird-7LVXD2.desktop
+x-scheme-handler/nxm=Vortex Mod Manager.desktop
+x-scheme-handler/nxm-protocol=Vortex Mod Manager.desktop
+
