@@ -166,6 +166,12 @@ git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" checkout -f
 git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" submodule update --init --recursive
 git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" submodule foreach git checkout main
 
+# Clone nvim
+git clone https://github.com/adriannic/nvim-config "$HOME"/.config/nvim
+
+# Clone ags
+git clone https://github.com/adriannic/ags-dotfiles "$HOME"/.config/ags
+
 # Installing yay
 echo "Checking if yay is installed..."
 [[ ! $(yay -V) ]] && (
