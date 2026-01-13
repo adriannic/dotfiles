@@ -69,6 +69,7 @@ packages=(
 	gamescope
 	gdb
 	gdu
+	ghostscript
 	github-cli
 	glow
 	hypridle
@@ -90,6 +91,7 @@ packages=(
 	mangal-bin
 	mangohud
 	megacmd
+	mermaid-cli
 	mpv
 	mpvpaper
 	mypy
@@ -126,10 +128,12 @@ packages=(
 	steamtinkerlaunch
 	swayosd-git
 	swww
+	tectonic
 	telegram-desktop
 	thunderbird
 	time
 	tldr
+	tree-sitter-cli
 	ttf-firacode-nerd
 	ttf-ms-win11-auto
 	unrar
