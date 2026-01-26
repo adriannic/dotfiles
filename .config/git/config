@@ -10,8 +10,16 @@
 [init]
 	defaultBranch = main
 [core]
-	pager = bat
+	pager = delta
 [submodule]
 	recurse = true
 [push]
 	recurseSubmodules = on-demand
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	side-by-side = true
+	dark = true
+[merge]
+	conflictStyle = zdiff3

@@ -17,6 +17,7 @@ export EDITOR="nvim"
 export GDK_BACKEND=wayland,x11
 export HYPRSHOT_DIR=~/Imágenes/Capturas
 export PAGER="bat"
+export MANPAGER="nvim +Man!"
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_QPA_PLATFORM="wayland;xcb"
 export QT_QPA_PLATFORMTHEME=qt6ct

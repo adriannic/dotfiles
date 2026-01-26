@@ -70,6 +70,7 @@ packages=(
 	gdb
 	gdu
 	ghostscript
+	git-delta
 	github-cli
 	glow
 	hypridle
