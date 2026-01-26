@@ -119,6 +119,7 @@ packages=(
 	pywal-git
 	qalculate-gtk
 	qbittorrent
+	quickshell
 	rclone
 	reflector
 	remmina
@@ -137,6 +138,7 @@ packages=(
 	tree-sitter-cli
 	ttf-firacode-nerd
 	ttf-ms-win11-auto
+	unixodbc
 	unrar
 	unzip
 	v4l2loopback-dkms
@@ -174,8 +176,8 @@ git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" submodule foreach git check
 # Clone nvim
 git clone https://github.com/adriannic/nvim-config "$HOME"/.config/nvim
 
-# Clone ags
-git clone https://github.com/adriannic/ags-dotfiles "$HOME"/.config/ags
+# Clone quickshell
+git clone https://github.com/adriannic/quickshell-dotfiles "$HOME"/.config/quickshell
 
 # Installing yay
 echo "Checking if yay is installed..."

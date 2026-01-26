@@ -53,7 +53,7 @@ function wallpaper() {
 			swww kill
 			mpvpaper -o "volume=100 loop" '*' "$1" --fork
 		else
-			swww-daemon & disown
+			pidof swww-daemon || swww-daemon & disown
 			swww img --transition-type any --transition-fps 60 --transition-duration 1 "$1" &
 		fi
 		wal -n -i "$tmp"
@@ -61,7 +61,7 @@ function wallpaper() {
 		# pywalfox update &
 		walogram &
 		# swaync-client -rs &
-		ags quit && ags run &
+		# ags quit; ags run ~/Programacion/ags/app.tsx &
 		pkill swayosd-server
 		swayosd-server &
 		sleep 0.5
