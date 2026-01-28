@@ -27,6 +27,7 @@ prep=(
 	qt6-wayland
 	qt6ct-kde
 	rustup
+	socat
 	tbb
 	udiskie
 	upower
