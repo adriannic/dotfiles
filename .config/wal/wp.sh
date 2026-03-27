@@ -50,11 +50,11 @@ function wallpaper() {
 	(
 		procs="$(pgrep mpvpaper)"
 		if is_video "$1"; then
-			swww kill
+			awww kill
 			mpvpaper -o "volume=100 loop" '*' "$1" --fork
 		else
-			pidof swww-daemon || swww-daemon & disown
-			swww img --transition-type any --transition-fps 60 --transition-duration 1 "$1" &
+			pidof awww-daemon || awww-daemon & disown
+			awww img --transition-type any --transition-fps 60 --transition-duration 1 "$1" &
 		fi
 		wal -n -i "$tmp"
 		fix_qt_contrast &
