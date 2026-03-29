@@ -12,6 +12,7 @@ prep=(
 	gst-libav
 	gst-plugins-ugly
 	gtk3
+	hyprqt6engine
 	kdecoration
 	libvncserver
 	nwg-look
@@ -22,10 +23,8 @@ prep=(
 	pipewire-pulse
 	qt5-svg
 	qt5-wayland
-	qt5ct-kde
 	qt6-multimedia-ffmpeg
 	qt6-wayland
-	qt6ct-kde
 	rustup
 	socat
 	tbb
