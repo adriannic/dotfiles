@@ -43,7 +43,6 @@ nvidia=(
 
 packages=(
 	ark
-	aylurs-gtk-shell
 	bat
 	bear
 	blueberry
