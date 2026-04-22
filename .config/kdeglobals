@@ -9,7 +9,6 @@ Theme=candy-icons
 
 [KDE]
 ShowDeleteCommand=false
-widgetStyle=qt6ct-style
 
 [KFileDialog Settings]
 Allow Expansion=false
