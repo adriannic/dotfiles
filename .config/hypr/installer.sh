@@ -14,6 +14,8 @@ prep=(
 	gtk3
 	hyprqt6engine
 	kdecoration
+	layer-shell-qt
+	layer-shell-qt5
 	libvncserver
 	nwg-look
 	phonon-qt6-mpv
@@ -21,6 +23,7 @@ prep=(
 	pipewire-alsa
 	pipewire-audio
 	pipewire-pulse
+	qt5-quickcontrols2
 	qt5-svg
 	qt5-wayland
 	qt6-multimedia-ffmpeg
@@ -124,6 +127,8 @@ packages=(
 	remmina
 	ripgrep
 	ripgrep-all
+	sddm
+	sddm-minesddm-theme
 	starship
 	steam
 	steamtinkerlaunch
@@ -215,14 +220,6 @@ rustup toolchain install stable
 rustup toolchain install nightly
 rustup default stable
 
-echo "Installing hypr-workspaces..."
-git clone https://github.com/adriannic/hypr-workspaces
-(
-	cd hypr-workspaces || exit
-	makepkg -si --noconfirm --needed
-)
-rm -rf hypr-workspaces
-
 echo "Enabling bluetooth..."
 sudo systemctl enable --now bluetooth
 
@@ -250,6 +247,12 @@ sudo mkdir -p /etc/systemd/system/getty@tty1.service.d/
 echo "[Service]
 ExecStart=
 ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin adriannic %I $TERM" | sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf >/dev/null
+
+# Setup SDDM
+echo "Setting up SDDM..."
+echo "[Theme]
+Current=minesddm" | sudo tee /etc/sddm.conf >/dev/null
+sudo systemctl enable sddm
 
 # Hack to be able to open term apps with wofi
 echo "Creating symlink to kitty from gnome-terminal..."

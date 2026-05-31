@@ -15,13 +15,13 @@ hl.bind(mainMod .. " + T", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("killall wofi || cliphist list | wofi -S dmenu | cliphist decode | wl-copy"))
 hl.bind(mainMod .. " + return", hl.dsp.exec_cmd("kitty"))
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd("killall wofi || wofi"))
-hl.bind(" + Print", hl.dsp.exec_cmd("hyprshow -m region"))
-hl.bind(" + F11", hl.dsp.window.fullscreen())
+hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region"))
+hl.bind("F11", hl.dsp.window.fullscreen())
 hl.bind(
 	" + CTRL + ALT + A",
 	hl.dsp.exec_cmd("pkill -f ~/.config/hypr/scripts/autoclicker.sh || bash ~/.config/hypr/scripts/autoclicker.sh")
 )
-hl.bind(" + SHIFT + Print", hl.dsp.exec_cmd("hyprshow -m output"))
+hl.bind("SHIFT + Print", hl.dsp.exec_cmd("hyprshot -m output"))
 hl.bind(
 	"XF86AudioLowerVolume",
 	hl.dsp.exec_cmd("swayosd-client --output-volume lower"),
