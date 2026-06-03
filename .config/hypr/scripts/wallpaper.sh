@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 if ls ~/.cache/wallpaper/selected; then
-  bash ~/.config/wal/wp.sh "$(cat ~/.cache/wallpaper/selected)"
+  bash ~/.config/wal/wp.sh "$(cat ~/.cache/wallpaper/selected)" true
 else
-  bash ~/.config/wal/random-bg.sh
+  bash ~/.config/wal/random-bg.sh true
 fi

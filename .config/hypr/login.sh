@@ -6,5 +6,5 @@ for i in $MONITORS; do
 done
 
 for i in $MONITORS; do
-  (sleep 5 && echo 'cycle pause' | socat - "/tmp/mpvsocket-$i") &
+  (sleep 1 && echo 'cycle pause' | socat - "/tmp/mpvsocket-$i") &
 done

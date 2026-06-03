@@ -26,6 +26,12 @@ function is_video() {
 }
 
 function wallpaper() {
+	if [[ "$2" = "true" ]]; then
+		SILENT=true
+	else
+		SILENT=false
+	fi
+
 	mkdir -p ~/.cache/wallpaper/
 	tmp="$(mktemp).png"
 
@@ -68,11 +74,11 @@ function wallpaper() {
 		for p in $procs; do
 			kill "$p"
 		done
-		notify-send -i "$tmp" "Fondo de pantalla cambiado" "Fondo de pantalla y esquema de colores cambiado a $(basename "$1")"
+		[[ "$SILENT" != "true" ]] && notify-send -i "$tmp" "Fondo de pantalla cambiado" "Fondo de pantalla y esquema de colores cambiado a $(basename "$1")"
 		pkill polkit-gnome
 		/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 		disown
 	) >/dev/null 2>&1
 }
 
-wallpaper "$1"
+wallpaper "$1" "$2"

@@ -38,3 +38,8 @@ hl.animation({
 	bezier = "easeInOutQuart",
 	style = "slide",
 })
+
+hl.animation({
+	leaf = "monitorAdded",
+	enabled = false,
+})

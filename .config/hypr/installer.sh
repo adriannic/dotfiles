@@ -127,7 +127,8 @@ packages=(
 	remmina
 	ripgrep
 	ripgrep-all
-	sddm
+	sddm-git
+	sddm-hyprland
 	sddm-minesddm-theme
 	starship
 	steam
