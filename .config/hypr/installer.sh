@@ -161,7 +161,7 @@ packages=(
 	xdg-utils
 	yarn
 	ydotool
-	youtube-music
+	pear-desktop
 	yt-dlp
 	zathura
 	zathura-pdf-mupdf
