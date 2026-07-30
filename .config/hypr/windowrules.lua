@@ -21,7 +21,7 @@ hl.window_rule({ match = { class = "^(firefox|brave-browser)$" }, workspace = "4
 hl.window_rule({ match = { class = "^(org.telegram.desktop)$" }, workspace = "5" })
 hl.window_rule({ match = { class = "^(discord|vesktop)$" }, workspace = "6" })
 hl.window_rule({ match = { class = "^(whatsdesk)$" }, workspace = "7" })
-hl.window_rule({ match = { class = "^(Spotify|com.github.th_ch.youtube_music)$" }, workspace = "8" })
+hl.window_rule({ match = { class = "^(Spotify|com.github.th-ch.youtube-music)$" }, workspace = "8" })
 hl.window_rule({ match = { class = "^(com.obsproject.Studio)$" }, workspace = "9" })
 
 -- suppress maximize events
