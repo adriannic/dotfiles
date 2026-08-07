@@ -52,7 +52,6 @@ packages=(
 	brave-bin
 	brightnessctl
 	btop
-	bun-bin
 	candy-icons-git
 	cbatticon
 	cliphist
@@ -93,7 +92,7 @@ packages=(
 	man-pages
 	mangal-bin
 	mangohud
-	megacmd
+	megacmd-bin
 	mermaid-cli
 	mpv
 	mpvpaper
@@ -115,9 +114,11 @@ packages=(
 	pacman-contrib
 	partitionmanager
 	pavucontrol
+	pear-desktop
 	playerctl
 	polkit-gnome
-	protonup-qt-bin
+	protonplus
+	protontricks
 	pywal-git
 	qalculate-gtk
 	qbittorrent
@@ -128,7 +129,6 @@ packages=(
 	ripgrep
 	ripgrep-all
 	sddm-git
-	sddm-hyprland
 	sddm-minesddm-theme
 	starship
 	steam
@@ -161,7 +161,6 @@ packages=(
 	xdg-utils
 	yarn
 	ydotool
-	pear-desktop
 	yt-dlp
 	zathura
 	zathura-pdf-mupdf
@@ -236,6 +235,18 @@ yay -S --needed --noconfirm --sudoloop "${packages[@]}"
 
 # Remove phonon-qt6-vlc
 yay -Rns --noconfirm --sudoloop phonon-qt6-vlc
+
+# Install sddm-hyprland (aur package is broken)
+git clone https://aur.archlinux.org/sddm-hyprland.git
+(
+	cd sddm-hyprland || return
+	sed PKGBUILD --in-place -e 's/\/hyprland.conf/\/hyprland.lua/g' -e 's/\/hyprprefs.conf/\/hyprprefs.lua/g'
+	makepkg -si --noconfirm --needed
+)
+rm -rf sddm-hyprland
+
+# yay cleanup
+yay -Yc
 
 # Hyprland plugins
 # hyprpm update
