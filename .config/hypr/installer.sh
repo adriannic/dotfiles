@@ -49,7 +49,7 @@ packages=(
 	bat
 	bear
 	blueberry
-	brave-bin
+	brave-origin-bin
 	brightnessctl
 	btop
 	candy-icons-git
@@ -132,7 +132,6 @@ packages=(
 	sddm-minesddm-theme
 	starship
 	steam
-	steamtinkerlaunch
 	swayosd-git
 	swww
 	tectonic
@@ -147,7 +146,6 @@ packages=(
 	unrar
 	unzip
 	v4l2loopback-dkms
-	vencord-hook
 	walogram-git
 	wayvnc
 	wev
