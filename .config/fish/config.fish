@@ -5,20 +5,19 @@ if status is-interactive
     ulimit -n 4096
 
     # Aliases
-    alias ls="lsd"
+    alias bye="shutdown now"
+    alias cya="reboot"
+    alias diff="diff --color=auto"
+    alias dot="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+    alias grep="grep --color=auto"
     alias ip="ip -color=auto"
     alias l="ls -la"
     alias la="ls -a"
     alias ll="ls -l"
-    alias diff="diff --color=auto"
-    alias grep="grep --color=auto"
+    alias ls="lsd"
     alias myip="curl http://ipecho.net/plain; echo"
-    alias space="du -ahd1 2> /dev/null | sort -h"
-    alias bye="shutdown now"
-    alias cya="reboot"
     alias open="xdg-open"
-    alias dot="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-    alias rdp="WAYLAND_DISPLAY=wayland-1 wayvnc & remmina vnc://localhost"
+    alias space="du -ahd1 2> /dev/null | sort -h"
 
     ## Desktop specific aliases
     alias towindows="systemctl reboot --boot-loader-entry=auto-windows"

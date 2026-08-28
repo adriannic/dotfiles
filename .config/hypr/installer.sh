@@ -1,39 +1,58 @@
 #! /bin/bash
 
+export MAKEFLAGS="-j $(nproc)"
+
 prep=(
 	archlinux-xdg-menu
+	base
 	base-devel
+	btrfs-progs
 	cmake
-	cpio
-	ffmpegthumbs
-	firewalld
-	frameworkintegration
-	go
-	gst-libav
-	gst-plugins-ugly
-	gtk3
+	cups
+	cups-pk-helper
+	docker
+	docker-compose
+	firewall-applet
+	git
 	hyprqt6engine
-	kdecoration
-	layer-shell-qt
-	layer-shell-qt5
-	libvncserver
+	lib32-vulkan-radeon
+	linux
+	linux-firmware
 	nwg-look
 	phonon-qt6-mpv
 	pipewire
+	rocm-hip-sdk
+	rocm-opencl-sdk
+	rsync
+	rustup
+	sddm-git
+	socat
+	udiskie
+	vulkan-radeon
+	zram-generator
+)
+
+optdeps=(
+	dosfstools
+	exfat-utils
+	ffmpegthumbs
+	ghostscript
+	gst-libav
+	gst-plugin-pipewire
+	gst-plugins-ugly
+	npm
+	openbsd-netcat
 	pipewire-alsa
 	pipewire-audio
+	pipewire-jack
 	pipewire-pulse
-	qt5-quickcontrols2
-	qt5-svg
-	qt5-wayland
-	qt6-multimedia-ffmpeg
-	qt6-wayland
-	rustup
-	socat
-	tbb
-	udiskie
-	upower
+	unixodbc
+	unrar
+	unzip
+	v4l2loopback-dkms
+	wine
 	wireplumber
+	zathura-pdf-mupdf
 )
 
 nvidia=(
@@ -45,7 +64,10 @@ nvidia=(
 )
 
 packages=(
+	amd-container-toolkit
+	anydesk-bin
 	ark
+	awww
 	bat
 	bear
 	blueberry
@@ -55,35 +77,30 @@ packages=(
 	candy-icons-git
 	cbatticon
 	cliphist
-	curl
 	darkly-bin
 	dialog
 	discord
 	dolphin
-	dosfstools
-	exfat-utils
 	fastfetch
 	fish
 	flatpak
 	fzf
 	gamemode
 	gamescope
-	gdb
 	gdu
-	ghostscript
 	git-delta
 	github-cli
 	glow
 	hypridle
+	hyprland
+	hyprland-preview-share-picker-git
 	hyprlock
 	hyprpicker
 	hyprshot
-	iproute2
 	jre-openjdk
 	kitty
-	less
 	lib32-gamemode
-	libnotify
+	libvirt
 	loupe
 	lsd
 	luarocks
@@ -93,7 +110,6 @@ packages=(
 	mangal-bin
 	mangohud
 	megacmd-bin
-	mermaid-cli
 	mpv
 	mpvpaper
 	mypy
@@ -108,60 +124,53 @@ packages=(
 	noto-fonts-cjk
 	noto-fonts-emoji
 	noto-fonts-extra
-	npm
 	obs-studio
-	openbsd-netcat
 	pacman-contrib
 	partitionmanager
 	pavucontrol
 	pear-desktop
 	playerctl
 	polkit-gnome
+	prismlauncher
 	protonplus
 	protontricks
 	pywal-git
-	qalculate-gtk
 	qbittorrent
+	qemu-full
 	quickshell
 	rclone
 	reflector
-	remmina
-	ripgrep
 	ripgrep-all
-	sddm-git
+	rustdesk-bin
 	sddm-minesddm-theme
 	starship
 	steam
+	sunshine-bin
 	swayosd-git
-	swww
+	syncplay
+	system-config-printer
 	tectonic
 	telegram-desktop
 	thunderbird
 	time
 	tldr
 	tree-sitter-cli
+	ttf-dejavu
 	ttf-firacode-nerd
-	ttf-ms-win11-auto
-	unixodbc
-	unrar
-	unzip
-	v4l2loopback-dkms
+	ttf-liberation
+	vm-curator-bin
 	walogram-git
-	wayvnc
-	wev
+	waypipe
 	whatsdesk-bin
-	wine
+	winboat-bin
 	wl-clip-persist
 	wofi
-	xdg-desktop-portal
 	xdg-desktop-portal-hyprland
 	xdg-user-dirs
-	xdg-utils
 	yarn
 	ydotool
 	yt-dlp
 	zathura
-	zathura-pdf-mupdf
 	zip
 	zoxide
 )
@@ -207,22 +216,27 @@ else
 	echo "Not using nvidia."
 fi
 
-yay -S --needed --noconfirm --sudoloop hyprland
-
 # Prep
 echo "Installing prep stage packages..."
 yay -S --needed --noconfirm --sudoloop "${prep[@]}"
+
+echo "Installing optional dependencies..."
+yay -S --needed --noconfirm --sudoloop "${optdeps[@]}"
 
 echo "Installing rust toolchains..."
 rustup toolchain install stable
 rustup toolchain install nightly
 rustup default stable
+rustup component add rust-analyzer
 
 echo "Enabling bluetooth..."
 sudo systemctl enable --now bluetooth
 
 echo "Enabling firewalld..."
 sudo systemctl enable --now firewalld
+
+echo "Enabling docker..."
+sudo systemctl enable --now docker
 
 echo "Setting up archlinux-xdg-menu..."
 XDG_MENU_PREFIX=arch- kbuildsycoca6
@@ -245,6 +259,11 @@ rm -rf sddm-hyprland
 
 # yay cleanup
 yay -Yc
+yay -Sc
+sudo rm -rf /var/lib/pacman/pkg/*
+
+echo "Configuring user groups..."
+sudo usermod -aG docker,render,video "$(id -un)"
 
 # Hyprland plugins
 # hyprpm update
