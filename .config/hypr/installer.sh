@@ -154,6 +154,7 @@ packages=(
 	thunderbird
 	time
 	tldr
+	tmux
 	tree-sitter-cli
 	ttf-dejavu
 	ttf-firacode-nerd
