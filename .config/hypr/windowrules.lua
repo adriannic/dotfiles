@@ -6,23 +6,23 @@ hl.window_rule({ match = { content = 3 }, immediate = true })
 hl.window_rule({ match = { initial_class = "^(yad)$" }, center = true })
 
 -- polkit
-hl.window_rule({ match = { class = "^(polkit-gnome-authentication-agent-1)$" }, float = true, dim_around = true })
+hl.window_rule({ match = { class = "^(.*polkit.*)$" }, float = true, dim_around = true })
 
 -- wofi
-hl.window_rule({ match = { class = "^(wofi)$" }, border_size = 0, no_shadow = true })
+hl.window_rule({ match = { class = "^(.*wofi.*)$" }, border_size = 0, no_shadow = true })
 
 -- steam
-hl.window_rule({ match = { class = "^([Ss]team)$", title = "^(([Ss]team).*)$" }, float = true })
-hl.window_rule({ match = { class = "^([Ss]team)$", title = "^([Ss]team)$" }, tile = true, workspace = "3 silent" })
+hl.window_rule({ match = { class = "^(.*[Ss]team.*)$", title = "^((.*[Ss]team).*)$" }, float = true })
+hl.window_rule({ match = { class = "^(.*[Ss]team)$", title = "^(.*[Ss]team.*)$" }, tile = true, workspace = "3 silent" })
 
 -- workspaces
-hl.window_rule({ match = { class = "^([Ss]team|osu!)$" }, workspace = "3" })
-hl.window_rule({ match = { class = "^(firefox|brave-browser)$" }, workspace = "4" })
-hl.window_rule({ match = { class = "^(org.telegram.desktop)$" }, workspace = "5" })
-hl.window_rule({ match = { class = "^(discord|vesktop)$" }, workspace = "6" })
-hl.window_rule({ match = { class = "^(whatsdesk)$" }, workspace = "7" })
-hl.window_rule({ match = { class = "^(Spotify|com.github.th-ch.youtube-music)$" }, workspace = "8" })
-hl.window_rule({ match = { class = "^(com.obsproject.Studio)$" }, workspace = "9" })
+hl.window_rule({ match = { class = "^(.*[Ss]team.*|.*osu.*|.*prismlauncher.*)$" }, workspace = "3" })
+hl.window_rule({ match = { class = "^(.*firefox.*|.*brave-.*)$" }, workspace = "4" })
+hl.window_rule({ match = { class = "^(.*telegram.*)$" }, workspace = "5" })
+hl.window_rule({ match = { class = "^(.*discord.*|.*vesktop.*)$" }, workspace = "6" })
+hl.window_rule({ match = { class = "^(.*whatsdesk.*)$" }, workspace = "7" })
+hl.window_rule({ match = { class = "^(.*Spotify.*|.*music.*)$" }, workspace = "8" })
+hl.window_rule({ match = { class = "^(.*obs.*)$" }, workspace = "9" })
 
 -- suppress maximize events
 hl.window_rule({ match = { class = ".*" }, suppress_event = "maximize" })
