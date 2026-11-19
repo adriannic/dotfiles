@@ -82,6 +82,7 @@ packages=(
 	discord
 	dolphin
 	fastfetch
+	fd
 	fish
 	flatpak
 	fzf

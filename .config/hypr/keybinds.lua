@@ -6,6 +6,7 @@ hl.bind(
 		"bash -c 'mpv --no-video ~/.config/audio/sonic/pause.wav' & hyprlock; bash -c 'mpv --no-video ~/.config/audio/sonic/confirm.wav'"
 	)
 )
+hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("qs -c minecraft ipc call settings toggleVisible"))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("dolphin"))
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
