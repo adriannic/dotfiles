@@ -49,6 +49,7 @@ export MAKEFLAGS="-j $(nproc)"
 export ROCM_PATH=/opt/rocm/
 export CUDA_PATH=/opt/cuda/
 export HSA_OVERRIDE_GFX_VERSION=10.3.0
+case ":$PATH:" in *":$HOME/.local/bin:"*) ;; *) export PATH="$HOME/.local/bin:$PATH" ;; esac
 
 [ "$(tty)" = "/dev/tty1" ] && exec start-hyprland
 
