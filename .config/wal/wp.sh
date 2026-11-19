@@ -40,7 +40,7 @@ function wallpaper() {
 		echo $?
 	)
 
-	if is_video "$1" && [[ $(mpvpaper --help >/dev/null 2>&1; echo $?) != 0 ]]; then
+	if is_video "$1" && [[ $mpvpaper_present != 0 ]]; then
 		notify-send "No se pudo cambiar el fondo de pantalla" "No está presente mpvpaper"
 		exit 1
 	fi
@@ -56,18 +56,15 @@ function wallpaper() {
 	(
 		procs="$(pgrep mpvpaper)"
 		if is_video "$1"; then
-			awww kill
 			mpvpaper -o "volume=100 loop" '*' "$1" --fork
 		else
-			pidof awww-daemon || awww-daemon & disown
+			pidof awww-daemon || awww-daemon &
+			disown
 			awww img --transition-type any --transition-fps 60 --transition-duration 1 "$1" &
 		fi
 		wal -n -i "$tmp"
 		fix_qt_contrast &
-		# pywalfox update &
 		walogram &
-		# swaync-client -rs &
-		# ags quit; ags run ~/Programacion/ags/app.tsx &
 		pkill swayosd-server
 		swayosd-server &
 		sleep 0.5
